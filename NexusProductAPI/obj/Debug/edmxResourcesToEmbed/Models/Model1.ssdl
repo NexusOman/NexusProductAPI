@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NEXUSPRODUCTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="CMN_Mst_User_Authenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="VSR_Mst_OwnVehicles_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Mst_ServiceTypes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_Mst_ServiceTypes_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Mst_ServiceTypes_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ServiceTypeNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="serviceTypeNameAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="DescriptionEn" Type="varchar(max)" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_Mst_VehicleTypes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_Mst_VehicleTypes_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Mst_VehicleTypes_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VehicleTypeNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="DescriptionEn" Type="varchar(max)" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_STN_OpeningCount_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="actualCount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_STN_ServicePricing_GetAllByServiceID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ServiceID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_STN_ServicePricing_GetAllByVehicleTypeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vehicleTypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vehicleTypeId" Type="int" Mode="In" />
+    <Parameter Name="BayType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_STN_ServicePricing_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ServiceTypeID" Type="int" Mode="In" />
+    <Parameter Name="Pricing" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="VSR_Trn_ServiceEntry_Details_GetAllByEntryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="VSR_Trn_ServiceEntry_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Trn_ServiceEntry_GetDashboardData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Trn_ServiceEntry_IsShowOpening" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="VSR_Trn_ServiceEntry_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EntryStartNo" Type="int" Mode="In" />
+    <Parameter Name="BayType" Type="int" Mode="In" />
+    <Parameter Name="PartyType" Type="int" Mode="In" />
+    <Parameter Name="VehicleNumber" Type="varchar" Mode="In" />
+    <Parameter Name="VehicleType" Type="int" Mode="In" />
+    <Parameter Name="ImgUrl" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Remarks" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+    <Parameter Name="TotalAmount" Type="decimal" Mode="In" />
+    <Parameter Name="Discount" Type="decimal" Mode="In" />
+    <Parameter Name="NetAmount" Type="decimal" Mode="In" />
+    <Parameter Name="details" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ServiceEntryID" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="NEXUSPRODUCTModelStoreContainer" />
+</Schema>

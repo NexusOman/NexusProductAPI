@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NEXUSPRODUCTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="CMN_Mst_User_Authenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="VSR_Mst_OwnVehicles_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Mst_ServiceTypes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_Mst_ServiceTypes_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Mst_ServiceTypes_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceTypeNameEn" Type="varchar" Mode="In" />
+          <Parameter Name="serviceTypeNameAr" Type="nvarchar" Mode="In" />
+          <Parameter Name="DescriptionEn" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_Mst_VehicleTypes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_Mst_VehicleTypes_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Mst_VehicleTypes_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VehicleTypeNameEn" Type="varchar" Mode="In" />
+          <Parameter Name="DescriptionEn" Type="varchar(max)" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_STN_OpeningCount_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="actualCount" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_STN_ServicePricing_GetAllByServiceID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_STN_ServicePricing_GetAllByVehicleTypeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vehicleTypeId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vehicleTypeId" Type="int" Mode="In" />
+          <Parameter Name="BayType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_STN_ServicePricing_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceTypeID" Type="int" Mode="In" />
+          <Parameter Name="Pricing" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="VSR_Trn_ServiceEntry_Details_GetAllByEntryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EntryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="VSR_Trn_ServiceEntry_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Trn_ServiceEntry_GetDashboardData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Trn_ServiceEntry_IsShowOpening" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="VSR_Trn_ServiceEntry_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EntryStartNo" Type="int" Mode="In" />
+          <Parameter Name="BayType" Type="int" Mode="In" />
+          <Parameter Name="PartyType" Type="int" Mode="In" />
+          <Parameter Name="VehicleNumber" Type="varchar" Mode="In" />
+          <Parameter Name="VehicleType" Type="int" Mode="In" />
+          <Parameter Name="ImgUrl" Type="varchar(max)" Mode="In" />
+          <Parameter Name="Remarks" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerName" Type="varchar" Mode="In" />
+          <Parameter Name="TotalAmount" Type="decimal" Mode="In" />
+          <Parameter Name="Discount" Type="decimal" Mode="In" />
+          <Parameter Name="NetAmount" Type="decimal" Mode="In" />
+          <Parameter Name="details" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ServiceEntryID" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="NEXUSPRODUCTModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NEXUSPRODUCTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NEXUSPRODUCTEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="VSR_Mst_OwnVehicles_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Mst_OwnVehicles_GetAll_Result)" />
+          <FunctionImport Name="VSR_Mst_ServiceTypes_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Mst_ServiceTypes_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Mst_ServiceTypes_GetAll_Result)" />
+          <FunctionImport Name="VSR_Mst_ServiceTypes_Save">
+            <Parameter Name="ServiceTypeNameEn" Mode="In" Type="String" />
+            <Parameter Name="serviceTypeNameAr" Mode="In" Type="String" />
+            <Parameter Name="DescriptionEn" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Mst_VehicleTypes_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Mst_VehicleTypes_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Mst_VehicleTypes_GetAll_Result)" />
+          <FunctionImport Name="VSR_Mst_VehicleTypes_Save">
+            <Parameter Name="VehicleTypeNameEn" Mode="In" Type="String" />
+            <Parameter Name="DescriptionEn" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_STN_OpeningCount_Save">
+          <Parameter Name="actualCount" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_STN_ServicePricing_GetAllByServiceID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByServiceID_Result)">
+          <Parameter Name="ServiceID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_STN_ServicePricing_GetAllByVehicleTypeID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByVehicleTypeID_Result)">
+          <Parameter Name="vehicleTypeId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType" ReturnType="Collection(NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType_Result)">
+            <Parameter Name="vehicleTypeId" Mode="In" Type="Int32" />
+            <Parameter Name="BayType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_STN_ServicePricing_Save">
+            <Parameter Name="ServiceTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="Pricing" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Trn_ServiceEntry_Details_GetAllByEntryId" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Details_GetAllByEntryId_Result)">
+          <Parameter Name="EntryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Trn_ServiceEntry_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetAll_Result)" />
+          <FunctionImport Name="VSR_Trn_ServiceEntry_GetDashboardData" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetDashboardData_Result)" />
+          <FunctionImport Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result)" />
+          <FunctionImport Name="VSR_Trn_ServiceEntry_IsShowOpening" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="VSR_Trn_ServiceEntry_Save" ReturnType="Collection(Int32)">
+            <Parameter Name="EntryStartNo" Mode="In" Type="Int32" />
+            <Parameter Name="BayType" Mode="In" Type="Int32" />
+            <Parameter Name="PartyType" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleNumber" Mode="In" Type="String" />
+            <Parameter Name="VehicleType" Mode="In" Type="Int32" />
+            <Parameter Name="ImgUrl" Mode="In" Type="String" />
+            <Parameter Name="Remarks" Mode="In" Type="String" />
+            <Parameter Name="CustomerName" Mode="In" Type="String" />
+            <Parameter Name="TotalAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="Discount" Mode="In" Type="Decimal" />
+            <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="details" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result)">
+          <Parameter Name="ServiceEntryID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="VehicleNo" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="VehicleType" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_Mst_ServiceTypes_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="DescriptionEn" Nullable="true" />
+          <Property Type="String" Name="DescriptionAr" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_Mst_VehicleTypes_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="VehicleTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="VehicleTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="DescriptionEn" Nullable="true" />
+          <Property Type="String" Name="DescriptionAr" Nullable="true" />
+          <Property Type="Int32" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_STN_ServicePricing_GetAllByServiceID_Result">
+          <Property Type="String" Name="VehicleTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="VehicleTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="vehicleTypeID" Nullable="false" />
+          <Property Type="Decimal" Name="OwnVehicle" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="ThirdParty" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Int32" Name="ServiceTypeID" Nullable="true" />
+          <Property Type="Int32" Name="PricingID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="VSR_STN_ServicePricing_GetAllByVehicleTypeID_Result">
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="ServiceTypeID" Nullable="false" />
+          <Property Type="Decimal" Name="OwnVehicle" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="ThirdParty" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Boolean" Name="checked" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType_Result">
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="ServiceTypeID" Nullable="false" />
+          <Property Type="Decimal" Name="amount" Nullable="false" Precision="18" Scale="3" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntry_Details_GetAllByEntryId_Result">
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntry_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="EntryNo" Nullable="false" />
+          <Property Type="DateTime" Name="EntryDate" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="BayType" Nullable="false" />
+          <Property Type="Int32" Name="PartyType" Nullable="false" />
+          <Property Type="String" Name="VehicleNumber" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="VehicleType" Nullable="false" />
+          <Property Type="String" Name="ImgUrl" Nullable="false" />
+          <Property Type="String" Name="Remarks" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Int32" Name="ServiceEntryID" Nullable="false" />
+          <Property Type="Int32" Name="ServicesCount" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntry_GetDashboardData_Result">
+          <Property Type="Int32" Name="manualown" Nullable="true" />
+          <Property Type="Int32" Name="manualtp" Nullable="true" />
+          <Property Type="Int32" Name="autoown" Nullable="true" />
+          <Property Type="Int32" Name="autotp" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
+          <Property Type="Int32" Name="EntryNo" Nullable="false" />
+          <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ServiceId" Nullable="false" />
+          <Property Type="Int32" Name="ServiceEntryID" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="EntryNo" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="3" />
+        </ComplexType>
+        <ComplexType Name="CMN_Mst_User_Authenticate_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+          <Property Type="Int32" Name="EmpID" Nullable="true" />
+          <Property Type="String" Name="ProfilePic" Nullable="true" />
+          <Property Type="Int32" Name="StatusID" Nullable="true" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NEXUSPRODUCTModelStoreContainer" CdmEntityContainer="NEXUSPRODUCTEntities" >
+          <FunctionImportMapping FunctionImportName="VSR_Mst_OwnVehicles_GetAll" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_OwnVehicles_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Mst_OwnVehicles_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleNo" ColumnName="VehicleNo" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Mst_ServiceTypes_Delete" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_ServiceTypes_Delete" />
+          <FunctionImportMapping FunctionImportName="VSR_Mst_ServiceTypes_GetAll" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_ServiceTypes_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Mst_ServiceTypes_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+                <ScalarProperty Name="DescriptionEn" ColumnName="DescriptionEn" />
+                <ScalarProperty Name="DescriptionAr" ColumnName="DescriptionAr" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Mst_ServiceTypes_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_ServiceTypes_Save" />
+          <FunctionImportMapping FunctionImportName="VSR_Mst_VehicleTypes_Delete" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_VehicleTypes_Delete" />
+          <FunctionImportMapping FunctionImportName="VSR_Mst_VehicleTypes_GetAll" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_VehicleTypes_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Mst_VehicleTypes_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleTypeNameEn" ColumnName="VehicleTypeNameEn" />
+                <ScalarProperty Name="VehicleTypeNameAr" ColumnName="VehicleTypeNameAr" />
+                <ScalarProperty Name="DescriptionEn" ColumnName="DescriptionEn" />
+                <ScalarProperty Name="DescriptionAr" ColumnName="DescriptionAr" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Mst_VehicleTypes_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Mst_VehicleTypes_Save" />
+          <FunctionImportMapping FunctionImportName="VSR_STN_OpeningCount_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_STN_OpeningCount_Save" />
+          <FunctionImportMapping FunctionImportName="VSR_STN_ServicePricing_GetAllByServiceID" FunctionName="NEXUSPRODUCTModel.Store.VSR_STN_ServicePricing_GetAllByServiceID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByServiceID_Result">
+                <ScalarProperty Name="VehicleTypeNameAr" ColumnName="VehicleTypeNameAr" />
+                <ScalarProperty Name="VehicleTypeNameEn" ColumnName="VehicleTypeNameEn" />
+                <ScalarProperty Name="vehicleTypeID" ColumnName="vehicleTypeID" />
+                <ScalarProperty Name="OwnVehicle" ColumnName="OwnVehicle" />
+                <ScalarProperty Name="ThirdParty" ColumnName="ThirdParty" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+                <ScalarProperty Name="PricingID" ColumnName="PricingID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_STN_ServicePricing_GetAllByVehicleTypeID" FunctionName="NEXUSPRODUCTModel.Store.VSR_STN_ServicePricing_GetAllByVehicleTypeID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByVehicleTypeID_Result">
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+                <ScalarProperty Name="OwnVehicle" ColumnName="OwnVehicle" />
+                <ScalarProperty Name="ThirdParty" ColumnName="ThirdParty" />
+                <ScalarProperty Name="checked" ColumnName="checked" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType" FunctionName="NEXUSPRODUCTModel.Store.VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_STN_ServicePricing_GetAllByVehicleTypeIDAndBayType_Result">
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+                <ScalarProperty Name="ServiceTypeID" ColumnName="ServiceTypeID" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_STN_ServicePricing_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_STN_ServicePricing_Save" />
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Details_GetAllByEntryId" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Details_GetAllByEntryId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Details_GetAllByEntryId_Result">
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_GetAll" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="BayType" ColumnName="BayType" />
+                <ScalarProperty Name="PartyType" ColumnName="PartyType" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
+                <ScalarProperty Name="ServicesCount" ColumnName="ServicesCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_GetDashboardData" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_GetDashboardData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetDashboardData_Result">
+                <ScalarProperty Name="manualown" ColumnName="manualown" />
+                <ScalarProperty Name="manualtp" ColumnName="manualtp" />
+                <ScalarProperty Name="autoown" ColumnName="autoown" />
+                <ScalarProperty Name="autotp" ColumnName="autotp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Head_getMaxEntryNo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_IsShowOpening" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_IsShowOpening" />
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Save" />
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
