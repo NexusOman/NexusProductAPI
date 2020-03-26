@@ -37,7 +37,7 @@ namespace NexusProductAPI.Controllers.ServiceModule
             }
         }
 
-      
+
         #endregion
 
         #region ServicePricing
@@ -355,7 +355,7 @@ namespace NexusProductAPI.Controllers.ServiceModule
             List<VSR_Mst_ServiceTypes_GetAll_Result> ServiceType = new List<VSR_Mst_ServiceTypes_GetAll_Result>();
             try
             {
-                db.VSR_Mst_ServiceTypes_Save(data.serviceTypeNameEn, data.serviceTypeNameAr, data.descriptionEn, data.id);
+                db.VSR_Mst_ServiceTypes_Save(data.serviceType, data.serviceTypeAr, data.description, data.serviceTypeId);
                 ServiceType = db.VSR_Mst_ServiceTypes_GetAll().ToList();
                 if (ServiceType.Count() > 0)
                 {
@@ -378,7 +378,7 @@ namespace NexusProductAPI.Controllers.ServiceModule
             List<VSR_Mst_ServiceTypes_GetAll_Result> ServiceType = new List<VSR_Mst_ServiceTypes_GetAll_Result>();
             try
             {
-                db.VSR_Mst_ServiceTypes_Delete(data.id);
+                db.VSR_Mst_ServiceTypes_Delete(data.serviceTypeId);
                 ServiceType = db.VSR_Mst_ServiceTypes_GetAll().ToList();
                 if (ServiceType.Count() > 0)
                 {
@@ -577,10 +577,10 @@ namespace NexusProductAPI.Controllers.ServiceModule
         }
         public class postData
         {
-            public string serviceTypeNameEn { get; set; }
-            public string descriptionEn { get; set; }
-            public string serviceTypeNameAr { get; set; }
-            public int id { get; set; }
+            public string serviceType { get; set; }
+            public string description { get; set; }
+            public string serviceTypeAr { get; set; }
+            public int serviceTypeId { get; set; }
         }
 
         public class ServiceResponse
