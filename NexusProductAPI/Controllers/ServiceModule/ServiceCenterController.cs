@@ -322,6 +322,31 @@ namespace NexusProductAPI.Controllers.ServiceModule
             return SR;
         }
 
+        [Route("api/getDetailsForServiceEntry")]
+        public ServiceEntryInitialLoad getDetailsForServiceEntry()
+        {
+            try
+            {
+               
+                ServiceEntryInitialLoad SR = new ServiceEntryInitialLoad();
+                SR.details = db.VSR_Trn_ServiceEntry_Head_getMaxEntryNo().ToList();
+                SR.VehicleTypes = db.VSR_Mst_VehicleTypes_GetAll().ToList();
+                SR.ownVehicles= db.VSR_Mst_OwnVehicles_GetAll().ToList();
+                SR.ServiceDetails= db.VSR_Trn_ServiceEntryDetails_GetByServeEntryID(0).ToList();
+                SR.status = 1;
+                return SR;
+            }
+            catch(Exception Ex)
+            {
+                ServiceEntryInitialLoad SR = new ServiceEntryInitialLoad();
+                SR.status = 0;
+                SR.message = "Some Error Occured while Fetching Initial Data";
+                return SR;
+            }
+        }
+
+
+
         #endregion
 
         #region ServiceTypes
@@ -467,6 +492,17 @@ namespace NexusProductAPI.Controllers.ServiceModule
         #endregion
 
         #region responsetypes
+
+        public class ServiceEntryInitialLoad
+        {
+           public int status { get; set; }
+           public List<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result> details { get; set; }
+            public List<VSR_Mst_VehicleTypes_GetAll_Result> VehicleTypes { get; set; }
+            public List<VSR_Mst_OwnVehicles_GetAll_Result> ownVehicles { get; set; }
+            public List<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> ServiceDetails { get; set; }
+            public string message { get; set; }
+        }
+
         public class DashboardResponse
         {
             public List<VSR_Trn_ServiceEntry_GetDashboardData_Result> dashDetails { get; set; }

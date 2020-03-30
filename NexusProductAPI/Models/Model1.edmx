@@ -9,6 +9,87 @@
           <Parameter Name="UserName" Type="varchar" Mode="In" />
           <Parameter Name="Password" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="CMN_Utl_Menu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CMN_Utl_MenuItems_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="CMN_Utl_Modules_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Bank_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Bank_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Bank_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="bankCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="bankName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_BloodGroups_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_BloodGroups_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_BloodGroups_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BGCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="BGCodeName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Country_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Country_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Country_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Departments_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Departments_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Departments_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DeptCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="DeptName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Designation_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Designation_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Designation_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DesignationCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="DesignationName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_EmpDocs_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_EmpDocs_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_EmpDocs_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="empdocCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="empdocName" Type="nvarchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Subcontractors_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Subcontractors_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Subcontractors_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="subcontractorCode" Type="varchar" Mode="In" />
+          <Parameter Name="subcontractorName" Type="varchar" Mode="In" />
+          <Parameter Name="ContactPerson" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNumber" Type="varchar" Mode="In" />
+          <Parameter Name="ContactEmail" Type="varchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_WorkLocation_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_WorkLocation_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_WorkLocation_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="WorkLocationCode" Type="varchar" Mode="In" />
+          <Parameter Name="WorkLocationName" Type="varchar" Mode="In" />
+          <Parameter Name="ContactPerson" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNumber" Type="varchar" Mode="In" />
+          <Parameter Name="ContactEmail" Type="varchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <Function Name="VSR_Mst_OwnVehicles_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="VSR_Mst_ServiceTypes_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
@@ -118,7 +199,6 @@
           </FunctionImport>
           <FunctionImport Name="VSR_Trn_ServiceEntry_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetAll_Result)" />
           <FunctionImport Name="VSR_Trn_ServiceEntry_GetDashboardData" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_GetDashboardData_Result)" />
-          <FunctionImport Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result)" />
           <FunctionImport Name="VSR_Trn_ServiceEntry_IsShowOpening" ReturnType="Collection(Int32)" />
           <FunctionImport Name="VSR_Trn_ServiceEntry_Save" ReturnType="Collection(Int32)">
             <Parameter Name="EntryStartNo" Mode="In" Type="Int32" />
@@ -141,6 +221,88 @@
             <Parameter Name="UserName" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result)" />
+          <FunctionImport Name="HRP_Mst_BloodGroups_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_BloodGroups_Save">
+            <Parameter Name="BGCode" Mode="In" Type="String" />
+            <Parameter Name="BGCodeName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_BloodGroups_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Country_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Country_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Country_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Country_Save">
+            <Parameter Name="CountryCode" Mode="In" Type="String" />
+            <Parameter Name="CountryName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CMN_Utl_Menu_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Menu_GetAll_Result)" />
+          <FunctionImport Name="CMN_Utl_MenuItems_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_MenuItems_GetAll_Result)" />
+          <FunctionImport Name="CMN_Utl_Modules_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Designation_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Designation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Designation_Save">
+            <Parameter Name="DesignationCode" Mode="In" Type="String" />
+            <Parameter Name="DesignationName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Departments_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Departments_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Departments_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Departments_Save">
+            <Parameter Name="DeptCode" Mode="In" Type="String" />
+            <Parameter Name="DeptName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Bank_Save">
+            <Parameter Name="bankCode" Mode="In" Type="String" />
+            <Parameter Name="bankName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_EmpDocs_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_EmpDocs_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_EmpDocs_Save">
+            <Parameter Name="empdocCode" Mode="In" Type="String" />
+            <Parameter Name="empdocName" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Subcontractors_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Subcontractors_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Subcontractors_Save">
+            <Parameter Name="subcontractorCode" Mode="In" Type="String" />
+            <Parameter Name="subcontractorName" Mode="In" Type="String" />
+            <Parameter Name="ContactPerson" Mode="In" Type="String" />
+            <Parameter Name="ContactNumber" Mode="In" Type="String" />
+            <Parameter Name="ContactEmail" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_WorkLocation_Delete">
+          <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_WorkLocation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_WorkLocation_Save">
+            <Parameter Name="WorkLocationCode" Mode="In" Type="String" />
+            <Parameter Name="WorkLocationName" Mode="In" Type="String" />
+            <Parameter Name="ContactPerson" Mode="In" Type="String" />
+            <Parameter Name="ContactNumber" Mode="In" Type="String" />
+            <Parameter Name="ContactEmail" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Bank_Delete">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Bank_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result)" />
         </EntityContainer>
         <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -212,10 +374,6 @@
           <Property Type="Int32" Name="autoown" Nullable="true" />
           <Property Type="Int32" Name="autotp" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
-          <Property Type="Int32" Name="EntryNo" Nullable="false" />
-          <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
-        </ComplexType>
         <ComplexType Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="Int32" Name="ServiceId" Nullable="false" />
@@ -242,6 +400,80 @@
           <Property Type="Int32" Name="CreatedBy" Nullable="true" />
           <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
           <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
+          <Property Type="Int32" Name="EntryNo" Nullable="false" />
+          <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_BloodGroups_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="bgcode" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="bgcodeName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Country_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="countrycode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="countryname" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="CMN_Utl_Menu_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ModuleID" Nullable="false" />
+          <Property Type="String" Name="MenuNameEn" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MenuNameAr" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Desription" Nullable="true" />
+          <Property Type="String" Name="MenuRoutLink" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MenuRoutComponent" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="faicon" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="CMN_Utl_MenuItems_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MenuItemNameEn" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="MenuID" Nullable="false" />
+          <Property Type="String" Name="MenuItemNameAr" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="MenuItemRoutLink" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MenuItemRoutComponent" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="CMN_Utl_Modules_GetAll_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ModuleNameEn" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="ModuleNameAr" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="faicon" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Designation_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="designationcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="designationname" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Departments_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="departmentcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="departmentname" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_EmpDocs_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="empdoccode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="empdocname" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Subcontractors_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="subcontractorcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="subcontractorname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_WorkLocation_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="worklocationcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="worklocationname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Bank_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="bankcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="bankname" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -361,14 +593,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Head_getMaxEntryNo">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
-                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
-                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_IsShowOpening" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_IsShowOpening" />
           <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Save" />
           <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
@@ -403,6 +627,144 @@
                 <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
                 <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
                 <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Head_getMaxEntryNo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="bgcode" ColumnName="bgcode" />
+                <ScalarProperty Name="bgcodeName" ColumnName="bgcodeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Country_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Country_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Country_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+                <ScalarProperty Name="countryname" ColumnName="countryname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Country_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_Save" />
+          <FunctionImportMapping FunctionImportName="CMN_Utl_Menu_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Menu_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Menu_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="MenuNameEn" ColumnName="MenuNameEn" />
+                <ScalarProperty Name="MenuNameAr" ColumnName="MenuNameAr" />
+                <ScalarProperty Name="Desription" ColumnName="Desription" />
+                <ScalarProperty Name="MenuRoutLink" ColumnName="MenuRoutLink" />
+                <ScalarProperty Name="MenuRoutComponent" ColumnName="MenuRoutComponent" />
+                <ScalarProperty Name="faicon" ColumnName="faicon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CMN_Utl_MenuItems_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_MenuItems_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_MenuItems_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MenuItemNameEn" ColumnName="MenuItemNameEn" />
+                <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+                <ScalarProperty Name="MenuItemNameAr" ColumnName="MenuItemNameAr" />
+                <ScalarProperty Name="MenuItemRoutLink" ColumnName="MenuItemRoutLink" />
+                <ScalarProperty Name="MenuItemRoutComponent" ColumnName="MenuItemRoutComponent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CMN_Utl_Modules_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Modules_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ModuleNameEn" ColumnName="ModuleNameEn" />
+                <ScalarProperty Name="ModuleNameAr" ColumnName="ModuleNameAr" />
+                <ScalarProperty Name="faicon" ColumnName="faicon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="designationcode" ColumnName="designationcode" />
+                <ScalarProperty Name="designationname" ColumnName="designationname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Departments_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="departmentcode" ColumnName="departmentcode" />
+                <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="empdoccode" ColumnName="empdoccode" />
+                <ScalarProperty Name="empdocname" ColumnName="empdocname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="subcontractorcode" ColumnName="subcontractorcode" />
+                <ScalarProperty Name="subcontractorname" ColumnName="subcontractorname" />
+                <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="contactemail" ColumnName="contactemail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="worklocationcode" ColumnName="worklocationcode" />
+                <ScalarProperty Name="worklocationname" ColumnName="worklocationname" />
+                <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+                <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+                <ScalarProperty Name="contactemail" ColumnName="contactemail" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_Delete" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="bankcode" ColumnName="bankcode" />
+                <ScalarProperty Name="bankname" ColumnName="bankname" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
