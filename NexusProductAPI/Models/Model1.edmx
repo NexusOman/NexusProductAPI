@@ -214,9 +214,6 @@
             <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
             <Parameter Name="details" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result)">
-          <Parameter Name="ServiceEntryID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
             <Parameter Name="UserName" Mode="In" Type="String" />
             <Parameter Name="Password" Mode="In" Type="String" />
@@ -300,9 +297,12 @@
             <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="HRP_Mst_Bank_Delete">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="HRP_Mst_Bank_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result)" />
+          <FunctionImport Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result)">
+            <Parameter Name="ServiceEntryID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -373,20 +373,6 @@
           <Property Type="Int32" Name="manualtp" Nullable="true" />
           <Property Type="Int32" Name="autoown" Nullable="true" />
           <Property Type="Int32" Name="autotp" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="ServiceId" Nullable="false" />
-          <Property Type="Int32" Name="ServiceEntryID" Nullable="false" />
-          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="3" />
-          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
-          <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="10" />
-          <Property Type="Int32" Name="EntryNo" Nullable="false" />
-          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
-          <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="18" Scale="3" />
-          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="3" />
-          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="3" />
         </ComplexType>
         <ComplexType Name="CMN_Mst_User_Authenticate_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -474,6 +460,21 @@
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="bankcode" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="bankname" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="ServiceId" Nullable="false" />
+          <Property Type="Int32" Name="ServiceEntryID" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="EntryNo" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="3" />
+          <Property Type="String" Name="VehicleNumber" Nullable="false" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -595,24 +596,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_IsShowOpening" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_IsShowOpening" />
           <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Save" />
-          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
-                <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
-                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
-                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
-                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
-                <ScalarProperty Name="Discount" ColumnName="Discount" />
-                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
             <ResultMapping>
               <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
@@ -765,6 +748,25 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="bankcode" ColumnName="bankcode" />
                 <ScalarProperty Name="bankname" ColumnName="bankname" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+                <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+                <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

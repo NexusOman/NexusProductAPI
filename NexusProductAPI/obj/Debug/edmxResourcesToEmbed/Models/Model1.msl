@@ -115,24 +115,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_IsShowOpening" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_IsShowOpening" />
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Save" />
-    <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
-          <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
-          <ScalarProperty Name="Amount" ColumnName="Amount" />
-          <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
-          <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
-          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
-          <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
-          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
-          <ScalarProperty Name="Discount" ColumnName="Discount" />
-          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
       <ResultMapping>
         <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
@@ -285,6 +267,25 @@
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="bankcode" ColumnName="bankcode" />
           <ScalarProperty Name="bankname" ColumnName="bankname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceEntryID" ColumnName="ServiceEntryID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
+          <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

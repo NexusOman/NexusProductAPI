@@ -229,15 +229,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("VSR_Trn_ServiceEntry_Save", entryStartNoParameter, bayTypeParameter, partyTypeParameter, vehicleNumberParameter, vehicleTypeParameter, imgUrlParameter, remarksParameter, customerNameParameter, totalAmountParameter, discountParameter, netAmountParameter, detailsParameter);
         }
     
-        public virtual ObjectResult<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> VSR_Trn_ServiceEntryDetails_GetByServeEntryID(Nullable<int> serviceEntryID)
-        {
-            var serviceEntryIDParameter = serviceEntryID.HasValue ?
-                new ObjectParameter("ServiceEntryID", serviceEntryID) :
-                new ObjectParameter("ServiceEntryID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>("VSR_Trn_ServiceEntryDetails_GetByServeEntryID", serviceEntryIDParameter);
-        }
-    
         public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
         {
             var userNameParameter = userName != null ?
@@ -541,6 +532,15 @@ namespace NexusProductAPI.Models
         public virtual ObjectResult<HRP_Mst_Bank_GetAll_Result> HRP_Mst_Bank_GetAll()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAll_Result>("HRP_Mst_Bank_GetAll");
+        }
+    
+        public virtual ObjectResult<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> VSR_Trn_ServiceEntryDetails_GetByServeEntryID(Nullable<int> serviceEntryID)
+        {
+            var serviceEntryIDParameter = serviceEntryID.HasValue ?
+                new ObjectParameter("ServiceEntryID", serviceEntryID) :
+                new ObjectParameter("ServiceEntryID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>("VSR_Trn_ServiceEntryDetails_GetByServeEntryID", serviceEntryIDParameter);
         }
     }
 }

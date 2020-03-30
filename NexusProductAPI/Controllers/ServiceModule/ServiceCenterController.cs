@@ -8,6 +8,15 @@ using System.Web.Http;
 using Newtonsoft.Json;
 using System.Web.Configuration;
 using System.Data.Entity.Core.Objects;
+using System.Data;
+using System.ComponentModel;
+using Microsoft.Reporting.WebForms;
+using System.IO;
+using System.Text;
+using System.Drawing.Printing;
+using System.Drawing.Imaging;
+using System.Web;
+using System.Drawing;
 
 namespace NexusProductAPI.Controllers.ServiceModule
 {
@@ -241,6 +250,17 @@ namespace NexusProductAPI.Controllers.ServiceModule
                 ServiceEntryResponse SR = new ServiceEntryResponse();
                 List<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> ServicePricing = new List<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>();
                 ServicePricing = db.VSR_Trn_ServiceEntryDetails_GetByServeEntryID(ID).ToList();
+                DataTable dt = ToDataTable(ServicePricing);
+
+                // System.Web.UI.ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "openModal", "window.open('../Report/RDLCVwr.aspx?rt=gplqtn&ft=pdf&no=" + e.CommandArgument.ToString() + "' ,'_blank');", true);
+                LocalReport report = new LocalReport();
+                report.ReportPath = "Reports\\ServiceCenter\\serviceentryPrint.rdlc";
+                //report.ReportEmbeddedResource = ("serviceentryPrint.rdlc");
+                report.DataSources.Add(new ReportDataSource("DataSet1", dt));
+                Export(report);
+
+                //m_currentPageIndex = 0;
+                //Print();
                 SR.status = 1;
                 SR.message = "Saved Successfully !!";
                 SR.ServiceDetails = ServicePricing;
@@ -254,6 +274,69 @@ namespace NexusProductAPI.Controllers.ServiceModule
                 return SR;
             }
         }
+
+
+
+        [HttpPost]
+        [Route("api/ServiceEntryWithoutPrint")]
+        public ServiceEntryResponse ServiceEntryWithoutPrint([FromBody]ServiceEntry serviceEntryList)
+        {
+
+            try
+            {
+                string Details = JsonConvert.SerializeObject(serviceEntryList.serviceDetails);
+                string vehicleno = serviceEntryList.vehicleNumber;
+                int vehicletype = serviceEntryList.VehicleType;
+                int partytype = serviceEntryList.partyType;
+                int baytype = serviceEntryList.baytype;
+                string url = serviceEntryList.base64img;
+                string remarks = serviceEntryList.remarks;
+                string customer = serviceEntryList.customername;
+                decimal total = serviceEntryList.Total;
+                decimal discount = serviceEntryList.discount;
+                decimal netamt = serviceEntryList.netamount;
+                //string base64Img = "";
+                //int index = serviceEntryList.base64img.IndexOf(',');
+                //base64Img = serviceEntryList.base64img.Substring(index + 1);
+                //byte[] bytes = Convert.FromBase64String(base64Img);
+
+                //Image image;
+                //using (MemoryStream ms = new MemoryStream(bytes))
+                //{
+                //    image = Image.FromStream(ms);
+                //}
+
+
+
+                //var path = "";
+                //if (!Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"+ DateTime.Now.ToString("dd_MM_yyyy"))))
+                //    Directory.CreateDirectory(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy")));
+                //path = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"  +DateTime.Now.ToString("dd_MM_yyyy") + "/"), "V_"+ DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png");
+                //string url= "Images/" + DateTime.Now.ToString("dd_MM_yyyy") + "/V_" + DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png";
+                //try { image.Save(path,ImageFormat.Png); } catch(Exception ex) { url = serviceEntryList.base64img; }
+                int EntryStarNo = int.Parse(WebConfigurationManager.AppSettings["ServiceEntryStartNo"].ToString());
+                ObjectResult<Nullable<int>> queryResult = db.VSR_Trn_ServiceEntry_Save(EntryStarNo, baytype, partytype, vehicleno, vehicletype, url, remarks, customer, total, discount, netamt, Details);
+                int ID = 0;
+                foreach (Nullable<int> result in queryResult)
+                    ID = result.Value;
+                ServiceEntryResponse SR = new ServiceEntryResponse();
+                List<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> ServicePricing = new List<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>();
+                ServicePricing = db.VSR_Trn_ServiceEntryDetails_GetByServeEntryID(ID).ToList();
+               
+                SR.status = 1;
+                SR.message = "Saved Successfully !!";
+                SR.ServiceDetails = ServicePricing;
+                return SR;
+            }
+            catch (Exception ex)
+            {
+                ServiceEntryResponse SR = new ServiceEntryResponse();
+                SR.status = 0;
+                SR.message = "Error Occured While Saving Details";
+                return SR;
+            }
+        }
+
 
 
         [HttpGet]
@@ -638,6 +721,114 @@ namespace NexusProductAPI.Controllers.ServiceModule
             public int status { get; set; }
             public string message { get; set; }
             public List<VSR_Mst_VehicleTypes_GetAll_Result> VehicleTypes { get; set; }
+        }
+
+        #endregion
+
+        #region CommonMethods
+        private static List<Stream> m_streams;
+        private static int m_currentPageIndex = 0;
+        public static DataTable ToDataTable<T>( IList<T> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+        public static void PrintToPrinter(LocalReport report)
+        {
+            Export(report);
+
+        }
+
+        public static void Export(LocalReport report, bool print = true)
+        {
+            string deviceInfo =
+             @"<DeviceInfo>
+                <OutputFormat>EMF</OutputFormat>
+                <PageWidth>3in</PageWidth>
+                <PageHeight>8.3in</PageHeight>
+                <MarginTop>0in</MarginTop>
+                <MarginLeft>0.1in</MarginLeft>
+                <MarginRight>0.1in</MarginRight>
+                <MarginBottom>0in</MarginBottom>
+            </DeviceInfo>";
+            Warning[] warnings;
+            m_streams = new List<Stream>();
+            report.Render("Image", deviceInfo, CreateStream, out warnings);
+            foreach (Stream stream in m_streams)
+                stream.Position = 0;
+
+            if (print)
+            {
+                Print();
+            }
+        }
+
+
+        public static void Print()
+        {
+            if (m_streams == null || m_streams.Count == 0)
+                throw new Exception("Error: no stream to print.");
+            PrintDocument printDoc = new PrintDocument();
+            if (!printDoc.PrinterSettings.IsValid)
+            {
+                throw new Exception("Error: cannot find the default printer.");
+            }
+            else
+            {
+                printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
+                m_currentPageIndex = 0;
+                printDoc.Print();
+            }
+        }
+
+        public static Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek)
+        {
+            Stream stream = new MemoryStream();
+            m_streams.Add(stream);
+            return stream;
+        }
+
+        public static void PrintPage(object sender, PrintPageEventArgs ev)
+        {
+            Metafile pageImage = new
+               Metafile(m_streams[m_currentPageIndex]);
+
+            // Adjust rectangular area with printer margins.
+            Rectangle adjustedRect = new Rectangle(
+                ev.PageBounds.Left - (int)ev.PageSettings.HardMarginX,
+                ev.PageBounds.Top - (int)ev.PageSettings.HardMarginY,
+                ev.PageBounds.Width,
+                ev.PageBounds.Height);
+
+            // Draw a white background for the report
+            ev.Graphics.FillRectangle(Brushes.White, adjustedRect);
+
+            // Draw the report content
+            ev.Graphics.DrawImage(pageImage, adjustedRect);
+
+            // Prepare for the next page. Make sure we haven't hit the end.
+            m_currentPageIndex++;
+            ev.HasMorePages = (m_currentPageIndex < m_streams.Count);
+        }
+
+        public static void DisposePrint()
+        {
+            if (m_streams != null)
+            {
+                foreach (Stream stream in m_streams)
+                    stream.Close();
+                m_streams = null;
+            }
         }
 
         #endregion
