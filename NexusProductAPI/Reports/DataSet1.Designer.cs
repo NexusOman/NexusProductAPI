@@ -305,6 +305,8 @@ namespace NexusProductAPI.Reports {
             
             private global::System.Data.DataColumn columnVehicleNumber;
             
+            private global::System.Data.DataColumn columnEntryTime;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ServiceEntryDataTable() {
@@ -444,6 +446,14 @@ namespace NexusProductAPI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EntryTimeColumn {
+                get {
+                    return this.columnEntryTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -479,7 +489,7 @@ namespace NexusProductAPI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ServiceEntryRow AddServiceEntryRow(int ServiceId, int ServiceEntryID, decimal Amount, string ServiceTypeNameEn, string ServiceTypeNameAr, string EntryDate, int EntryNo, string CustomerName, decimal NetAmount, decimal Discount, decimal TotalAmount, string VehicleNumber) {
+            public ServiceEntryRow AddServiceEntryRow(int ServiceId, int ServiceEntryID, decimal Amount, string ServiceTypeNameEn, string ServiceTypeNameAr, string EntryDate, int EntryNo, string CustomerName, decimal NetAmount, decimal Discount, decimal TotalAmount, string VehicleNumber, string EntryTime) {
                 ServiceEntryRow rowServiceEntryRow = ((ServiceEntryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -494,7 +504,8 @@ namespace NexusProductAPI.Reports {
                         NetAmount,
                         Discount,
                         TotalAmount,
-                        VehicleNumber};
+                        VehicleNumber,
+                        EntryTime};
                 rowServiceEntryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowServiceEntryRow);
                 return rowServiceEntryRow;
@@ -537,6 +548,7 @@ namespace NexusProductAPI.Reports {
                 this.columnDiscount = base.Columns["Discount"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columnVehicleNumber = base.Columns["VehicleNumber"];
+                this.columnEntryTime = base.Columns["EntryTime"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -568,6 +580,8 @@ namespace NexusProductAPI.Reports {
                 base.Columns.Add(this.columnTotalAmount);
                 this.columnVehicleNumber = new global::System.Data.DataColumn("VehicleNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVehicleNumber);
+                this.columnEntryTime = new global::System.Data.DataColumn("EntryTime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEntryTime);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -590,6 +604,8 @@ namespace NexusProductAPI.Reports {
                 this.columnTotalAmount.AllowDBNull = false;
                 this.columnVehicleNumber.AllowDBNull = false;
                 this.columnVehicleNumber.MaxLength = 100;
+                this.columnEntryTime.ReadOnly = true;
+                this.columnEntryTime.MaxLength = 8;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -895,6 +911,22 @@ namespace NexusProductAPI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string EntryTime {
+                get {
+                    try {
+                        return ((string)(this[this.tableServiceEntry.EntryTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EntryTime\' in table \'ServiceEntry\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableServiceEntry.EntryTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsServiceTypeNameEnNull() {
                 return this.IsNull(this.tableServiceEntry.ServiceTypeNameEnColumn);
             }
@@ -939,6 +971,18 @@ namespace NexusProductAPI.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetCustomerNameNull() {
                 this[this.tableServiceEntry.CustomerNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsEntryTimeNull() {
+                return this.IsNull(this.tableServiceEntry.EntryTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetEntryTimeNull() {
+                this[this.tableServiceEntry.EntryTimeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1114,6 +1158,7 @@ namespace NexusProductAPI.Reports.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Discount", "Discount");
             tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
             tableMapping.ColumnMappings.Add("VehicleNumber", "VehicleNumber");
+            tableMapping.ColumnMappings.Add("EntryTime", "EntryTime");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

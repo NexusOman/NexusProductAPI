@@ -147,6 +147,44 @@
     <FunctionImport Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result)">
       <Parameter Name="ServiceEntryID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Employee_Delete">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_EmployeeDocuments_Delete">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_EmployeeDocuments_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_EmployeeDocuments_GetAll_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_EmployeeDocuments_Save">
+      <Parameter Name="EmpId" Mode="In" Type="Int32" />
+      <Parameter Name="details" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Employee_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Employee_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_Employee_Save" ReturnType="Collection(Int32)">
+      <Parameter Name="EmpID" Mode="In" Type="String" />
+      <Parameter Name="EmpName" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="Int32" />
+      <Parameter Name="PrimaryIDNo" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="DateTime" />
+      <Parameter Name="phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="DOJ" Mode="In" Type="DateTime" />
+      <Parameter Name="Designation" Mode="In" Type="Int32" />
+      <Parameter Name="Department" Mode="In" Type="Int32" />
+      <Parameter Name="WorkLocation" Mode="In" Type="Int32" />
+      <Parameter Name="EmpType" Mode="In" Type="String" />
+      <Parameter Name="SubcontractorId" Mode="In" Type="Int32" />
+      <Parameter Name="Timing" Mode="In" Type="String" />
+      <Parameter Name="ReportingTo" Mode="In" Type="Int32" />
+      <Parameter Name="Bank" Mode="In" Type="Int32" />
+      <Parameter Name="Branch" Mode="In" Type="String" />
+      <Parameter Name="SwiftCode" Mode="In" Type="String" />
+      <Parameter Name="AccNo" Mode="In" Type="String" />
+      <Parameter Name="bloodgroup" Mode="In" Type="Int32" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -313,11 +351,46 @@
     <Property Type="String" Name="ServiceTypeNameEn" Nullable="true" MaxLength="500" />
     <Property Type="String" Name="ServiceTypeNameAr" Nullable="true" MaxLength="500" />
     <Property Type="String" Name="EntryDate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="EntryTime" Nullable="true" MaxLength="8" />
     <Property Type="Int32" Name="EntryNo" Nullable="false" />
     <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
     <Property Type="Decimal" Name="NetAmount" Nullable="false" Precision="18" Scale="3" />
     <Property Type="Decimal" Name="Discount" Nullable="false" Precision="18" Scale="3" />
     <Property Type="Decimal" Name="TotalAmount" Nullable="false" Precision="18" Scale="3" />
     <Property Type="String" Name="VehicleNumber" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_EmployeeDocuments_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="empid" Nullable="true" />
+    <Property Type="Int32" Name="doctype" Nullable="true" />
+    <Property Type="String" Name="docno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="issuedate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="expirydate" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="url" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="empdocname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Employee_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="empid" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="empname" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="bloodgroup" Nullable="true" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="nationality" Nullable="true" />
+    <Property Type="String" Name="primaryidno" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="dob" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="phone" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="doj" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="designation" Nullable="true" />
+    <Property Type="Int32" Name="department" Nullable="true" />
+    <Property Type="Int32" Name="worklocation" Nullable="true" />
+    <Property Type="String" Name="emptype" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="subcontractorid" Nullable="true" />
+    <Property Type="String" Name="timing" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="reportingto" Nullable="true" />
+    <Property Type="Int32" Name="bank" Nullable="true" />
+    <Property Type="String" Name="branch" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="swiftcode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="accno" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

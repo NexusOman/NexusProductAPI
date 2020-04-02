@@ -1,5 +1,8 @@
-﻿using NexusProductAPI.Models;
+﻿using Newtonsoft.Json;
+using NexusProductAPI.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Http;
 
@@ -651,7 +654,8 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 SR.Departments = db.HRP_Mst_Departments_GetAll().ToList();
                 SR.Designation = db.HRP_Mst_Designation_GetAll().ToList();
                 SR.Subcontractors = db.HRP_Mst_Subcontractors_GetAll().ToList();
-                
+                SR.Employees = db.HRP_Mst_Employee_GetAll().ToList();
+                SR.doctypes = db.HRP_Mst_EmpDocs_GetAll().ToList();
                 return SR;
             }
             catch
@@ -661,6 +665,141 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             }
         }
 
+        [Route("api/GetEmployees")]
+        public EmployeeResponse GetEmployees()
+        {
+            EmployeeResponse SR = new EmployeeResponse();
+            List<HRP_Mst_Employee_GetAll_Result> Employees = new List<HRP_Mst_Employee_GetAll_Result>();
+            try
+            {
+                Employees = db.HRP_Mst_Employee_GetAll().ToList();
+                if (Employees.Count() > 0)
+                {
+                    SR.status = 1; SR.employees = Employees;
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured in fetching Employee Document Types"; SR.employees = Employees; SR.status = 0;
+                return SR;
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/PostEmployees")]
+        public EmployeeResponse PostEmployees(HRP_Mst_Employee_GetAll_Result data)
+        {
+            EmployeeResponse SR = new EmployeeResponse();
+            List<HRP_Mst_Employee_GetAll_Result> Employee = new List<HRP_Mst_Employee_GetAll_Result>();
+            try
+            {
+
+               var queryResult = db.HRP_Mst_Employee_Save(data.empid, data.empname, data.gender, data.nationality, data.primaryidno, DateTime.ParseExact(data.dob, "dd/MM/yyyy", null)
+                    , data.phone, data.email, DateTime.ParseExact(data.doj, "dd/MM/yyyy", null), data.designation, data.department, data.worklocation,
+                    data.emptype, data.subcontractorid, data.timing, data.reportingto, data.bank, data.branch, data.swiftcode, data.accno,data.bloodgroup, data.id);
+                foreach (Nullable<int> result in queryResult)
+                    SR.empid = result.Value;
+                Employee = db.HRP_Mst_Employee_GetAll().ToList();
+                if (Employee.Count() > 0)
+                {
+                    SR.status = 1; SR.employees = Employee; SR.message = "Saved Successfully!!";
+                }
+                return SR;
+            }
+            catch(Exception Ex)
+            {
+                SR.message = "Error Occured "; SR.employees = Employee; SR.status = 0;
+                return SR;
+            }
+        }
+
+        [HttpPost]
+        [Route("api/DeleteEmployee")]
+        public EmployeeResponse DeleteEmployee(HRP_Mst_Employee_GetAll_Result data)
+        {
+            EmployeeResponse SR = new EmployeeResponse();
+            List<HRP_Mst_Employee_GetAll_Result> employees = new List<HRP_Mst_Employee_GetAll_Result>();
+            try
+            {
+                db.HRP_Mst_Subcontractors_Delete(data.id);
+                employees = db.HRP_Mst_Employee_GetAll().ToList();
+                if (employees.Count() > 0)
+                {
+                    SR.status = 1; SR.employees = employees; SR.message = "Deleted Successfully!!";
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured "; SR.employees = employees; SR.status = 0;
+                return SR;
+            }
+        }
+
+        [HttpGet]
+        [Route("api/GetEmployeeDocs")]
+        public EmployeeDocumentsResponse GetEmployeeDocs(int id)
+        {
+            EmployeeDocumentsResponse SR = new EmployeeDocumentsResponse();
+            List<HRP_Mst_EmployeeDocuments_GetAll_Result> docs = new List<HRP_Mst_EmployeeDocuments_GetAll_Result>();
+            try
+            {
+                docs = db.HRP_Mst_EmployeeDocuments_GetAll(id).ToList();
+               
+                    SR.status = 1; SR.DocList = docs;
+                
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured in fetching Employee Documents"; SR.DocList = docs; SR.status = 0;
+                return SR;
+            }
+        }
+
+        [HttpPost]
+        [Route("api/PostEmpDocuments")]
+        public EmpDocsPostResponse PostEmpDocuments(PostEmployeeDocs data)
+        {
+            EmpDocsPostResponse SR = new EmpDocsPostResponse();
+            try
+            {
+                int empid = data.empid;
+                string Details = JsonConvert.SerializeObject(data.Docs);
+                db.HRP_Mst_EmployeeDocuments_Save(empid, Details);
+              
+                    SR.status = 1;  SR.message = "Documents Saved Successfully!!";
+                
+                return SR;
+            }
+            catch(Exception ex)
+            {
+                SR.message = "Error Occured in Saving Documents"; SR.status = 0;
+                return SR;
+            }
+        }
+
+
+
+        public class EmployeeDocumentsResponse
+        {
+            public int status { get; set; }
+            public List<HRP_Mst_EmployeeDocuments_GetAll_Result> DocList { get; set; }
+            public string message = "";
+        }
+        public class EmpDocsPostResponse
+        {
+            public int status { get; set; }
+            public string message { get; set; }
+        }
+
+        public class PostEmployeeDocs
+        {
+            public List<HRP_Mst_EmployeeDocuments_GetAll_Result> Docs { get; set; }
+            public int empid { get; set; }
+        }
 
         public class EmployeeInitResponse
         {
@@ -673,7 +812,94 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             public List<HRP_Mst_Bank_GetAll_Result> Bank { get; set; }
             public List<HRP_Mst_Subcontractors_GetAll_Result> Subcontractors { get; set; }
             public List<HRP_Mst_WorkLocation_GetAll_Result> WorkLocation { get; set; }
+            public List<HRP_Mst_Employee_GetAll_Result> Employees { get; set; }
+            public List<HRP_Mst_EmpDocs_GetAll_Result> doctypes { get; set; }
+        }
+        public class EmployeeResponse
+        {
+            public int status { get; set; }
+            public string message { get; set; }
+            public int empid { get; set; }
+            public List<HRP_Mst_Employee_GetAll_Result> employees { get; set; }
+        }
+        #endregion
 
+
+        #region FileUpload
+
+        [HttpPost]
+        [Route("api/EmpFileUpload")]
+        public FileUploadResponse EmpFileUpload()
+        {
+            try
+            {
+                string filename = "";
+                int iUploadedCnt = 0;
+                System.Web.HttpPostedFile hpf;
+                // DEFINE THE PATH WHERE WE WANT TO SAVE THE FILES.
+                string srvPath = "", sPath = "";
+                srvPath = System.Web.Hosting.HostingEnvironment.MapPath("~/");
+                sPath = srvPath + "\\" + "EmpDocs\\";
+                bool folderExists = Directory.Exists(sPath);
+                if (!folderExists)
+                    Directory.CreateDirectory(sPath);
+                System.Web.HttpFileCollection hfc = System.Web.HttpContext.Current.Request.Files;
+                // CHECK THE FILE COUNT.
+                for (int iCnt = 0; iCnt <= hfc.Count - 1; iCnt++)
+                {
+                    hpf = hfc[iCnt];
+
+                    if (hpf.ContentLength > 0)
+                    {
+                        // CHECK IF THE SELECTED FILE(S) ALREADY EXISTS IN FOLDER. (AVOID DUPLICATE)
+                        if (!File.Exists(sPath + Path.GetFileName(hpf.FileName)))
+                        {
+                            // SAVE THE FILES IN THE FOLDER.
+                            //hpf.SaveAs(sPath + Path.GetFileName(hpf.FileName));
+                            string extension = Path.GetExtension(Path.GetFileName(hpf.FileName));
+                            filename = System.DateTime.Now.ToString("ddMMyyhhmmss") + extension;
+                            hpf.SaveAs(sPath + Path.GetFileName(filename));
+                            //fileSave = System.DateTime.Now.ToString("ddMMyyhhmmss") + ".";
+
+                            //filename = sPath + Path.GetFileName(hpf.FileName);
+
+                            iUploadedCnt = iUploadedCnt + 1;
+                        }
+                    }
+                }
+
+                // RETURN A MESSAGE (OPTIONAL).
+                if (iUploadedCnt > 0)
+                {
+                    //return iUploadedCnt + " Files Uploaded Successfully"+ Path.GetFileName(hpf.FileName);
+                    FileUploadResponse fr = new FileUploadResponse();
+                    fr.filename = filename;
+                    fr.status = 1;
+                    fr.Message = "File uploaded Successfully!!";
+                    return fr;
+                }
+                else
+                {
+                    //return "Upload Failed";
+                    FileUploadResponse fr = new FileUploadResponse();
+                    fr.filename = filename;
+                    fr.status = 0;
+                    fr.Message = "Upload Failed!!";
+                    return fr;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public class FileUploadResponse
+        {
+            public int status { get; set; }
+            public string filename { get; set; }
+            public string Message { get; set; }
         }
 
         #endregion

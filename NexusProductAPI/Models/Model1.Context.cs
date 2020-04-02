@@ -542,5 +542,143 @@ namespace NexusProductAPI.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>("VSR_Trn_ServiceEntryDetails_GetByServeEntryID", serviceEntryIDParameter);
         }
+    
+        public virtual int HRP_Mst_Employee_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Employee_Delete", iDParameter);
+        }
+    
+        public virtual int HRP_Mst_EmployeeDocuments_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_EmployeeDocuments_GetAll_Result> HRP_Mst_EmployeeDocuments_GetAll(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmployeeDocuments_GetAll_Result>("HRP_Mst_EmployeeDocuments_GetAll", iDParameter);
+        }
+    
+        public virtual int HRP_Mst_EmployeeDocuments_Save(Nullable<int> empId, string details)
+        {
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("details", details) :
+                new ObjectParameter("details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Save", empIdParameter, detailsParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Employee_GetAll_Result> HRP_Mst_Employee_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Employee_GetAll_Result>("HRP_Mst_Employee_GetAll");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> HRP_Mst_Employee_Save(string empID, string empName, string gender, Nullable<int> nationality, string primaryIDNo, Nullable<System.DateTime> dOB, string phone, string email, Nullable<System.DateTime> dOJ, Nullable<int> designation, Nullable<int> department, Nullable<int> workLocation, string empType, Nullable<int> subcontractorId, string timing, Nullable<int> reportingTo, Nullable<int> bank, string branch, string swiftCode, string accNo, Nullable<int> bloodgroup, Nullable<int> iD)
+        {
+            var empIDParameter = empID != null ?
+                new ObjectParameter("EmpID", empID) :
+                new ObjectParameter("EmpID", typeof(string));
+    
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var nationalityParameter = nationality.HasValue ?
+                new ObjectParameter("Nationality", nationality) :
+                new ObjectParameter("Nationality", typeof(int));
+    
+            var primaryIDNoParameter = primaryIDNo != null ?
+                new ObjectParameter("PrimaryIDNo", primaryIDNo) :
+                new ObjectParameter("PrimaryIDNo", typeof(string));
+    
+            var dOBParameter = dOB.HasValue ?
+                new ObjectParameter("DOB", dOB) :
+                new ObjectParameter("DOB", typeof(System.DateTime));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var dOJParameter = dOJ.HasValue ?
+                new ObjectParameter("DOJ", dOJ) :
+                new ObjectParameter("DOJ", typeof(System.DateTime));
+    
+            var designationParameter = designation.HasValue ?
+                new ObjectParameter("Designation", designation) :
+                new ObjectParameter("Designation", typeof(int));
+    
+            var departmentParameter = department.HasValue ?
+                new ObjectParameter("Department", department) :
+                new ObjectParameter("Department", typeof(int));
+    
+            var workLocationParameter = workLocation.HasValue ?
+                new ObjectParameter("WorkLocation", workLocation) :
+                new ObjectParameter("WorkLocation", typeof(int));
+    
+            var empTypeParameter = empType != null ?
+                new ObjectParameter("EmpType", empType) :
+                new ObjectParameter("EmpType", typeof(string));
+    
+            var subcontractorIdParameter = subcontractorId.HasValue ?
+                new ObjectParameter("SubcontractorId", subcontractorId) :
+                new ObjectParameter("SubcontractorId", typeof(int));
+    
+            var timingParameter = timing != null ?
+                new ObjectParameter("Timing", timing) :
+                new ObjectParameter("Timing", typeof(string));
+    
+            var reportingToParameter = reportingTo.HasValue ?
+                new ObjectParameter("ReportingTo", reportingTo) :
+                new ObjectParameter("ReportingTo", typeof(int));
+    
+            var bankParameter = bank.HasValue ?
+                new ObjectParameter("Bank", bank) :
+                new ObjectParameter("Bank", typeof(int));
+    
+            var branchParameter = branch != null ?
+                new ObjectParameter("Branch", branch) :
+                new ObjectParameter("Branch", typeof(string));
+    
+            var swiftCodeParameter = swiftCode != null ?
+                new ObjectParameter("SwiftCode", swiftCode) :
+                new ObjectParameter("SwiftCode", typeof(string));
+    
+            var accNoParameter = accNo != null ?
+                new ObjectParameter("AccNo", accNo) :
+                new ObjectParameter("AccNo", typeof(string));
+    
+            var bloodgroupParameter = bloodgroup.HasValue ?
+                new ObjectParameter("bloodgroup", bloodgroup) :
+                new ObjectParameter("bloodgroup", typeof(int));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("HRP_Mst_Employee_Save", empIDParameter, empNameParameter, genderParameter, nationalityParameter, primaryIDNoParameter, dOBParameter, phoneParameter, emailParameter, dOJParameter, designationParameter, departmentParameter, workLocationParameter, empTypeParameter, subcontractorIdParameter, timingParameter, reportingToParameter, bankParameter, branchParameter, swiftCodeParameter, accNoParameter, bloodgroupParameter, iDParameter);
+        }
     }
 }

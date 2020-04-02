@@ -35,6 +35,7 @@
               <Mapping SourceColumn="Discount" DataSetColumn="Discount" />
               <Mapping SourceColumn="TotalAmount" DataSetColumn="TotalAmount" />
               <Mapping SourceColumn="VehicleNumber" DataSetColumn="VehicleNumber" />
+              <Mapping SourceColumn="EntryTime" DataSetColumn="EntryTime" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -46,7 +47,7 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ServiceEntry" msprop:Generator_TableClassName="ServiceEntryDataTable" msprop:Generator_TableVarName="tableServiceEntry" msprop:Generator_TablePropName="ServiceEntry" msprop:Generator_RowDeletingName="ServiceEntryRowDeleting" msprop:Generator_RowChangingName="ServiceEntryRowChanging" msprop:Generator_RowEvHandlerName="ServiceEntryRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceEntryRowDeleted" msprop:Generator_UserTableName="ServiceEntry" msprop:Generator_RowChangedName="ServiceEntryRowChanged" msprop:Generator_RowEvArgName="ServiceEntryRowChangeEvent" msprop:Generator_RowClassName="ServiceEntryRow">
+        <xs:element name="ServiceEntry" msprop:Generator_TableClassName="ServiceEntryDataTable" msprop:Generator_TableVarName="tableServiceEntry" msprop:Generator_RowChangedName="ServiceEntryRowChanged" msprop:Generator_TablePropName="ServiceEntry" msprop:Generator_RowDeletingName="ServiceEntryRowDeleting" msprop:Generator_RowChangingName="ServiceEntryRowChanging" msprop:Generator_RowEvHandlerName="ServiceEntryRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceEntryRowDeleted" msprop:Generator_RowClassName="ServiceEntryRow" msprop:Generator_UserTableName="ServiceEntry" msprop:Generator_RowEvArgName="ServiceEntryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -89,6 +90,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EntryTime" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEntryTime" msprop:Generator_ColumnPropNameInRow="EntryTime" msprop:Generator_ColumnPropNameInTable="EntryTimeColumn" msprop:Generator_UserColumnName="EntryTime" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

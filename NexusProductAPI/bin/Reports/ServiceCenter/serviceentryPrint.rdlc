@@ -6,8 +6,8 @@
         <Source>Embedded</Source>
         <Value>logoAlMaha</Value>
         <Sizing>FitProportional</Sizing>
-        <Left>0.79375cm</Left>
-        <Height>1.5cm</Height>
+        <Left>1.17473cm</Left>
+        <Height>1.35889cm</Height>
         <Width>7.09083cm</Width>
         <Style>
           <Border>
@@ -15,69 +15,6 @@
           </Border>
         </Style>
       </Image>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>CASH MEMO</Value>
-                <Style>
-                  <FontFamily>Verdana</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Verdana</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value />
-                <Style>
-                  <FontFamily>Verdana</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.62842cm</Top>
-        <Left>0.79375cm</Left>
-        <Height>0.56472cm</Height>
-        <Width>7.09083cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -98,11 +35,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.2637cm</Top>
+        <Top>1.42944cm</Top>
         <Left>0.79375cm</Left>
         <Height>1.30556cm</Height>
         <Width>7.09083cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -131,11 +68,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>3.63981cm</Top>
+        <Top>3.25175cm</Top>
         <Left>0.79375cm</Left>
         <Height>0.6cm</Height>
-        <Width>0.84194cm</Width>
-        <ZIndex>3</ZIndex>
+        <Width>0.73611cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -160,15 +97,17 @@ Postal Code:117</Value>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>EntryNo</rd:DefaultName>
-        <Top>3.63981cm</Top>
-        <Left>1.67097cm</Left>
+        <Top>3.25175cm</Top>
+        <Left>1.52986cm</Left>
         <Height>0.6cm</Height>
         <Width>2.65875cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -197,11 +136,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>3.63981cm</Top>
-        <Left>4.7825cm</Left>
+        <Top>3.25175cm</Top>
+        <Left>4.95889cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.0536cm</Width>
-        <ZIndex>5</ZIndex>
+        <Width>1.08889cm</Width>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -230,11 +169,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>EntryDate</rd:DefaultName>
-        <Top>3.63981cm</Top>
-        <Left>5.87139cm</Left>
+        <Top>3.25175cm</Top>
+        <Left>6.08306cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -263,11 +202,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>4.31037cm</Top>
+        <Top>3.92231cm</Top>
         <Left>0.79375cm</Left>
         <Height>0.6cm</Height>
         <Width>1.98847cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -296,11 +235,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>VehicleNumber</rd:DefaultName>
-        <Top>4.34564cm</Top>
-        <Left>2.78222cm</Left>
+        <Top>3.92231cm</Top>
+        <Left>3.09972cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -348,7 +287,6 @@ Postal Code:117</Value>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -382,7 +320,6 @@ Postal Code:117</Value>
                       <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -432,9 +369,20 @@ Postal Code:117</Value>
                       <rd:DefaultName>ServiceTypeNameEn</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -467,9 +415,20 @@ Postal Code:117</Value>
                       <rd:DefaultName>Amount</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -499,15 +458,31 @@ Postal Code:117</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>5.0162cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>4.41648cm</Top>
+        <Left>0.36108cm</Left>
         <Height>1.48222cm</Height>
         <Width>7.7361cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+          </TopBorder>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+          </RightBorder>
         </Style>
       </Tablix>
       <Textbox Name="Textbox6">
@@ -528,11 +503,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>6.56898cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>5.96926cm</Top>
+        <Left>0.36108cm</Left>
         <Height>0.6cm</Height>
         <Width>1.81208cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -550,7 +525,7 @@ Postal Code:117</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!TotalAmount.Value, "DataSet1")</Value>
+                <Value>=First(Fields!TotalAmount.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>9pt</FontSize>
@@ -563,11 +538,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TotalAmount</rd:DefaultName>
-        <Top>6.56898cm</Top>
-        <Left>5.85375cm</Left>
+        <Top>5.96926cm</Top>
+        <Left>5.57954cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -596,11 +571,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.16898cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>6.56926cm</Top>
+        <Left>0.36108cm</Left>
         <Height>0.6cm</Height>
         <Width>2.14693cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -618,7 +593,7 @@ Postal Code:117</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!Discount.Value, "DataSet1")</Value>
+                <Value>=First(Fields!Discount.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>Verdana</FontFamily>
                   <FontSize>9pt</FontSize>
@@ -631,11 +606,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Discount</rd:DefaultName>
-        <Top>7.20231cm</Top>
-        <Left>5.86176cm</Left>
+        <Top>6.60259cm</Top>
+        <Left>5.58755cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -653,7 +628,7 @@ Postal Code:117</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!NetAmount.Value, "DataSet1")</Value>
+                <Value>=First(Fields!NetAmount.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>verdana</FontFamily>
                   <FontSize>9pt</FontSize>
@@ -667,11 +642,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NetAmount</rd:DefaultName>
-        <Top>7.81967cm</Top>
-        <Left>5.87939cm</Left>
+        <Top>7.21995cm</Top>
+        <Left>5.60518cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -701,11 +676,11 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>7.76898cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>7.16926cm</Top>
+        <Left>0.36108cm</Left>
         <Height>0.6cm</Height>
         <Width>2.6761cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -717,11 +692,11 @@ Postal Code:117</Value>
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>8.54537cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>7.94565cm</Top>
+        <Left>0.36108cm</Left>
         <Height>0cm</Height>
         <Width>7.71846cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -748,10 +723,73 @@ Postal Code:117</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>8.6512cm</Top>
-        <Left>0.63529cm</Left>
+        <Top>8.05148cm</Top>
+        <Left>0.36108cm</Left>
         <Height>0.6cm</Height>
         <Width>7.71846cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CASH MEMO</Value>
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Verdana</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.735cm</Top>
+        <Left>0.79375cm</Left>
+        <Height>0.56472cm</Height>
+        <Width>7.09083cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -763,11 +801,77 @@ Postal Code:117</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox10">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Time:</Value>
+                <Style>
+                  <FontFamily>verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>3.85175cm</Top>
+        <Left>4.95889cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.08889cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="EntryTime">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!EntryTime.Value, "DataSet1")</Value>
+                <Style>
+                  <FontFamily>verdana</FontFamily>
+                  <FontSize>9pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>EntryTime</rd:DefaultName>
+        <Top>3.90384cm</Top>
+        <Left>6.09106cm</Left>
+        <Height>0.51264cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.70139in</Height>
+    <Height>3.71528in</Height>
     <Style />
   </Body>
-  <Width>3.36341in</Width>
+  <Width>3.38231in</Width>
   <Page>
     <PageHeight>4cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
@@ -845,6 +949,10 @@ Postal Code:117</Value>
         </Field>
         <Field Name="VehicleNumber">
           <DataField>VehicleNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EntryTime">
+          <DataField>EntryTime</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

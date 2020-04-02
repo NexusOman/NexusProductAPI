@@ -61,6 +61,44 @@
     <Parameter Name="empdocName" Type="nvarchar" Mode="In" />
     <Parameter Name="ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="HRP_Mst_Employee_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HRP_Mst_Employee_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="HRP_Mst_Employee_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpID" Type="varchar" Mode="In" />
+    <Parameter Name="EmpName" Type="varchar" Mode="In" />
+    <Parameter Name="Gender" Type="char" Mode="In" />
+    <Parameter Name="Nationality" Type="int" Mode="In" />
+    <Parameter Name="PrimaryIDNo" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="date" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="DOJ" Type="date" Mode="In" />
+    <Parameter Name="Designation" Type="int" Mode="In" />
+    <Parameter Name="Department" Type="int" Mode="In" />
+    <Parameter Name="WorkLocation" Type="int" Mode="In" />
+    <Parameter Name="EmpType" Type="char" Mode="In" />
+    <Parameter Name="SubcontractorId" Type="int" Mode="In" />
+    <Parameter Name="Timing" Type="char" Mode="In" />
+    <Parameter Name="ReportingTo" Type="int" Mode="In" />
+    <Parameter Name="Bank" Type="int" Mode="In" />
+    <Parameter Name="Branch" Type="varchar" Mode="In" />
+    <Parameter Name="SwiftCode" Type="varchar" Mode="In" />
+    <Parameter Name="AccNo" Type="varchar" Mode="In" />
+    <Parameter Name="bloodgroup" Type="int" Mode="In" />
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HRP_Mst_EmployeeDocuments_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HRP_Mst_EmployeeDocuments_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="HRP_Mst_EmployeeDocuments_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpId" Type="int" Mode="In" />
+    <Parameter Name="details" Type="varchar(max)" Mode="In" />
+  </Function>
   <Function Name="HRP_Mst_Subcontractors_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
   </Function>
