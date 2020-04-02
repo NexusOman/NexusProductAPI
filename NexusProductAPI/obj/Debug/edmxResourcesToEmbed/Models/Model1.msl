@@ -280,6 +280,7 @@
           <ScalarProperty Name="ServiceTypeNameEn" ColumnName="ServiceTypeNameEn" />
           <ScalarProperty Name="ServiceTypeNameAr" ColumnName="ServiceTypeNameAr" />
           <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
           <ScalarProperty Name="EntryNo" ColumnName="EntryNo" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
           <ScalarProperty Name="NetAmount" ColumnName="NetAmount" />
@@ -289,5 +290,51 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Employee_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Employee_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_EmployeeDocuments_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmployeeDocuments_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_EmployeeDocuments_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmployeeDocuments_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_EmployeeDocuments_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="doctype" ColumnName="doctype" />
+          <ScalarProperty Name="docno" ColumnName="docno" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="expirydate" ColumnName="expirydate" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="empdocname" ColumnName="empdocname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HRP_Mst_EmployeeDocuments_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmployeeDocuments_Save" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Employee_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Employee_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Employee_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empid" ColumnName="empid" />
+          <ScalarProperty Name="empname" ColumnName="empname" />
+          <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="nationality" ColumnName="nationality" />
+          <ScalarProperty Name="primaryidno" ColumnName="primaryidno" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="doj" ColumnName="doj" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="worklocation" ColumnName="worklocation" />
+          <ScalarProperty Name="emptype" ColumnName="emptype" />
+          <ScalarProperty Name="subcontractorid" ColumnName="subcontractorid" />
+          <ScalarProperty Name="timing" ColumnName="timing" />
+          <ScalarProperty Name="reportingto" ColumnName="reportingto" />
+          <ScalarProperty Name="bank" ColumnName="bank" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="swiftcode" ColumnName="swiftcode" />
+          <ScalarProperty Name="accno" ColumnName="accno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Employee_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Employee_Save" />
   </EntityContainerMapping>
 </Mapping>

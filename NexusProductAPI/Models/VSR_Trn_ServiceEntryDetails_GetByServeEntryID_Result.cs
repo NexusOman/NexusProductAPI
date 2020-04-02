@@ -20,6 +20,7 @@ namespace NexusProductAPI.Models
         public string ServiceTypeNameEn { get; set; }
         public string ServiceTypeNameAr { get; set; }
         public string EntryDate { get; set; }
+        public string EntryTime { get; set; }
         public int EntryNo { get; set; }
         public string CustomerName { get; set; }
         public decimal NetAmount { get; set; }

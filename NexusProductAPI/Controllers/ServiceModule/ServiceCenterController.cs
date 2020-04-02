@@ -754,8 +754,8 @@ namespace NexusProductAPI.Controllers.ServiceModule
             string deviceInfo =
              @"<DeviceInfo>
                 <OutputFormat>EMF</OutputFormat>
-                <PageWidth>3in</PageWidth>
-                <PageHeight>8.3in</PageHeight>
+                <PageHeight>8.5in</PageHeight>  
+                <PageWidth>11in</PageWidth>                
                 <MarginTop>0in</MarginTop>
                 <MarginLeft>0.1in</MarginLeft>
                 <MarginRight>0.1in</MarginRight>
