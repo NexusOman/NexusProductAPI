@@ -25,7 +25,7 @@ namespace NexusProductAPI.Controllers.UserModule
                 }
                 return LR;
             }
-            catch
+            catch(Exception ex)
             {
                 LR.message = "Not a Valid User"; LR.UserDetails = UserDetail; LR.status = 0;
                 return LR;

@@ -115,23 +115,6 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_IsShowOpening" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_IsShowOpening" />
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Save" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Save" />
-    <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
-          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
-          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
-          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
-          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-          <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntry_Head_getMaxEntryNo">
       <ResultMapping>
         <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
@@ -336,5 +319,32 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Employee_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Employee_Save" />
+    <FunctionImportMapping FunctionImportName="CMN_Mst_UserRoles_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_UserRoles_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_UserRoles_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userrolenamear" ColumnName="userrolenamear" />
+          <ScalarProperty Name="userrolenameen" ColumnName="userrolenameen" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Mst_UserRoles_Save" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_UserRoles_Save" />
+    <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

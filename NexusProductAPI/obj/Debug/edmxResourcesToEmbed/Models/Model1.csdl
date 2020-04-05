@@ -58,10 +58,6 @@
       <Parameter Name="NetAmount" Mode="In" Type="Decimal" />
       <Parameter Name="details" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
-      <Parameter Name="UserName" Mode="In" Type="String" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result)" />
     <FunctionImport Name="HRP_Mst_BloodGroups_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
@@ -185,6 +181,14 @@
       <Parameter Name="bloodgroup" Mode="In" Type="Int32" />
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="CMN_Mst_UserRoles_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_UserRoles_GetAll_Result)" />
+    <FunctionImport Name="CMN_Mst_UserRoles_Save">
+      <Parameter Name="UserRoleNameEn" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -255,19 +259,6 @@
     <Property Type="Int32" Name="manualtp" Nullable="true" />
     <Property Type="Int32" Name="autoown" Nullable="true" />
     <Property Type="Int32" Name="autotp" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
-    <Property Type="Int32" Name="EmpID" Nullable="true" />
-    <Property Type="String" Name="ProfilePic" Nullable="true" />
-    <Property Type="Int32" Name="StatusID" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
-    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
   </ComplexType>
   <ComplexType Name="VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result">
     <Property Type="Int32" Name="EntryNo" Nullable="false" />
@@ -392,5 +383,23 @@
     <Property Type="String" Name="branch" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="swiftcode" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="accno" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_UserRoles_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="userrolenamear" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="userrolenameen" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+    <Property Type="Int32" Name="EmpID" Nullable="true" />
+    <Property Type="String" Name="ProfilePic" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
   </ComplexType>
 </Schema>

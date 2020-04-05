@@ -229,19 +229,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("VSR_Trn_ServiceEntry_Save", entryStartNoParameter, bayTypeParameter, partyTypeParameter, vehicleNumberParameter, vehicleTypeParameter, imgUrlParameter, remarksParameter, customerNameParameter, totalAmountParameter, discountParameter, netAmountParameter, detailsParameter);
         }
     
-        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
-        {
-            var userNameParameter = userName != null ?
-                new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
-        }
-    
         public virtual ObjectResult<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result> VSR_Trn_ServiceEntry_Head_getMaxEntryNo()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result>("VSR_Trn_ServiceEntry_Head_getMaxEntryNo");
@@ -679,6 +666,33 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("HRP_Mst_Employee_Save", empIDParameter, empNameParameter, genderParameter, nationalityParameter, primaryIDNoParameter, dOBParameter, phoneParameter, emailParameter, dOJParameter, designationParameter, departmentParameter, workLocationParameter, empTypeParameter, subcontractorIdParameter, timingParameter, reportingToParameter, bankParameter, branchParameter, swiftCodeParameter, accNoParameter, bloodgroupParameter, iDParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_UserRoles_GetAll_Result> CMN_Mst_UserRoles_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_UserRoles_GetAll_Result>("CMN_Mst_UserRoles_GetAll");
+        }
+    
+        public virtual int CMN_Mst_UserRoles_Save(string userRoleNameEn)
+        {
+            var userRoleNameEnParameter = userRoleNameEn != null ?
+                new ObjectParameter("UserRoleNameEn", userRoleNameEn) :
+                new ObjectParameter("UserRoleNameEn", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_Mst_UserRoles_Save", userRoleNameEnParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
         }
     }
 }
