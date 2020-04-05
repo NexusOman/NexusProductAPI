@@ -20,7 +20,7 @@ namespace NexusProductAPI.Models
         public int UserRoleID { get; set; }
         public Nullable<int> EmpID { get; set; }
         public string ProfilePic { get; set; }
-        public Nullable<int> StatusID { get; set; }
+        public Nullable<bool> Active { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string MemberSince { get; set; }

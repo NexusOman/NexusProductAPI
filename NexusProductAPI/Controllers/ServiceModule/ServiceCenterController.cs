@@ -223,27 +223,19 @@ namespace NexusProductAPI.Controllers.ServiceModule
                 decimal total = serviceEntryList.Total;
                 decimal discount = serviceEntryList.discount;
                 decimal netamt = serviceEntryList.netamount;
-                //string base64Img = "";
-                //int index = serviceEntryList.base64img.IndexOf(',');
-                //base64Img = serviceEntryList.base64img.Substring(index + 1);
-                //byte[] bytes = Convert.FromBase64String(base64Img);
-
-                //Image image;
-                //using (MemoryStream ms = new MemoryStream(bytes))
-                //{
-                //    image = Image.FromStream(ms);
-                //}
-
-
-
-                //var path = "";
-                //if (!Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"+ DateTime.Now.ToString("dd_MM_yyyy"))))
-                //    Directory.CreateDirectory(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy")));
-                //path = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"  +DateTime.Now.ToString("dd_MM_yyyy") + "/"), "V_"+ DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png");
-                //string url= "Images/" + DateTime.Now.ToString("dd_MM_yyyy") + "/V_" + DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png";
-                //try { image.Save(path,ImageFormat.Png); } catch(Exception ex) { url = serviceEntryList.base64img; }
+                var path = "";
+                if (!Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy"))))
+                    Directory.CreateDirectory(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy")));
+                path = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy") + "/"), "V_" + DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".jpg");
+               string base64Img = "";
+                int index = serviceEntryList.base64img.IndexOf(',');
+                base64Img = serviceEntryList.base64img.Substring(index + 1);
+                File.WriteAllBytes(path, Convert.FromBase64String(base64Img));
+                int pathindex = path.IndexOf("Images/");
+                path = path.Substring(index + 1);
+               
                 int EntryStarNo = int.Parse(WebConfigurationManager.AppSettings["ServiceEntryStartNo"].ToString());
-                ObjectResult<Nullable<int>> queryResult = db.VSR_Trn_ServiceEntry_Save(EntryStarNo, baytype, partytype, vehicleno, vehicletype, url, remarks, customer, total, discount, netamt, Details);
+                ObjectResult<Nullable<int>> queryResult = db.VSR_Trn_ServiceEntry_Save(EntryStarNo, baytype, partytype, vehicleno, vehicletype, path, remarks, customer, total, discount, netamt, Details);
                 int ID = 0;
                 foreach (Nullable<int> result in queryResult)
                     ID = result.Value;
@@ -295,27 +287,18 @@ namespace NexusProductAPI.Controllers.ServiceModule
                 decimal total = serviceEntryList.Total;
                 decimal discount = serviceEntryList.discount;
                 decimal netamt = serviceEntryList.netamount;
-                //string base64Img = "";
-                //int index = serviceEntryList.base64img.IndexOf(',');
-                //base64Img = serviceEntryList.base64img.Substring(index + 1);
-                //byte[] bytes = Convert.FromBase64String(base64Img);
-
-                //Image image;
-                //using (MemoryStream ms = new MemoryStream(bytes))
-                //{
-                //    image = Image.FromStream(ms);
-                //}
-
-
-
-                //var path = "";
-                //if (!Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"+ DateTime.Now.ToString("dd_MM_yyyy"))))
-                //    Directory.CreateDirectory(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy")));
-                //path = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/"  +DateTime.Now.ToString("dd_MM_yyyy") + "/"), "V_"+ DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png");
-                //string url= "Images/" + DateTime.Now.ToString("dd_MM_yyyy") + "/V_" + DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".png";
-                //try { image.Save(path,ImageFormat.Png); } catch(Exception ex) { url = serviceEntryList.base64img; }
+                var path = "";
+                if (!Directory.Exists(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy"))))
+                    Directory.CreateDirectory(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy")));
+                path = Path.Combine(System.Web.Hosting.HostingEnvironment.MapPath("~/Images/" + DateTime.Now.ToString("dd_MM_yyyy") + "/"), "V_" + DateTime.Now.ToString("dd_MM_yyyy_hhmmss") + ".jpg");
+                string base64Img = "";
+                int index = serviceEntryList.base64img.IndexOf(',');
+                base64Img = serviceEntryList.base64img.Substring(index + 1);
+                File.WriteAllBytes(path, Convert.FromBase64String(base64Img));
+                int pathindex = path.IndexOf("Images/");
+                path = path.Substring(index + 1);
                 int EntryStarNo = int.Parse(WebConfigurationManager.AppSettings["ServiceEntryStartNo"].ToString());
-                ObjectResult<Nullable<int>> queryResult = db.VSR_Trn_ServiceEntry_Save(EntryStarNo, baytype, partytype, vehicleno, vehicletype, url, remarks, customer, total, discount, netamt, Details);
+                ObjectResult<Nullable<int>> queryResult = db.VSR_Trn_ServiceEntry_Save(EntryStarNo, baytype, partytype, vehicleno, vehicletype, path, remarks, customer, total, discount, netamt, Details);
                 int ID = 0;
                 foreach (Nullable<int> result in queryResult)
                     ID = result.Value;
