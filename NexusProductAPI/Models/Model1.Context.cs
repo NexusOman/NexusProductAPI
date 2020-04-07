@@ -296,21 +296,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Save", countryCodeParameter, countryNameParameter, iDParameter);
         }
     
-        public virtual ObjectResult<CMN_Utl_Menu_GetAll_Result> CMN_Utl_Menu_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_Result>("CMN_Utl_Menu_GetAll");
-        }
-    
-        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_Result> CMN_Utl_MenuItems_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_Result>("CMN_Utl_MenuItems_GetAll");
-        }
-    
-        public virtual ObjectResult<CMN_Utl_Modules_GetAll_Result> CMN_Utl_Modules_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_Result>("CMN_Utl_Modules_GetAll");
-        }
-    
         public virtual int HRP_Mst_Designation_Delete(Nullable<int> iD)
         {
             var iDParameter = iD.HasValue ?
@@ -693,6 +678,70 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("Password", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Modules_GetAll_Result> CMN_Utl_Modules_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_Result>("CMN_Utl_Modules_GetAll");
+        }
+    
+        public virtual int CMN_STN_RoleToMenu_Save(Nullable<int> roleId, string details)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("details", details) :
+                new ObjectParameter("details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_STN_RoleToMenu_Save", roleIdParameter, detailsParameter);
+        }
+    
+        public virtual ObjectResult<CMN_STN_RoleToMenu_GetAll_Result> CMN_STN_RoleToMenu_GetAll(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_STN_RoleToMenu_GetAll_Result>("CMN_STN_RoleToMenu_GetAll", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Menu_GetAll_Result> CMN_Utl_Menu_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_Result>("CMN_Utl_Menu_GetAll");
+        }
+    
+        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_Result> CMN_Utl_MenuItems_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_Result>("CMN_Utl_MenuItems_GetAll");
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Menu_GetAll_ByRoleID_Result> CMN_Utl_Menu_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_ByRoleID_Result>("CMN_Utl_Menu_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_ByRoleID_Result> CMN_Utl_MenuItems_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_ByRoleID_Result>("CMN_Utl_MenuItems_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Modules_GetAll_ByRoleID_Result> CMN_Utl_Modules_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_ByRoleID_Result>("CMN_Utl_Modules_GetAll_ByRoleID", roleIdParameter);
         }
     }
 }

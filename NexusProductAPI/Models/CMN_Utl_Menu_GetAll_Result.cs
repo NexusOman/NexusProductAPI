@@ -13,13 +13,15 @@ namespace NexusProductAPI.Models
     
     public partial class CMN_Utl_Menu_GetAll_Result
     {
-        public int ID { get; set; }
-        public int ModuleID { get; set; }
-        public string MenuNameEn { get; set; }
-        public string MenuNameAr { get; set; }
-        public string Desription { get; set; }
-        public string MenuRoutLink { get; set; }
-        public string MenuRoutComponent { get; set; }
+        public int id { get; set; }
+        public int moduleID { get; set; }
+        public string menuNameEn { get; set; }
+        public string menuNameAr { get; set; }
+        public string desription { get; set; }
+        public string menuRoutLink { get; set; }
+        public string menuRoutComponent { get; set; }
         public string faicon { get; set; }
+        public Nullable<bool> isdirect { get; set; }
+        public Nullable<bool> cchecked { get; set; }
     }
 }

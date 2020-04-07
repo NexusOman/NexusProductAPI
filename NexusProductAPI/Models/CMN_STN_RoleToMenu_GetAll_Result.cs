@@ -11,12 +11,16 @@ namespace NexusProductAPI.Models
 {
     using System;
     
-    public partial class CMN_Utl_Modules_GetAll_Result
+    public partial class CMN_STN_RoleToMenu_GetAll_Result
     {
         public int ID { get; set; }
-        public string ModuleNameEn { get; set; }
-        public string ModuleNameAr { get; set; }
-        public string faicon { get; set; }
-        public Nullable<bool> Checked { get; set; }
+        public int RoleID { get; set; }
+        public int MenuItemID { get; set; }
+        public Nullable<int> MenuID { get; set; }
+        public Nullable<int> ModuleID { get; set; }
+        public bool IsView { get; set; }
+        public bool IsAdd { get; set; }
+        public bool IsEdit { get; set; }
+        public bool IsDelete { get; set; }
     }
 }
