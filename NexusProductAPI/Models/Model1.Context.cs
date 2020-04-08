@@ -667,19 +667,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_Mst_UserRoles_Save", userRoleNameEnParameter);
         }
     
-        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
-        {
-            var userNameParameter = userName != null ?
-                new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
-        }
-    
         public virtual ObjectResult<CMN_Utl_Modules_GetAll_Result> CMN_Utl_Modules_GetAll()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_Result>("CMN_Utl_Modules_GetAll");
@@ -742,6 +729,19 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("RoleId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_ByRoleID_Result>("CMN_Utl_Modules_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
         }
     }
 }
