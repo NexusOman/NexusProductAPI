@@ -145,42 +145,6 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Country_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_Save" />
-    <FunctionImportMapping FunctionImportName="CMN_Utl_Menu_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Menu_GetAll">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Menu_GetAll_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
-          <ScalarProperty Name="MenuNameEn" ColumnName="MenuNameEn" />
-          <ScalarProperty Name="MenuNameAr" ColumnName="MenuNameAr" />
-          <ScalarProperty Name="Desription" ColumnName="Desription" />
-          <ScalarProperty Name="MenuRoutLink" ColumnName="MenuRoutLink" />
-          <ScalarProperty Name="MenuRoutComponent" ColumnName="MenuRoutComponent" />
-          <ScalarProperty Name="faicon" ColumnName="faicon" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="CMN_Utl_MenuItems_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_MenuItems_GetAll">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_MenuItems_GetAll_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="MenuItemNameEn" ColumnName="MenuItemNameEn" />
-          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
-          <ScalarProperty Name="MenuItemNameAr" ColumnName="MenuItemNameAr" />
-          <ScalarProperty Name="MenuItemRoutLink" ColumnName="MenuItemRoutLink" />
-          <ScalarProperty Name="MenuItemRoutComponent" ColumnName="MenuItemRoutComponent" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="CMN_Utl_Modules_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Modules_GetAll">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ModuleNameEn" ColumnName="ModuleNameEn" />
-          <ScalarProperty Name="ModuleNameAr" ColumnName="ModuleNameAr" />
-          <ScalarProperty Name="faicon" ColumnName="faicon" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_Delete" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_GetAll">
       <ResultMapping>
@@ -343,6 +307,101 @@
           <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_Modules_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Modules_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ModuleNameEn" ColumnName="ModuleNameEn" />
+          <ScalarProperty Name="ModuleNameAr" ColumnName="ModuleNameAr" />
+          <ScalarProperty Name="faicon" ColumnName="faicon" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_STN_RoleToMenu_Save" FunctionName="NEXUSPRODUCTModel.Store.CMN_STN_RoleToMenu_Save" />
+    <FunctionImportMapping FunctionImportName="CMN_STN_RoleToMenu_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_STN_RoleToMenu_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_STN_RoleToMenu_GetAll_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="MenuItemID" ColumnName="MenuItemID" />
+          <ScalarProperty Name="MenuID" ColumnName="MenuID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="IsView" ColumnName="IsView" />
+          <ScalarProperty Name="IsAdd" ColumnName="IsAdd" />
+          <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_Menu_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Menu_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Menu_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="moduleID" ColumnName="moduleID" />
+          <ScalarProperty Name="menuNameEn" ColumnName="menuNameEn" />
+          <ScalarProperty Name="menuNameAr" ColumnName="menuNameAr" />
+          <ScalarProperty Name="desription" ColumnName="desription" />
+          <ScalarProperty Name="menuRoutLink" ColumnName="menuRoutLink" />
+          <ScalarProperty Name="menuRoutComponent" ColumnName="menuRoutComponent" />
+          <ScalarProperty Name="faicon" ColumnName="faicon" />
+          <ScalarProperty Name="isdirect" ColumnName="isdirect" />
+          <ScalarProperty Name="cchecked" ColumnName="cchecked" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_MenuItems_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_MenuItems_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_MenuItems_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menuItemNameEn" ColumnName="menuItemNameEn" />
+          <ScalarProperty Name="menuID" ColumnName="menuID" />
+          <ScalarProperty Name="menuItemNameAr" ColumnName="menuItemNameAr" />
+          <ScalarProperty Name="menuItemRoutLink" ColumnName="menuItemRoutLink" />
+          <ScalarProperty Name="menuItemRoutComponent" ColumnName="menuItemRoutComponent" />
+          <ScalarProperty Name="seqNo" ColumnName="seqNo" />
+          <ScalarProperty Name="cchecked" ColumnName="cchecked" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_Menu_GetAll_ByRoleID" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Menu_GetAll_ByRoleID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Menu_GetAll_ByRoleID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="moduleID" ColumnName="moduleID" />
+          <ScalarProperty Name="menuNameEn" ColumnName="menuNameEn" />
+          <ScalarProperty Name="menuNameAr" ColumnName="menuNameAr" />
+          <ScalarProperty Name="desription" ColumnName="desription" />
+          <ScalarProperty Name="menuRoutLink" ColumnName="menuRoutLink" />
+          <ScalarProperty Name="menuRoutComponent" ColumnName="menuRoutComponent" />
+          <ScalarProperty Name="faicon" ColumnName="faicon" />
+          <ScalarProperty Name="isdirect" ColumnName="isdirect" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_MenuItems_GetAll_ByRoleID" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_MenuItems_GetAll_ByRoleID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_MenuItems_GetAll_ByRoleID_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="menuItemNameEn" ColumnName="menuItemNameEn" />
+          <ScalarProperty Name="menuID" ColumnName="menuID" />
+          <ScalarProperty Name="menuItemNameAr" ColumnName="menuItemNameAr" />
+          <ScalarProperty Name="menuItemRoutLink" ColumnName="menuItemRoutLink" />
+          <ScalarProperty Name="menuItemRoutComponent" ColumnName="menuItemRoutComponent" />
+          <ScalarProperty Name="seqNo" ColumnName="seqNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CMN_Utl_Modules_GetAll_ByRoleID" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Modules_GetAll_ByRoleID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_ByRoleID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ModuleNameEn" ColumnName="ModuleNameEn" />
+          <ScalarProperty Name="ModuleNameAr" ColumnName="ModuleNameAr" />
+          <ScalarProperty Name="faicon" ColumnName="faicon" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
