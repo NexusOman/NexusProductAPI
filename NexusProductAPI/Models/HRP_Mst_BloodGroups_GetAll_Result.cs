@@ -16,5 +16,6 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string bgcode { get; set; }
         public string bgcodeName { get; set; }
+        public bool active { get; set; }
     }
 }

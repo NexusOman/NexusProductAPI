@@ -11,14 +11,12 @@ namespace NexusProductAPI.Models
 {
     using System;
     
-    public partial class HRP_Mst_Subcontractors_GetAll_Result
+    public partial class HRP_Mst_OtherEarningsDeduction_GetAll_Result
     {
         public int id { get; set; }
-        public string subcontractorcode { get; set; }
-        public string subcontractorname { get; set; }
-        public string contactperson { get; set; }
-        public string contactnumber { get; set; }
-        public string contactemail { get; set; }
+        public string otherearningscode { get; set; }
+        public string otherearningsname { get; set; }
+        public string addordeduct { get; set; }
         public bool active { get; set; }
     }
 }
