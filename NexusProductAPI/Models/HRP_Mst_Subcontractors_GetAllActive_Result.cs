@@ -11,7 +11,7 @@ namespace NexusProductAPI.Models
 {
     using System;
     
-    public partial class HRP_Mst_Subcontractors_GetAll_Result
+    public partial class HRP_Mst_Subcontractors_GetAllActive_Result
     {
         public int id { get; set; }
         public string subcontractorcode { get; set; }
@@ -19,6 +19,5 @@ namespace NexusProductAPI.Models
         public string contactperson { get; set; }
         public string contactnumber { get; set; }
         public string contactemail { get; set; }
-        public bool active { get; set; }
     }
 }

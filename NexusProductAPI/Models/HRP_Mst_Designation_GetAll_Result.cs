@@ -16,5 +16,6 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string designationcode { get; set; }
         public string designationname { get; set; }
+        public bool active { get; set; }
     }
 }
