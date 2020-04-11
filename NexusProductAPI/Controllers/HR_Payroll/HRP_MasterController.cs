@@ -79,30 +79,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateBloodGroups")]
-        public BloodGroupResponse ActivateDeactivateBloodGroups(HRP_Mst_BloodGroups_GetAll_Result data)
-        {
-            BloodGroupResponse SR = new BloodGroupResponse();
-            List<HRP_Mst_BloodGroups_GetAll_Result> BloodGroup = new List<HRP_Mst_BloodGroups_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_BloodGroup_ActivateDeactivate(data.id,data.active);
-                BloodGroup = db.HRP_Mst_BloodGroups_GetAll().ToList();
-                if (BloodGroup.Count() > 0)
-                {
-                    SR.status = 1; SR.BloodGroups = BloodGroup; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.BloodGroups = BloodGroup; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class BloodGroupResponse
         {
             public int status { get; set; }
@@ -180,30 +156,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateCountry")]
-        public CountryResponse ActivateDeactivateCountry(HRP_Mst_Country_GetAll_Result data)
-        {
-            CountryResponse SR = new CountryResponse();
-            List<HRP_Mst_Country_GetAll_Result> Countrys = new List<HRP_Mst_Country_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_Country_ActivateDeactivate(data.id,data.active);
-                Countrys = db.HRP_Mst_Country_GetAll().ToList();
-                if (Countrys.Count() > 0)
-                {
-                    SR.status = 1; SR.Country = Countrys; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.Country = Countrys; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class CountryResponse
         {
             public int status { get; set; }
@@ -282,30 +234,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateDesignation")]
-        public DesignationResponse ActivateDeactivateDesignation(HRP_Mst_Designation_GetAll_Result data)
-        {
-            DesignationResponse SR = new DesignationResponse();
-            List<HRP_Mst_Designation_GetAll_Result> Designations = new List<HRP_Mst_Designation_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_Designation_Delete(data.id);
-                Designations = db.HRP_Mst_Designation_GetAll().ToList();
-                if (Designations.Count() > 0)
-                {
-                    SR.status = 1; SR.Designation = Designations; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.Designation = Designations; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class DesignationResponse
         {
             public int status { get; set; }
@@ -384,30 +312,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateDepartments")]
-        public DepartmentsResponse ActivateDeactivateDepartments(HRP_Mst_Departments_GetAll_Result data)
-        {
-            DepartmentsResponse SR = new DepartmentsResponse();
-            List<HRP_Mst_Departments_GetAll_Result> Departmentss = new List<HRP_Mst_Departments_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_Departments_ActivateDeactivate(data.id,data.active);
-                Departmentss = db.HRP_Mst_Departments_GetAll().ToList();
-                if (Departmentss.Count() > 0)
-                {
-                    SR.status = 1; SR.Departments = Departmentss; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.Departments = Departmentss; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class DepartmentsResponse
         {
             public int status { get; set; }
@@ -477,29 +381,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 if (Banks.Count() > 0)
                 {
                     SR.status = 1; SR.Bank = Banks; SR.message = "Deleted Successfully!!";
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.Bank = Banks; SR.status = 0;
-                return SR;
-            }
-        }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateBank")]
-        public BankResponse ActivateDeactivateBank(HRP_Mst_Bank_GetAll_Result data)
-        {
-            BankResponse SR = new BankResponse();
-            List<HRP_Mst_Bank_GetAll_Result> Banks = new List<HRP_Mst_Bank_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_Bank_ActivateDeactivate(data.id,data.active);
-                Banks = db.HRP_Mst_Bank_GetAll().ToList();
-                if (Banks.Count() > 0)
-                {
-                    SR.status = 1; SR.Bank = Banks; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
                 }
                 return SR;
             }
@@ -587,30 +468,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateEmpDocs")]
-        public EmpDocsResponse ActivateDeactivateEmpDocs(HRP_Mst_EmpDocs_GetAll_Result data)
-        {
-            EmpDocsResponse SR = new EmpDocsResponse();
-            List<HRP_Mst_EmpDocs_GetAll_Result> EmpDocss = new List<HRP_Mst_EmpDocs_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_EmpDocs_ActivateDeactivate(data.id,data.active);
-                EmpDocss = db.HRP_Mst_EmpDocs_GetAll().ToList();
-                if (EmpDocss.Count() > 0)
-                {
-                    SR.status = 1; SR.EmpDocs = EmpDocss; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.EmpDocs = EmpDocss; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class EmpDocsResponse
         {
             public int status { get; set; }
@@ -689,30 +546,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateSubcontractors")]
-        public SubcontractorsResponse ActivateDeactivateSubcontractors(HRP_Mst_Subcontractors_GetAll_Result data)
-        {
-            SubcontractorsResponse SR = new SubcontractorsResponse();
-            List<HRP_Mst_Subcontractors_GetAll_Result> Subcontractorss = new List<HRP_Mst_Subcontractors_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_Subcontractors_ActivateDeactivate(data.id,data.active);
-                Subcontractorss = db.HRP_Mst_Subcontractors_GetAll().ToList();
-                if (Subcontractorss.Count() > 0)
-                {
-                    SR.status = 1; SR.Subcontractors = Subcontractorss; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.Subcontractors = Subcontractorss; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class SubcontractorsResponse
         {
             public int status { get; set; }
@@ -791,30 +624,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 return SR;
             }
         }
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateWorkLocation")]
-        public WorkLocationResponse ActivateDeactivateWorkLocation(HRP_Mst_WorkLocation_GetAll_Result data)
-        {
-            WorkLocationResponse SR = new WorkLocationResponse();
-            List<HRP_Mst_WorkLocation_GetAll_Result> WorkLocations = new List<HRP_Mst_WorkLocation_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_WorkLocation_ActivateDeactivate(data.id,data.active);
-                WorkLocations = db.HRP_Mst_WorkLocation_GetAll().ToList();
-                if (WorkLocations.Count() > 0)
-                {
-                    SR.status = 1; SR.WorkLocation = WorkLocations; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.WorkLocation = WorkLocations; SR.status = 0;
-                return SR;
-            }
-        }
-
         public class WorkLocationResponse
         {
             public int status { get; set; }
@@ -839,7 +648,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 {
                     SR.status = 1; SR.WorkLocation = WorkLocations;
                 }
-                SR.Bank = db.HRP_Mst_Bank_GetAllActive().ToList();
+                SR.Bank = db.HRP_Mst_Bank_GetAll().ToList();
                 SR.BloodGroups = db.HRP_Mst_BloodGroups_GetAll().ToList();
                 SR.Country = db.HRP_Mst_Country_GetAll().ToList();
                 SR.Departments = db.HRP_Mst_Departments_GetAll().ToList();
@@ -1000,7 +809,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             public List<HRP_Mst_Country_GetAll_Result> Country { get; set; }
             public List<HRP_Mst_Designation_GetAll_Result> Designation { get; set; }
             public List<HRP_Mst_Departments_GetAll_Result> Departments { get; set; }
-            public List<HRP_Mst_Bank_GetAllActive_Result> Bank { get; set; }
+            public List<HRP_Mst_Bank_GetAll_Result> Bank { get; set; }
             public List<HRP_Mst_Subcontractors_GetAll_Result> Subcontractors { get; set; }
             public List<HRP_Mst_WorkLocation_GetAll_Result> WorkLocation { get; set; }
             public List<HRP_Mst_Employee_GetAll_Result> Employees { get; set; }
@@ -1013,249 +822,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             public int empid { get; set; }
             public List<HRP_Mst_Employee_GetAll_Result> employees { get; set; }
         }
-        #endregion
-
-
-        #region LeaveTypes
-        [Route("api/GetLeaveTypes")]
-        public LeaveTypesResponse GetLeaveTypes()
-        {
-            LeaveTypesResponse SR = new LeaveTypesResponse();
-            List<HRP_Mst_LeaveTypes_GetAll_Result> LeaveTypess = new List<HRP_Mst_LeaveTypes_GetAll_Result>();
-            try
-            {
-                LeaveTypess = db.HRP_Mst_LeaveTypes_GetAll().ToList();
-                if (LeaveTypess.Count() > 0)
-                {
-                    SR.status = 1; SR.LeaveTypes = LeaveTypess;
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured in fetching LeaveTypess"; SR.LeaveTypes = LeaveTypess; SR.status = 0;
-                return SR;
-            }
-        }
-
-
-        [HttpPost]
-        [Route("api/PostLeaveTypes")]
-        public LeaveTypesResponse PostLeaveTypes(HRP_Mst_LeaveTypes_GetAll_Result data)
-        {
-            LeaveTypesResponse SR = new LeaveTypesResponse();
-            List<HRP_Mst_LeaveTypes_GetAll_Result> LeaveTypess = new List<HRP_Mst_LeaveTypes_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_LeaveTypes_Save(data.leavetypecode, data.leavetypename, data.id);
-                LeaveTypess = db.HRP_Mst_LeaveTypes_GetAll().ToList();
-                if (LeaveTypess.Count() > 0)
-                {
-                    SR.status = 1; SR.LeaveTypes = LeaveTypess; SR.message = "Saved Successfully!!";
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.LeaveTypes = LeaveTypess; SR.status = 0;
-                return SR;
-            }
-        }
-
-        
-        [HttpPost]
-        [Route("api/ActivateDeactivateLeaveTypes")]
-        public LeaveTypesResponse ActivateDeactivateLeaveTypes(HRP_Mst_LeaveTypes_GetAll_Result data)
-        {
-            LeaveTypesResponse SR = new LeaveTypesResponse();
-            List<HRP_Mst_LeaveTypes_GetAll_Result> LeaveTypess = new List<HRP_Mst_LeaveTypes_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_LeaveTypes_ActivateDeactivate(data.id, data.active);
-                LeaveTypess = db.HRP_Mst_LeaveTypes_GetAll().ToList();
-                if (LeaveTypess.Count() > 0)
-                {
-                    SR.status = 1; SR.LeaveTypes = LeaveTypess; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.LeaveTypes = LeaveTypess; SR.status = 0;
-                return SR;
-            }
-        }
-
-        public class LeaveTypesResponse
-        {
-            public int status { get; set; }
-            public string message { get; set; }
-            public List<HRP_Mst_LeaveTypes_GetAll_Result> LeaveTypes { get; set; }
-        }
-
-
-        #endregion
-
-        #region SalaryComponents
-        [Route("api/GetSalaryComponents")]
-        public SalaryComponentsResponse GetSalaryComponents()
-        {
-            SalaryComponentsResponse SR = new SalaryComponentsResponse();
-            List<HRP_Mst_SalaryComponents_GetAll_Result> SalaryComponentss = new List<HRP_Mst_SalaryComponents_GetAll_Result>();
-            try
-            {
-                SalaryComponentss = db.HRP_Mst_SalaryComponents_GetAll().ToList();
-                if (SalaryComponentss.Count() > 0)
-                {
-                    SR.status = 1; SR.SalaryComponents = SalaryComponentss;
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured in fetching SalaryComponentss"; SR.SalaryComponents = SalaryComponentss; SR.status = 0;
-                return SR;
-            }
-        }
-
-
-        [HttpPost]
-        [Route("api/PostSalaryComponents")]
-        public SalaryComponentsResponse PostSalaryComponents(HRP_Mst_SalaryComponents_GetAll_Result data)
-        {
-            SalaryComponentsResponse SR = new SalaryComponentsResponse();
-            List<HRP_Mst_SalaryComponents_GetAll_Result> SalaryComponentss = new List<HRP_Mst_SalaryComponents_GetAll_Result>();
-            try
-            {
-                Nullable<decimal> defaultamount = null;
-                try { defaultamount = data.defaultamount; } catch { }
-                db.HRP_Mst_SalaryComponents_Save(data.salarycomponentcode, data.salarycomponentname,data.addordeduct,defaultamount, data.id);
-                SalaryComponentss = db.HRP_Mst_SalaryComponents_GetAll().ToList();
-                if (SalaryComponentss.Count() > 0)
-                {
-                    SR.status = 1; SR.SalaryComponents = SalaryComponentss; SR.message = "Saved Successfully!!";
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.SalaryComponents = SalaryComponentss; SR.status = 0;
-                return SR;
-            }
-        }
-
-
-        [HttpPost]
-        [Route("api/ActivateDeactivateSalaryComponents")]
-        public SalaryComponentsResponse ActivateDeactivateSalaryComponents(HRP_Mst_SalaryComponents_GetAll_Result data)
-        {
-            SalaryComponentsResponse SR = new SalaryComponentsResponse();
-            List<HRP_Mst_SalaryComponents_GetAll_Result> SalaryComponentss = new List<HRP_Mst_SalaryComponents_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_SalaryComponents_ActivateDeactivate(data.id, data.active);
-                SalaryComponentss = db.HRP_Mst_SalaryComponents_GetAll().ToList();
-                if (SalaryComponentss.Count() > 0)
-                {
-                    SR.status = 1; SR.SalaryComponents = SalaryComponentss; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.SalaryComponents = SalaryComponentss; SR.status = 0;
-                return SR;
-            }
-        }
-
-        public class SalaryComponentsResponse
-        {
-            public int status { get; set; }
-            public string message { get; set; }
-            public List<HRP_Mst_SalaryComponents_GetAll_Result> SalaryComponents { get; set; }
-        }
-
-
-        #endregion
-
-
-        #region OtherEarningsDeduction
-        [Route("api/GetOtherEarningsDeduction")]
-        public OtherEarningsDeductionResponse GetOtherEarningsDeduction()
-        {
-            OtherEarningsDeductionResponse SR = new OtherEarningsDeductionResponse();
-            List<HRP_Mst_OtherEarningsDeduction_GetAll_Result> OtherEarningsDeductions = new List<HRP_Mst_OtherEarningsDeduction_GetAll_Result>();
-            try
-            {
-                OtherEarningsDeductions = db.HRP_Mst_OtherEarningsDeduction_GetAll().ToList();
-                if (OtherEarningsDeductions.Count() > 0)
-                {
-                    SR.status = 1; SR.OtherEarningsDeduction = OtherEarningsDeductions;
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured in fetching OtherEarningsDeductions"; SR.OtherEarningsDeduction = OtherEarningsDeductions; SR.status = 0;
-                return SR;
-            }
-        }
-
-
-        [HttpPost]
-        [Route("api/PostOtherEarningsDeduction")]
-        public OtherEarningsDeductionResponse PostOtherEarningsDeduction(HRP_Mst_OtherEarningsDeduction_GetAll_Result data)
-        {
-            OtherEarningsDeductionResponse SR = new OtherEarningsDeductionResponse();
-            List<HRP_Mst_OtherEarningsDeduction_GetAll_Result> OtherEarningsDeductions = new List<HRP_Mst_OtherEarningsDeduction_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_OtherEarningsDeduction_Save(data.otherearningscode, data.otherearningsname,data.addordeduct, data.id);
-                OtherEarningsDeductions = db.HRP_Mst_OtherEarningsDeduction_GetAll().ToList();
-                if (OtherEarningsDeductions.Count() > 0)
-                {
-                    SR.status = 1; SR.OtherEarningsDeduction = OtherEarningsDeductions; SR.message = "Saved Successfully!!";
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.OtherEarningsDeduction = OtherEarningsDeductions; SR.status = 0;
-                return SR;
-            }
-        }
-
-      
-        [HttpPost]
-        [Route("api/ActivateDeactivateOtherEarningsDeduction")]
-        public OtherEarningsDeductionResponse ActivateDeactivateOtherEarningsDeduction(HRP_Mst_OtherEarningsDeduction_GetAll_Result data)
-        {
-            OtherEarningsDeductionResponse SR = new OtherEarningsDeductionResponse();
-            List<HRP_Mst_OtherEarningsDeduction_GetAll_Result> OtherEarningsDeductions = new List<HRP_Mst_OtherEarningsDeduction_GetAll_Result>();
-            try
-            {
-                db.HRP_Mst_OtherEarningsDeduction_ActivateDeactivate(data.id,data.active);
-                OtherEarningsDeductions = db.HRP_Mst_OtherEarningsDeduction_GetAll().ToList();
-                if (OtherEarningsDeductions.Count() > 0)
-                {
-                    SR.status = 1; SR.OtherEarningsDeduction = OtherEarningsDeductions; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
-                }
-                return SR;
-            }
-            catch
-            {
-                SR.message = "Error Occured "; SR.OtherEarningsDeduction = OtherEarningsDeductions; SR.status = 0;
-                return SR;
-            }
-        }
-        public class OtherEarningsDeductionResponse
-        {
-            public int status { get; set; }
-            public string message { get; set; }
-            public List<HRP_Mst_OtherEarningsDeduction_GetAll_Result> OtherEarningsDeduction { get; set; }
-        }
-
-
         #endregion
 
 

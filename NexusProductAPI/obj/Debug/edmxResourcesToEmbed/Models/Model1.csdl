@@ -67,9 +67,11 @@
       <Parameter Name="BGCodeName" Mode="In" Type="String" />
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_BloodGroups_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_Country_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Country_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Country_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_Country_Save">
       <Parameter Name="CountryCode" Mode="In" Type="String" />
       <Parameter Name="CountryName" Mode="In" Type="String" />
@@ -78,6 +80,7 @@
     <FunctionImport Name="HRP_Mst_Designation_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Designation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_Designation_Save">
       <Parameter Name="DesignationCode" Mode="In" Type="String" />
       <Parameter Name="DesignationName" Mode="In" Type="String" />
@@ -86,6 +89,7 @@
     <FunctionImport Name="HRP_Mst_Departments_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Departments_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Departments_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_Departments_Save">
       <Parameter Name="DeptCode" Mode="In" Type="String" />
       <Parameter Name="DeptName" Mode="In" Type="String" />
@@ -99,6 +103,7 @@
     <FunctionImport Name="HRP_Mst_EmpDocs_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_EmpDocs_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_EmpDocs_Save">
       <Parameter Name="empdocCode" Mode="In" Type="String" />
       <Parameter Name="empdocName" Mode="In" Type="String" />
@@ -107,6 +112,7 @@
     <FunctionImport Name="HRP_Mst_Subcontractors_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Subcontractors_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_Subcontractors_Save">
       <Parameter Name="subcontractorCode" Mode="In" Type="String" />
       <Parameter Name="subcontractorName" Mode="In" Type="String" />
@@ -118,6 +124,7 @@
     <FunctionImport Name="HRP_Mst_WorkLocation_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_WorkLocation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAll_Result)" />
     <FunctionImport Name="HRP_Mst_WorkLocation_Save">
       <Parameter Name="WorkLocationCode" Mode="In" Type="String" />
       <Parameter Name="WorkLocationName" Mode="In" Type="String" />
@@ -129,6 +136,7 @@
     <FunctionImport Name="HRP_Mst_Bank_Delete">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Bank_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result)" />
     <FunctionImport Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" ReturnType="Collection(NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result)">
       <Parameter Name="ServiceEntryID" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -174,6 +182,10 @@
     <FunctionImport Name="CMN_Mst_UserRoles_Save">
       <Parameter Name="UserRoleNameEn" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
     <FunctionImport Name="CMN_Utl_Modules_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result)" />
     <FunctionImport Name="CMN_STN_RoleToMenu_Save">
       <Parameter Name="RoleId" Mode="In" Type="Int32" />
@@ -192,94 +204,6 @@
     </FunctionImport>
     <FunctionImport Name="CMN_Utl_Modules_GetAll_ByRoleID" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_ByRoleID_Result)">
       <Parameter Name="RoleId" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
-      <Parameter Name="UserName" Mode="In" Type="String" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Bank_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="Status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Bank_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Bank_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_Country_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Bank_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_BloodGroup_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="Status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_BloodGroups_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_BloodGroups_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_Country_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Country_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_Country_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Country_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_Departments_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Departments_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Departments_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_Departments_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Departments_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_Designation_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Designation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_Designation_GetAll_Active" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Active_Result)" />
-    <FunctionImport Name="HRP_Mst_EmpDocs_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_EmpDocs_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_EmpDocs_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_Subcontractors_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_Subcontractors_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_Subcontractors_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_WorkLocation_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_WorkLocation_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_WorkLocation_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_LeaveTypes_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="Status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_LeaveTypes_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_LeaveTypes_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_LeaveTypes_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_LeaveTypes_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_LeaveTypes_Save">
-      <Parameter Name="LeaveTypeCode" Mode="In" Type="String" />
-      <Parameter Name="LeaveTypeName" Mode="In" Type="String" />
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_SalaryComponents_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
-      <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
-      <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
-      <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
-      <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_ActivateDeactivate">
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-      <Parameter Name="status" Mode="In" Type="Boolean" />
-    </FunctionImport>
-    <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_OtherEarningsDeduction_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_OtherEarningsDeduction_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_Save">
-      <Parameter Name="OtherEarningsCode" Mode="In" Type="String" />
-      <Parameter Name="OtherEarningsName" Mode="In" Type="String" />
-      <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
-      <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
@@ -356,6 +280,52 @@
     <Property Type="Int32" Name="EntryNo" Nullable="false" />
     <Property Type="DateTime" Name="EntryDate" Nullable="true" Precision="23" />
   </ComplexType>
+  <ComplexType Name="HRP_Mst_BloodGroups_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="bgcode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="bgcodeName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Country_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="countrycode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="countryname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Designation_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="designationcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="designationname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Departments_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="departmentcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="departmentname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_EmpDocs_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="empdoccode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="empdocname" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Subcontractors_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="subcontractorcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="subcontractorname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_WorkLocation_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="worklocationcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="worklocationname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Bank_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="bankcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="bankname" Nullable="false" MaxLength="100" />
+  </ComplexType>
   <ComplexType Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="Int32" Name="ServiceId" Nullable="false" />
@@ -410,6 +380,19 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="userrolenamear" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="userrolenameen" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+    <Property Type="Int32" Name="EmpID" Nullable="true" />
+    <Property Type="String" Name="ProfilePic" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
   </ComplexType>
   <ComplexType Name="CMN_Utl_Modules_GetAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -476,158 +459,5 @@
     <Property Type="String" Name="ModuleNameEn" Nullable="true" MaxLength="60" />
     <Property Type="String" Name="ModuleNameAr" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="faicon" Nullable="true" MaxLength="500" />
-  </ComplexType>
-  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
-    <Property Type="Int32" Name="EmpID" Nullable="true" />
-    <Property Type="String" Name="ProfilePic" Nullable="true" />
-    <Property Type="Boolean" Name="Active" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
-    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Bank_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="bankcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="bankname" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Bank_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="bankcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="bankname" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_BloodGroups_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="bgcode" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="bgcodeName" Nullable="false" MaxLength="50" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_BloodGroups_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="bgcode" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="bgcodeName" Nullable="false" MaxLength="50" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Country_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="countrycode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="countryname" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Country_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="countrycode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="countryname" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Departments_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="departmentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="departmentname" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Departments_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="departmentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="departmentname" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Designation_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="designationcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="designationname" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Designation_GetAll_Active_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="designationcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="designationname" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_EmpDocs_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="empdoccode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="empdocname" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_EmpDocs_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="empdoccode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="empdocname" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Subcontractors_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="subcontractorcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="subcontractorname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_Subcontractors_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="subcontractorcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="subcontractorname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_WorkLocation_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="worklocationcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="worklocationname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_WorkLocation_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="worklocationcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="worklocationname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="contactperson" Nullable="true" MaxLength="100" />
-    <Property Type="String" Name="contactnumber" Nullable="true" MaxLength="10" />
-    <Property Type="String" Name="contactemail" Nullable="true" MaxLength="500" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_LeaveTypes_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="leavetypecode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="leavetypename" Nullable="false" MaxLength="100" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_LeaveTypes_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="leavetypecode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="leavetypename" Nullable="false" MaxLength="100" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_SalaryComponents_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_SalaryComponents_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_OtherEarningsDeduction_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="otherearningsname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_OtherEarningsDeduction_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="otherearningsname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
   </ComplexType>
 </Schema>
