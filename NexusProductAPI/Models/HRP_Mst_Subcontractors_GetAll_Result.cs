@@ -19,6 +19,5 @@ namespace NexusProductAPI.Models
         public string contactperson { get; set; }
         public string contactnumber { get; set; }
         public string contactemail { get; set; }
-        public bool active { get; set; }
     }
 }

@@ -16,6 +16,5 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string empdoccode { get; set; }
         public string empdocname { get; set; }
-        public bool active { get; set; }
     }
 }

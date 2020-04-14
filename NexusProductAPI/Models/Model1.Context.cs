@@ -260,6 +260,11 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroups_Save", bGCodeParameter, bGCodeNameParameter, iDParameter);
         }
     
+        public virtual ObjectResult<HRP_Mst_BloodGroups_GetAll_Result> HRP_Mst_BloodGroups_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_BloodGroups_GetAll_Result>("HRP_Mst_BloodGroups_GetAll");
+        }
+    
         public virtual int HRP_Mst_Country_Delete(Nullable<int> iD)
         {
             var iDParameter = iD.HasValue ?
@@ -267,6 +272,11 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Country_GetAll_Result> HRP_Mst_Country_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Country_GetAll_Result>("HRP_Mst_Country_GetAll");
         }
     
         public virtual int HRP_Mst_Country_Save(string countryCode, string countryName, Nullable<int> iD)
@@ -295,6 +305,11 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_Delete", iDParameter);
         }
     
+        public virtual ObjectResult<HRP_Mst_Designation_GetAll_Result> HRP_Mst_Designation_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Designation_GetAll_Result>("HRP_Mst_Designation_GetAll");
+        }
+    
         public virtual int HRP_Mst_Designation_Save(string designationCode, string designationName, Nullable<int> iD)
         {
             var designationCodeParameter = designationCode != null ?
@@ -319,6 +334,11 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Departments_GetAll_Result> HRP_Mst_Departments_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Departments_GetAll_Result>("HRP_Mst_Departments_GetAll");
         }
     
         public virtual int HRP_Mst_Departments_Save(string deptCode, string deptName, Nullable<int> iD)
@@ -364,6 +384,11 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_Delete", iDParameter);
         }
     
+        public virtual ObjectResult<HRP_Mst_EmpDocs_GetAll_Result> HRP_Mst_EmpDocs_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmpDocs_GetAll_Result>("HRP_Mst_EmpDocs_GetAll");
+        }
+    
         public virtual int HRP_Mst_EmpDocs_Save(string empdocCode, string empdocName, Nullable<int> iD)
         {
             var empdocCodeParameter = empdocCode != null ?
@@ -388,6 +413,11 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Subcontractors_GetAll_Result> HRP_Mst_Subcontractors_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Subcontractors_GetAll_Result>("HRP_Mst_Subcontractors_GetAll");
         }
     
         public virtual int HRP_Mst_Subcontractors_Save(string subcontractorCode, string subcontractorName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
@@ -428,6 +458,11 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_Delete", iDParameter);
         }
     
+        public virtual ObjectResult<HRP_Mst_WorkLocation_GetAll_Result> HRP_Mst_WorkLocation_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_WorkLocation_GetAll_Result>("HRP_Mst_WorkLocation_GetAll");
+        }
+    
         public virtual int HRP_Mst_WorkLocation_Save(string workLocationCode, string workLocationName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
         {
             var workLocationCodeParameter = workLocationCode != null ?
@@ -464,6 +499,11 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Bank_GetAll_Result> HRP_Mst_Bank_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAll_Result>("HRP_Mst_Bank_GetAll");
         }
     
         public virtual ObjectResult<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> VSR_Trn_ServiceEntryDetails_GetByServeEntryID(Nullable<int> serviceEntryID)

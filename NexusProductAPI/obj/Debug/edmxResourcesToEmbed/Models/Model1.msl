@@ -125,20 +125,98 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_Delete" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_Save" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_BloodGroups_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_BloodGroups_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_BloodGroups_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bgcode" ColumnName="bgcode" />
+          <ScalarProperty Name="bgcodeName" ColumnName="bgcodeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Country_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Country_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Country_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="countrycode" ColumnName="countrycode" />
+          <ScalarProperty Name="countryname" ColumnName="countryname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Country_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Country_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Designation_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="designationcode" ColumnName="designationcode" />
+          <ScalarProperty Name="designationname" ColumnName="designationname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Designation_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Designation_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Departments_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="departmentcode" ColumnName="departmentcode" />
+          <ScalarProperty Name="departmentname" ColumnName="departmentname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Departments_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Departments_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_EmpDocs_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="empdoccode" ColumnName="empdoccode" />
+          <ScalarProperty Name="empdocname" ColumnName="empdocname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_EmpDocs_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_EmpDocs_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Subcontractors_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="subcontractorcode" ColumnName="subcontractorcode" />
+          <ScalarProperty Name="subcontractorname" ColumnName="subcontractorname" />
+          <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+          <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+          <ScalarProperty Name="contactemail" ColumnName="contactemail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_Subcontractors_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Subcontractors_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_WorkLocation_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="worklocationcode" ColumnName="worklocationcode" />
+          <ScalarProperty Name="worklocationname" ColumnName="worklocationname" />
+          <ScalarProperty Name="contactperson" ColumnName="contactperson" />
+          <ScalarProperty Name="contactnumber" ColumnName="contactnumber" />
+          <ScalarProperty Name="contactemail" ColumnName="contactemail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="HRP_Mst_WorkLocation_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_WorkLocation_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_Delete" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_Delete" />
+    <FunctionImportMapping FunctionImportName="HRP_Mst_Bank_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Bank_GetAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Bank_GetAll_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bankcode" ColumnName="bankcode" />
+          <ScalarProperty Name="bankname" ColumnName="bankname" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" FunctionName="NEXUSPRODUCTModel.Store.VSR_Trn_ServiceEntryDetails_GetByServeEntryID">
       <ResultMapping>
         <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result">
@@ -215,6 +293,23 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="CMN_Mst_UserRoles_Save" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_UserRoles_Save" />
+    <FunctionImportMapping FunctionImportName="CMN_Mst_User_Authenticate" FunctionName="NEXUSPRODUCTModel.Store.CMN_Mst_User_Authenticate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="ProfilePic" ColumnName="ProfilePic" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="MemberSince" ColumnName="MemberSince" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="CMN_Utl_Modules_GetAll" FunctionName="NEXUSPRODUCTModel.Store.CMN_Utl_Modules_GetAll">
       <ResultMapping>
         <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result">

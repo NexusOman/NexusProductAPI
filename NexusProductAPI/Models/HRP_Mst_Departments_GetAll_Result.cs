@@ -16,6 +16,5 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string departmentcode { get; set; }
         public string departmentname { get; set; }
-        public bool active { get; set; }
     }
 }

@@ -16,6 +16,5 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string countrycode { get; set; }
         public string countryname { get; set; }
-        public bool active { get; set; }
     }
 }
