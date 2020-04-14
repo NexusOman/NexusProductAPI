@@ -260,15 +260,6 @@
       <Parameter Name="ID" Mode="In" Type="Int32" />
       <Parameter Name="status" Mode="In" Type="Boolean" />
     </FunctionImport>
-    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
-    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
-    <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
-      <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
-      <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
-      <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
-      <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
-      <Parameter Name="ID" Mode="In" Type="Int32" />
-    </FunctionImport>
     <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_ActivateDeactivate">
       <Parameter Name="ID" Mode="In" Type="Int32" />
       <Parameter Name="status" Mode="In" Type="Boolean" />
@@ -279,6 +270,41 @@
       <Parameter Name="OtherEarningsCode" Mode="In" Type="String" />
       <Parameter Name="OtherEarningsName" Mode="In" Type="String" />
       <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Shift_ActivateDeactivate">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Shift_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_Shift_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_Shift_Save">
+      <Parameter Name="ShiftCode" Mode="In" Type="String" />
+      <Parameter Name="ShiftName" Mode="In" Type="String" />
+      <Parameter Name="StartTime" Mode="In" Type="Time" />
+      <Parameter Name="EndTime" Mode="In" Type="Time" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Holidays_ActivateDeactivate">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Holidays_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_Holidays_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_Holidays_Save">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EnDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
+      <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
+      <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
+      <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
+      <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="defaultpercent" Mode="In" Type="Decimal" />
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
@@ -602,21 +628,6 @@
     <Property Type="String" Name="leavetypecode" Nullable="false" MaxLength="5" />
     <Property Type="String" Name="leavetypename" Nullable="false" MaxLength="100" />
   </ComplexType>
-  <ComplexType Name="HRP_Mst_SalaryComponents_GetAll_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-    <Property Type="Boolean" Name="active" Nullable="false" />
-  </ComplexType>
-  <ComplexType Name="HRP_Mst_SalaryComponents_GetAllActive_Result">
-    <Property Type="Int32" Name="id" Nullable="false" />
-    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-  </ComplexType>
   <ComplexType Name="HRP_Mst_OtherEarningsDeduction_GetAll_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
@@ -629,5 +640,50 @@
     <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
     <Property Type="String" Name="otherearningsname" Nullable="false" MaxLength="100" />
     <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Shift_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="shiftcode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="shiftname" Nullable="true" MaxLength="100" />
+    <Property Type="Time" Name="starttime" Nullable="true" />
+    <Property Type="Time" Name="endtime" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Shift_GetAllActive_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="shiftcode" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="shiftname" Nullable="true" MaxLength="100" />
+    <Property Type="Time" Name="starttime" Nullable="true" />
+    <Property Type="Time" Name="endtime" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Holidays_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" />
+    <Property Type="DateTime" Name="endate" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_Holidays_GetAllActive_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="DateTime" Name="startdate" Nullable="false" />
+    <Property Type="DateTime" Name="endate" Nullable="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_SalaryComponents_GetAll_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Decimal" Name="defaultpercent" Nullable="true" Precision="3" Scale="3" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HRP_Mst_SalaryComponents_GetAllActive_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+    <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Decimal" Name="defaultpercent" Nullable="true" Precision="3" Scale="3" />
   </ComplexType>
 </Schema>

@@ -11,14 +11,12 @@ namespace NexusProductAPI.Models
 {
     using System;
     
-    public partial class HRP_Mst_SalaryComponents_GetAll_Result
+    public partial class HRP_Mst_Shift_GetAllActive_Result
     {
         public int id { get; set; }
-        public string salarycomponentcode { get; set; }
-        public string salarycomponentname { get; set; }
-        public string addordeduct { get; set; }
-        public Nullable<decimal> defaultamount { get; set; }
-        public Nullable<decimal> defaultpercent { get; set; }
-        public bool active { get; set; }
+        public string shiftcode { get; set; }
+        public string shiftname { get; set; }
+        public Nullable<System.TimeSpan> starttime { get; set; }
+        public Nullable<System.TimeSpan> endtime { get; set; }
     }
 }

@@ -154,6 +154,18 @@
           <Parameter Name="EmpId" Type="int" Mode="In" />
           <Parameter Name="details" Type="varchar(max)" Mode="In" />
         </Function>
+        <Function Name="HRP_Mst_Holidays_ActivateDeactivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Holidays_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Holidays_GetAllActive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Holidays_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StartDate" Type="date" Mode="In" />
+          <Parameter Name="EnDate" Type="date" Mode="In" />
+          <Parameter Name="Description" Type="varchar" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
         <Function Name="HRP_Mst_LeaveTypes_ActivateDeactivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
           <Parameter Name="Status" Type="bit" Mode="In" />
@@ -188,6 +200,20 @@
           <Parameter Name="SalaryComponentName" Type="nvarchar" Mode="In" />
           <Parameter Name="AddOrDeduct" Type="char" Mode="In" />
           <Parameter Name="DefaultAmount" Type="decimal" Mode="In" />
+          <Parameter Name="defaultpercent" Type="decimal" Mode="In" />
+          <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Shift_ActivateDeactivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="int" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="HRP_Mst_Shift_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Shift_GetAllActive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="HRP_Mst_Shift_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ShiftCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="ShiftName" Type="nvarchar" Mode="In" />
+          <Parameter Name="StartTime" Type="time" Mode="In" />
+          <Parameter Name="EndTime" Type="time" Mode="In" />
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
         <Function Name="HRP_Mst_Subcontractors_ActivateDeactivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -550,15 +576,6 @@
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="status" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
-          <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
-          <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
-            <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
-            <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
-            <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
-            <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
-            <Parameter Name="ID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="HRP_Mst_OtherEarningsDeduction_ActivateDeactivate">
             <Parameter Name="ID" Mode="In" Type="Int32" />
             <Parameter Name="status" Mode="In" Type="Boolean" />
@@ -569,6 +586,41 @@
             <Parameter Name="OtherEarningsCode" Mode="In" Type="String" />
             <Parameter Name="OtherEarningsName" Mode="In" Type="String" />
             <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Shift_ActivateDeactivate">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Shift_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Shift_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAllActive_Result)" />
+          <FunctionImport Name="HRP_Mst_Shift_Save">
+            <Parameter Name="ShiftCode" Mode="In" Type="String" />
+            <Parameter Name="ShiftName" Mode="In" Type="String" />
+            <Parameter Name="StartTime" Mode="In" Type="Time" />
+            <Parameter Name="EndTime" Mode="In" Type="Time" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Holidays_ActivateDeactivate">
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_Holidays_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_Holidays_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAllActive_Result)" />
+          <FunctionImport Name="HRP_Mst_Holidays_Save">
+            <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+            <Parameter Name="EnDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="ID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
+          <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
+          <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
+            <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
+            <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
+            <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
+            <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="defaultpercent" Mode="In" Type="Decimal" />
             <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -892,21 +944,6 @@
           <Property Type="String" Name="leavetypecode" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="leavetypename" Nullable="false" MaxLength="100" />
         </ComplexType>
-        <ComplexType Name="HRP_Mst_SalaryComponents_GetAll_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-          <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-          <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-          <Property Type="Boolean" Name="active" Nullable="false" />
-        </ComplexType>
-        <ComplexType Name="HRP_Mst_SalaryComponents_GetAllActive_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
-          <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
-          <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
-          <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
-        </ComplexType>
         <ComplexType Name="HRP_Mst_OtherEarningsDeduction_GetAll_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
@@ -919,6 +956,51 @@
           <Property Type="String" Name="otherearningscode" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="otherearningsname" Nullable="false" MaxLength="100" />
           <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Shift_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="shiftcode" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="shiftname" Nullable="true" MaxLength="100" />
+          <Property Type="Time" Name="starttime" Nullable="true" />
+          <Property Type="Time" Name="endtime" Nullable="true" />
+          <Property Type="Boolean" Name="active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Shift_GetAllActive_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="shiftcode" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="shiftname" Nullable="true" MaxLength="100" />
+          <Property Type="Time" Name="starttime" Nullable="true" />
+          <Property Type="Time" Name="endtime" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Holidays_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="DateTime" Name="startdate" Nullable="false" />
+          <Property Type="DateTime" Name="endate" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="100" />
+          <Property Type="Boolean" Name="active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_Holidays_GetAllActive_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="DateTime" Name="startdate" Nullable="false" />
+          <Property Type="DateTime" Name="endate" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_SalaryComponents_GetAll_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="defaultpercent" Nullable="true" Precision="3" Scale="3" />
+          <Property Type="Boolean" Name="active" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="HRP_Mst_SalaryComponents_GetAllActive_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="salarycomponentcode" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="salarycomponentname" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="addordeduct" Nullable="false" MaxLength="1" />
+          <Property Type="Decimal" Name="defaultamount" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="Decimal" Name="defaultpercent" Nullable="true" Precision="3" Scale="3" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1447,30 +1529,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="HRP_Mst_LeaveTypes_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_LeaveTypes_Save" />
           <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_ActivateDeactivate" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_ActivateDeactivate" />
-          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAll">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
-                <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
-                <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
-                <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
-                <ScalarProperty Name="active" ColumnName="active" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAllActive">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
-                <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
-                <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
-                <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_Save" />
           <FunctionImportMapping FunctionImportName="HRP_Mst_OtherEarningsDeduction_ActivateDeactivate" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_OtherEarningsDeduction_ActivateDeactivate" />
           <FunctionImportMapping FunctionImportName="HRP_Mst_OtherEarningsDeduction_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_OtherEarningsDeduction_GetAll">
             <ResultMapping>
@@ -1494,6 +1552,80 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="HRP_Mst_OtherEarningsDeduction_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_OtherEarningsDeduction_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Shift_ActivateDeactivate" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Shift_ActivateDeactivate" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Shift_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Shift_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Shift_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="shiftcode" ColumnName="shiftcode" />
+                <ScalarProperty Name="shiftname" ColumnName="shiftname" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Shift_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Shift_GetAllActive">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Shift_GetAllActive_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="shiftcode" ColumnName="shiftcode" />
+                <ScalarProperty Name="shiftname" ColumnName="shiftname" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="endtime" ColumnName="endtime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Shift_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Shift_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Holidays_ActivateDeactivate" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Holidays_ActivateDeactivate" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Holidays_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Holidays_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="endate" ColumnName="endate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Holidays_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Holidays_GetAllActive">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAllActive_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="endate" ColumnName="endate" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_Holidays_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Holidays_Save" />
+          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
+                <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
+                <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
+                <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
+                <ScalarProperty Name="defaultpercent" ColumnName="defaultpercent" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAllActive">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
+                <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
+                <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
+                <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
+                <ScalarProperty Name="defaultpercent" ColumnName="defaultpercent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_Save" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

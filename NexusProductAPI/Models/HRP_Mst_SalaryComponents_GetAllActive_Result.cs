@@ -18,5 +18,6 @@ namespace NexusProductAPI.Models
         public string salarycomponentname { get; set; }
         public string addordeduct { get; set; }
         public Nullable<decimal> defaultamount { get; set; }
+        public Nullable<decimal> defaultpercent { get; set; }
     }
 }
