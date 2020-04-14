@@ -941,41 +941,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_ActivateDeactivate", iDParameter, statusParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAll_Result> HRP_Mst_SalaryComponents_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAll_Result>("HRP_Mst_SalaryComponents_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAllActive_Result> HRP_Mst_SalaryComponents_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAllActive_Result>("HRP_Mst_SalaryComponents_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_SalaryComponents_Save(string salaryComponentCode, string salaryComponentName, string addOrDeduct, Nullable<decimal> defaultAmount, Nullable<int> iD)
-        {
-            var salaryComponentCodeParameter = salaryComponentCode != null ?
-                new ObjectParameter("SalaryComponentCode", salaryComponentCode) :
-                new ObjectParameter("SalaryComponentCode", typeof(string));
-    
-            var salaryComponentNameParameter = salaryComponentName != null ?
-                new ObjectParameter("SalaryComponentName", salaryComponentName) :
-                new ObjectParameter("SalaryComponentName", typeof(string));
-    
-            var addOrDeductParameter = addOrDeduct != null ?
-                new ObjectParameter("AddOrDeduct", addOrDeduct) :
-                new ObjectParameter("AddOrDeduct", typeof(string));
-    
-            var defaultAmountParameter = defaultAmount.HasValue ?
-                new ObjectParameter("DefaultAmount", defaultAmount) :
-                new ObjectParameter("DefaultAmount", typeof(decimal));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_Save", salaryComponentCodeParameter, salaryComponentNameParameter, addOrDeductParameter, defaultAmountParameter, iDParameter);
-        }
-    
         public virtual int HRP_Mst_OtherEarningsDeduction_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
         {
             var iDParameter = iD.HasValue ?
@@ -1018,6 +983,137 @@ namespace NexusProductAPI.Models
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_OtherEarningsDeduction_Save", otherEarningsCodeParameter, otherEarningsNameParameter, addOrDeductParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Shift_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Shift_GetAll_Result> HRP_Mst_Shift_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAll_Result>("HRP_Mst_Shift_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Shift_GetAllActive_Result> HRP_Mst_Shift_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAllActive_Result>("HRP_Mst_Shift_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Shift_Save(string shiftCode, string shiftName, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, Nullable<int> iD)
+        {
+            var shiftCodeParameter = shiftCode != null ?
+                new ObjectParameter("ShiftCode", shiftCode) :
+                new ObjectParameter("ShiftCode", typeof(string));
+    
+            var shiftNameParameter = shiftName != null ?
+                new ObjectParameter("ShiftName", shiftName) :
+                new ObjectParameter("ShiftName", typeof(string));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.TimeSpan));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.TimeSpan));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_Save", shiftCodeParameter, shiftNameParameter, startTimeParameter, endTimeParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Holidays_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Holidays_GetAll_Result> HRP_Mst_Holidays_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAll_Result>("HRP_Mst_Holidays_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Holidays_GetAllActive_Result> HRP_Mst_Holidays_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAllActive_Result>("HRP_Mst_Holidays_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Holidays_Save(Nullable<System.DateTime> startDate, Nullable<System.DateTime> enDate, string description, Nullable<int> iD)
+        {
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+    
+            var enDateParameter = enDate.HasValue ?
+                new ObjectParameter("EnDate", enDate) :
+                new ObjectParameter("EnDate", typeof(System.DateTime));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_Save", startDateParameter, enDateParameter, descriptionParameter, iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAll_Result> HRP_Mst_SalaryComponents_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAll_Result>("HRP_Mst_SalaryComponents_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAllActive_Result> HRP_Mst_SalaryComponents_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAllActive_Result>("HRP_Mst_SalaryComponents_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_SalaryComponents_Save(string salaryComponentCode, string salaryComponentName, string addOrDeduct, Nullable<decimal> defaultAmount, Nullable<decimal> defaultpercent, Nullable<int> iD)
+        {
+            var salaryComponentCodeParameter = salaryComponentCode != null ?
+                new ObjectParameter("SalaryComponentCode", salaryComponentCode) :
+                new ObjectParameter("SalaryComponentCode", typeof(string));
+    
+            var salaryComponentNameParameter = salaryComponentName != null ?
+                new ObjectParameter("SalaryComponentName", salaryComponentName) :
+                new ObjectParameter("SalaryComponentName", typeof(string));
+    
+            var addOrDeductParameter = addOrDeduct != null ?
+                new ObjectParameter("AddOrDeduct", addOrDeduct) :
+                new ObjectParameter("AddOrDeduct", typeof(string));
+    
+            var defaultAmountParameter = defaultAmount.HasValue ?
+                new ObjectParameter("DefaultAmount", defaultAmount) :
+                new ObjectParameter("DefaultAmount", typeof(decimal));
+    
+            var defaultpercentParameter = defaultpercent.HasValue ?
+                new ObjectParameter("defaultpercent", defaultpercent) :
+                new ObjectParameter("defaultpercent", typeof(decimal));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_Save", salaryComponentCodeParameter, salaryComponentNameParameter, addOrDeductParameter, defaultAmountParameter, defaultpercentParameter, iDParameter);
         }
     }
 }
