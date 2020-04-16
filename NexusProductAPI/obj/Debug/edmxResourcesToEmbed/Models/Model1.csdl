@@ -182,10 +182,6 @@
     <FunctionImport Name="CMN_Mst_UserRoles_Save">
       <Parameter Name="UserRoleNameEn" Mode="In" Type="String" />
     </FunctionImport>
-    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
-      <Parameter Name="UserName" Mode="In" Type="String" />
-      <Parameter Name="Password" Mode="In" Type="String" />
-    </FunctionImport>
     <FunctionImport Name="CMN_Utl_Modules_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_Result)" />
     <FunctionImport Name="CMN_STN_RoleToMenu_Save">
       <Parameter Name="RoleId" Mode="In" Type="Int32" />
@@ -204,6 +200,149 @@
     </FunctionImport>
     <FunctionImport Name="CMN_Utl_Modules_GetAll_ByRoleID" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Utl_Modules_GetAll_ByRoleID_Result)">
       <Parameter Name="RoleId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CMN_Mst_User_Authenticate" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_User_Authenticate_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CMN_Mst_LocationGroup_DML_Oper">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="LocationGroupNameEn" Mode="In" Type="String" />
+      <Parameter Name="LocationGroupNameAr" Mode="In" Type="String" />
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="Governorate" Mode="In" Type="Int32" />
+      <Parameter Name="Willayat" Mode="In" Type="Int32" />
+      <Parameter Name="Coordinates" Mode="In" Type="String" />
+      <Parameter Name="ContactPerson" Mode="In" Type="String" />
+      <Parameter Name="ContactNo" Mode="In" Type="String" />
+      <Parameter Name="ContactEmail" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CMN_Mst_Governorate_GetList" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_Governorate_GetList_Result)" />
+    <FunctionImport Name="CMN_Mst_Wilayath_GetList" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_Wilayath_GetList_Result)" />
+    <FunctionImport Name="CMN_Mst_LocationGroup_GetList" ReturnType="Collection(NEXUSPRODUCTModel.CMN_Mst_LocationGroup_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_ItemMaster_DML_Oper">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="ItemCode" Mode="In" Type="String" />
+      <Parameter Name="ItemNameEn" Mode="In" Type="String" />
+      <Parameter Name="ItemNameAr" Mode="In" Type="String" />
+      <Parameter Name="Price" Mode="In" Type="Decimal" />
+      <Parameter Name="UOM" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_Technician_DML_Oper">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="EmpID" Mode="In" Type="String" />
+      <Parameter Name="TechnicianType" Mode="In" Type="Int32" />
+      <Parameter Name="Workshop" Mode="In" Type="Int32" />
+      <Parameter Name="TechnicianName" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_TechnicianTypes_DML_Oper">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="TechTypeNameEn" Mode="In" Type="String" />
+      <Parameter Name="TechTypeNameAr" Mode="In" Type="String" />
+      <Parameter Name="ChargePerHr" Mode="In" Type="Decimal" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_UOM_DML_Oper">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="UOM_Code" Mode="In" Type="String" />
+      <Parameter Name="UOM_NameEn" Mode="In" Type="String" />
+      <Parameter Name="UOM_NameAr" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CSVToTable" IsComposable="true" ReturnType="Collection(String)">
+      <Parameter Name="InStr" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_ItemMaster_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_ItemMaster_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Technician_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_Technician_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_TechnicianTypes_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_TechnicianTypes_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_UOM_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_UOM_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Brands_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="brandNameEn" Mode="In" Type="String" />
+      <Parameter Name="brandNameAr" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_Brands_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_Brands_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Services_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="serviceTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="serviceNameEn" Mode="In" Type="String" />
+      <Parameter Name="serviceNameAr" Mode="In" Type="String" />
+      <Parameter Name="serviceCode" Mode="In" Type="String" />
+      <Parameter Name="isItemRequired" Mode="In" Type="Boolean" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_Services_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_Services_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_ServiceTypes_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="serviceTypeNameEn" Mode="In" Type="String" />
+      <Parameter Name="serviceTypeNameAr" Mode="In" Type="String" />
+      <Parameter Name="kilometre" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_ServiceTypes_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_ServiceTypes_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Vehicles_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="vehicleTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="vehicleSubTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="regNo" Mode="In" Type="String" />
+      <Parameter Name="fleetNo" Mode="In" Type="String" />
+      <Parameter Name="regExpiryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="description" Mode="In" Type="String" />
+      <Parameter Name="brandID" Mode="In" Type="Int32" />
+      <Parameter Name="yearOfManufact" Mode="In" Type="Int32" />
+      <Parameter Name="firstRegDate" Mode="In" Type="DateTime" />
+      <Parameter Name="engineNo" Mode="In" Type="String" />
+      <Parameter Name="chasisNo" Mode="In" Type="String" />
+      <Parameter Name="purchaseDate" Mode="In" Type="DateTime" />
+      <Parameter Name="purchaseValue" Mode="In" Type="Decimal" />
+      <Parameter Name="serviceInterval_KM" Mode="In" Type="Int64" />
+      <Parameter Name="serviceInterval_Months" Mode="In" Type="Int32" />
+      <Parameter Name="status" Mode="In" Type="Int16" />
+      <Parameter Name="active" Mode="In" Type="String" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_Vehicles_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_Vehicles_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_VehicleSubType_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="vehicleType" Mode="In" Type="Int32" />
+      <Parameter Name="vehicleSubTypeNameEn" Mode="In" Type="String" />
+      <Parameter Name="vehicleSubTypeNameAr" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_VehicleSubType_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_VehicleSubType_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_VehicleType_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="vehicleTypeNameEn" Mode="In" Type="String" />
+      <Parameter Name="vehicleTypeNameAr" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="WSP_Mst_VehicleType_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_VehicleType_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Customers_GetList" ReturnType="Collection(NEXUSPRODUCTModel.WSP_Mst_Customers_GetList_Result)" />
+    <FunctionImport Name="WSP_Mst_Customers_DML_Oper">
+      <Parameter Name="id" Mode="In" Type="Int64" />
+      <Parameter Name="type" Mode="In" Type="Int16" />
+      <Parameter Name="uniqueIdNo" Mode="In" Type="String" />
+      <Parameter Name="location" Mode="In" Type="Int32" />
+      <Parameter Name="customerName" Mode="In" Type="String" />
+      <Parameter Name="contactPerson" Mode="In" Type="String" />
+      <Parameter Name="contactNo" Mode="In" Type="String" />
+      <Parameter Name="contactEmail" Mode="In" Type="String" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="Operation" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
@@ -381,19 +520,6 @@
     <Property Type="String" Name="userrolenamear" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="userrolenameen" Nullable="true" MaxLength="50" />
   </ComplexType>
-  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
-    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
-    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
-    <Property Type="Int32" Name="EmpID" Nullable="true" />
-    <Property Type="String" Name="ProfilePic" Nullable="true" />
-    <Property Type="Boolean" Name="Active" Nullable="true" />
-    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
-    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
-    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
-  </ComplexType>
   <ComplexType Name="CMN_Utl_Modules_GetAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="ModuleNameEn" Nullable="true" MaxLength="60" />
@@ -459,5 +585,147 @@
     <Property Type="String" Name="ModuleNameEn" Nullable="true" MaxLength="60" />
     <Property Type="String" Name="ModuleNameAr" Nullable="true" MaxLength="100" />
     <Property Type="String" Name="faicon" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_User_Authenticate_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="UserRoleID" Nullable="false" />
+    <Property Type="Int32" Name="EmpID" Nullable="true" />
+    <Property Type="String" Name="ProfilePic" Nullable="true" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MemberSince" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_Governorate_GetList_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NAME" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_Wilayath_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="Governorate" Nullable="true" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="CMN_Mst_LocationGroup_GetList_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="workshopNameAr" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="governorateCDE" Nullable="true" />
+    <Property Type="String" Name="governorateNME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="willayatCDE" Nullable="true" />
+    <Property Type="String" Name="willayatNME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="coOrdinates" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="contactPerson" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactNo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="contactEmail" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_ItemMaster_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="itemCode" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="itemNameAr" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="price" Nullable="false" Precision="14" Scale="3" />
+    <Property Type="Int32" Name="uOMCDE" Nullable="false" />
+    <Property Type="String" Name="uOMNME" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_Technician_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="empID" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="technicianTypeCDE" Nullable="false" />
+    <Property Type="String" Name="technicianTypeNME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="workshopCDE" Nullable="true" />
+    <Property Type="String" Name="workshopNME" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_TechnicianTypes_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="techTypeNameAr" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="chargePerHr" Nullable="true" Precision="14" Scale="3" />
+    <Property Type="Boolean" Name="active" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_UOM_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="uOM_Code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="uOM_NameAr" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_Brands_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="brandNameAr" Nullable="true" MaxLength="10" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_Services_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="serviceTypeCDE" Nullable="true" />
+    <Property Type="String" Name="serviceTypeNME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="serviceNameAr" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="serviceCode" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="isItemRequired" Nullable="true" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_ServiceTypes_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="serviceTypeNameAr" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="kilometre" Nullable="false" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_Vehicles_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="vehicleTypeCDE" Nullable="false" />
+    <Property Type="String" Name="vehicleTypeNME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="vehicleSubTypeCDE" Nullable="false" />
+    <Property Type="String" Name="vehicleSubTypeNME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="fleetNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="regExpiryDate" Nullable="true" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="200" />
+    <Property Type="Int32" Name="brandCDE" Nullable="true" />
+    <Property Type="String" Name="brandNME" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="yearOfManufact" Nullable="true" />
+    <Property Type="DateTime" Name="firstRegDate" Nullable="true" />
+    <Property Type="String" Name="engineNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="chasisNo" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="purchaseDate" Nullable="true" />
+    <Property Type="Decimal" Name="purchaseValue" Nullable="true" Precision="14" Scale="3" />
+    <Property Type="Int64" Name="serviceInterval_KM" Nullable="true" />
+    <Property Type="Int32" Name="serviceInterval_Months" Nullable="true" />
+    <Property Type="Int16" Name="status" Nullable="true" />
+    <Property Type="String" Name="active" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_VehicleSubType_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="vehicleTypeCDE" Nullable="false" />
+    <Property Type="String" Name="vehicleTypeNME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vehicleSubTypeNameAr" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_VehicleType_GetList_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vehicleTypeNameAr" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="WSP_Mst_Customers_GetList_Result">
+    <Property Type="Int64" Name="id" Nullable="false" />
+    <Property Type="Int16" Name="type" Nullable="false" />
+    <Property Type="String" Name="uniqueIdNo" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="locationCDE" Nullable="true" />
+    <Property Type="String" Name="locationNME" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactPerson" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="contactEmail" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
   </ComplexType>
 </Schema>
