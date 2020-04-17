@@ -13,8 +13,9 @@ namespace NexusProductAPI.Models
     
     public partial class WSP_Mst_Customers_GetList_Result
     {
-        public long id { get; set; }
-        public short type { get; set; }
+        public int id { get; set; }
+        public int custTypeCDE { get; set; }
+        public string custTypeNME { get; set; }
         public string uniqueIdNo { get; set; }
         public Nullable<int> locationCDE { get; set; }
         public string locationNME { get; set; }

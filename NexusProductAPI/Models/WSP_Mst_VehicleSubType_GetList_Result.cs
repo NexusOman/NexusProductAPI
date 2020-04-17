@@ -14,7 +14,7 @@ namespace NexusProductAPI.Models
     public partial class WSP_Mst_VehicleSubType_GetList_Result
     {
         public int id { get; set; }
-        public int vehicleTypeCDE { get; set; }
+        public Nullable<int> vehicleTypeCDE { get; set; }
         public string vehicleTypeNME { get; set; }
         public string text { get; set; }
         public string vehicleSubTypeNameAr { get; set; }

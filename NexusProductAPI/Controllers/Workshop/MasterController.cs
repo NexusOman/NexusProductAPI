@@ -388,7 +388,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetServiceTypes")]
+        [Route("api/GetWSPServiceTypes")]
         public ServiceTypes PostServiceTypes()
         {
             ServiceTypes Res = new ServiceTypes();
@@ -410,7 +410,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostServiceTypes")]
+        [Route("api/PostWSPServiceTypes")]
         public ServiceTypes PostServiceTypes(object obj)
         {
             ServiceTypes SR = new ServiceTypes();
@@ -449,7 +449,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetVehicleType")]
+        [Route("api/GetWSPVehicleType")]
         public VehicleType PostVehicleType()
         {
             VehicleType Res = new VehicleType();
@@ -471,7 +471,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostVehicleType")]
+        [Route("api/PostWSPVehicleType")]
         public VehicleType PostVehicleType(object obj)
         {
             VehicleType SR = new VehicleType();
@@ -510,7 +510,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetVehicleSubType")]
+        [Route("api/GetWSPVehicleSubType")]
         public VehicleSubType GetVehicleSubType()
         {
             VehicleSubType Res = new VehicleSubType();
@@ -532,7 +532,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostVehicleSubType")]
+        [Route("api/PostWSPVehicleSubType")]
         public VehicleSubType PostVehicleSubType(object obj)
         {
             VehicleSubType SR = new VehicleSubType();
@@ -570,7 +570,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetBrands")]
+        [Route("api/GetWSPBrands")]
         public Brands GetBrands()
         {
             Brands Res = new Brands();
@@ -592,7 +592,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostBrands")]
+        [Route("api/PostWSPBrands")]
         public Brands PostBrands(object obj)
         {
             Brands SR = new Brands();
@@ -630,7 +630,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetVehicles")]
+        [Route("api/GetWSPVehicles")]
         public Vehicles GetVehicles()
         {
             Vehicles Res = new Vehicles();
@@ -652,7 +652,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostVehicles")]
+        [Route("api/PostWSPVehicles")]
         public Vehicles PostVehicles(object obj)
         {
             Vehicles SR = new Vehicles();
@@ -692,8 +692,37 @@ namespace NexusProductAPI.Controllers.Workshop
             public List<WSP_Mst_Customers_GetList_Result> customers { get; set; }
         }
 
+        public class Locations
+        {
+            public int status { get; set; }
+            public string message { get; set; }
+            public List<CMN_Mst_Location_GetList_Result> locations { get; set; }
+        }
+
         [HttpGet]
-        [Route("api/GetCustomers")]
+        [Route("api/GetWSPLocation")]
+        public Locations GetLocation()
+        {
+            Locations Res = new Locations();
+            List<CMN_Mst_Location_GetList_Result> locations = new List<CMN_Mst_Location_GetList_Result>();
+            try
+            {
+                locations = db.CMN_Mst_Location_GetList().ToList();
+                if (locations.Count() > 0)
+                {
+                    Res.status = 1; Res.locations = locations;
+                }
+                return Res;
+            }
+            catch (Exception ex)
+            {
+                Res.message = "Error Occured in fetching location(s)"; Res.locations = locations; Res.status = 0;
+                return Res;
+            }
+        }
+
+        [HttpGet]
+        [Route("api/GetWSPCustomers")]
         public Customers GetCustomers()
         {
             Customers Res = new Customers();
@@ -714,8 +743,10 @@ namespace NexusProductAPI.Controllers.Workshop
             }
         }
 
+        
+
         [HttpPost]
-        [Route("api/PostCustomers")]
+        [Route("api/PostWSPCustomers")]
         public Customers PostCustomers(object obj)
         {
             Customers SR = new Customers();
@@ -726,7 +757,7 @@ namespace NexusProductAPI.Controllers.Workshop
             List<WSP_Mst_Customers_GetList_Result> customers = new List<WSP_Mst_Customers_GetList_Result>();
             try
             {
-                db.WSP_Mst_Customers_DML_Oper(data.id, data.type, data.uniqueIdNo, data.locationCDE, data.text
+                db.WSP_Mst_Customers_DML_Oper(data.id, data.custTypeCDE, data.uniqueIdNo, data.locationCDE, data.text
                     , data.contactPerson, data.contactNo, data.contactEmail, data.active, oper);
 
                 customers = db.WSP_Mst_Customers_GetList().ToList();
@@ -754,7 +785,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpGet]
-        [Route("api/GetServices")]
+        [Route("api/GetWSPServices")]
         public Services GetServices()
         {
             Services Res = new Services();
@@ -776,7 +807,7 @@ namespace NexusProductAPI.Controllers.Workshop
         }
 
         [HttpPost]
-        [Route("api/PostServices")]
+        [Route("api/PostWSPServices")]
         public Services PostServices(object obj)
         {
             Services SR = new Services();

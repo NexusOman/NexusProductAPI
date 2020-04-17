@@ -14,9 +14,9 @@ namespace NexusProductAPI.Models
     public partial class WSP_Mst_Vehicles_GetList_Result
     {
         public int id { get; set; }
-        public int vehicleTypeCDE { get; set; }
+        public Nullable<int> vehicleTypeCDE { get; set; }
         public string vehicleTypeNME { get; set; }
-        public int vehicleSubTypeCDE { get; set; }
+        public Nullable<int> vehicleSubTypeCDE { get; set; }
         public string vehicleSubTypeNME { get; set; }
         public string text { get; set; }
         public string fleetNo { get; set; }
@@ -33,6 +33,6 @@ namespace NexusProductAPI.Models
         public Nullable<long> serviceInterval_KM { get; set; }
         public Nullable<int> serviceInterval_Months { get; set; }
         public Nullable<short> status { get; set; }
-        public string active { get; set; }
+        public bool active { get; set; }
     }
 }

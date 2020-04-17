@@ -16,7 +16,7 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string text { get; set; }
         public string serviceTypeNameAr { get; set; }
-        public int kilometre { get; set; }
-        public bool active { get; set; }
+        public Nullable<long> kilometre { get; set; }
+        public string active { get; set; }
     }
 }

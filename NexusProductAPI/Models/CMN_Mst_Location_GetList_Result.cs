@@ -11,15 +11,10 @@ namespace NexusProductAPI.Models
 {
     using System;
     
-    public partial class WSP_Mst_Services_GetList_Result
+    public partial class CMN_Mst_Location_GetList_Result
     {
         public int id { get; set; }
-        public Nullable<int> serviceTypeCDE { get; set; }
-        public string serviceTypeNME { get; set; }
         public string text { get; set; }
-        public string serviceNameAr { get; set; }
-        public string serviceCode { get; set; }
-        public bool isItemRequired { get; set; }
-        public bool active { get; set; }
+        public string LocationNameAr { get; set; }
     }
 }
