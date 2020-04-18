@@ -1,5 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="NEXUSPRODUCTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="CMN_Mst_Governorate_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="CMN_Mst_LocationGroup_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="LocationGroupNameEn" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocationGroupNameAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
+    <Parameter Name="Governorate" Type="int" Mode="In" />
+    <Parameter Name="Willayat" Type="int" Mode="In" />
+    <Parameter Name="Coordinates" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactPerson" Type="varchar" Mode="In" />
+    <Parameter Name="ContactNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactEmail" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="CMN_Mst_LocationGroup_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="CMN_Mst_User_Authenticate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UserName" Type="varchar" Mode="In" />
     <Parameter Name="Password" Type="varchar" Mode="In" />
@@ -8,6 +24,7 @@
   <Function Name="CMN_Mst_UserRoles_Save" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="UserRoleNameEn" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="CMN_Mst_Wilayath_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="CMN_STN_RoleToMenu_GetAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="RoleId" Type="int" Mode="In" />
   </Function>
@@ -27,9 +44,15 @@
   <Function Name="CMN_Utl_Modules_GetAll_ByRoleID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="RoleId" Type="int" Mode="In" />
   </Function>
-  <Function Name="HRP_Mst_Bank_ActivateDeactivate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ID" Type="int" Mode="In" />
-    <Parameter Name="Status" Type="bit" Mode="In" />
+  <Function Name="CSVToTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="InStr" Type="varchar(max)" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="id" Type="varchar(max)" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
   </Function>
   <Function Name="HRP_Mst_Bank_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
@@ -306,5 +329,124 @@
   <Function Name="VSR_Trn_ServiceEntryDetails_GetByServeEntryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ServiceEntryID" Type="int" Mode="In" />
   </Function>
+  <Function Name="WSP_Mst_Brands_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="brandNameEn" Type="nvarchar" Mode="In" />
+    <Parameter Name="brandNameAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_Brands_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_Customers_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+    <Parameter Name="type" Type="smallint" Mode="In" />
+    <Parameter Name="uniqueIdNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="location" Type="int" Mode="In" />
+    <Parameter Name="customerName" Type="varchar" Mode="In" />
+    <Parameter Name="contactPerson" Type="varchar" Mode="In" />
+    <Parameter Name="contactNo" Type="varchar" Mode="In" />
+    <Parameter Name="contactEmail" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_Customers_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_ItemMaster_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="ItemCode" Type="varchar" Mode="In" />
+    <Parameter Name="ItemNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="ItemNameAr" Type="varchar" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="UOM" Type="int" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_ItemMaster_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_Services_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="serviceTypeID" Type="int" Mode="In" />
+    <Parameter Name="serviceNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="serviceNameAr" Type="varchar" Mode="In" />
+    <Parameter Name="serviceCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="isItemRequired" Type="bit" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_Services_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_ServiceTypes_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="serviceTypeNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="serviceTypeNameAr" Type="varchar" Mode="In" />
+    <Parameter Name="kilometre" Type="int" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_ServiceTypes_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_Technician_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="EmpID" Type="varchar" Mode="In" />
+    <Parameter Name="TechnicianType" Type="int" Mode="In" />
+    <Parameter Name="Workshop" Type="int" Mode="In" />
+    <Parameter Name="TechnicianName" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_Technician_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_TechnicianTypes_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="TechTypeNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="TechTypeNameAr" Type="varchar" Mode="In" />
+    <Parameter Name="ChargePerHr" Type="decimal" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_TechnicianTypes_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_UOM_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="UOM_Code" Type="varchar" Mode="In" />
+    <Parameter Name="UOM_NameEn" Type="varchar" Mode="In" />
+    <Parameter Name="UOM_NameAr" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_UOM_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_Vehicles_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="vehicleTypeID" Type="int" Mode="In" />
+    <Parameter Name="vehicleSubTypeID" Type="int" Mode="In" />
+    <Parameter Name="regNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="fleetNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="regExpiryDate" Type="date" Mode="In" />
+    <Parameter Name="description" Type="varchar" Mode="In" />
+    <Parameter Name="brandID" Type="int" Mode="In" />
+    <Parameter Name="yearOfManufact" Type="int" Mode="In" />
+    <Parameter Name="firstRegDate" Type="date" Mode="In" />
+    <Parameter Name="engineNo" Type="varchar" Mode="In" />
+    <Parameter Name="chasisNo" Type="varchar" Mode="In" />
+    <Parameter Name="purchaseDate" Type="date" Mode="In" />
+    <Parameter Name="purchaseValue" Type="decimal" Mode="In" />
+    <Parameter Name="serviceInterval_KM" Type="bigint" Mode="In" />
+    <Parameter Name="serviceInterval_Months" Type="int" Mode="In" />
+    <Parameter Name="status" Type="smallint" Mode="In" />
+    <Parameter Name="active" Type="nchar" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_Vehicles_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_VehicleSubType_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="vehicleType" Type="int" Mode="In" />
+    <Parameter Name="vehicleSubTypeNameEn" Type="nvarchar" Mode="In" />
+    <Parameter Name="vehicleSubTypeNameAr" Type="nvarchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_VehicleSubType_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="WSP_Mst_VehicleType_DML_Oper" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="vehicleTypeNameEn" Type="varchar" Mode="In" />
+    <Parameter Name="vehicleTypeNameAr" Type="varchar" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="Operation" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="WSP_Mst_VehicleType_GetList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="NEXUSPRODUCTModelStoreContainer" />
 </Schema>

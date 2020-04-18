@@ -28,6 +28,1006 @@ namespace NexusProductAPI.Models
         }
     
     
+        public virtual ObjectResult<CMN_Mst_Governorate_GetList_Result> CMN_Mst_Governorate_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_Governorate_GetList_Result>("CMN_Mst_Governorate_GetList");
+        }
+    
+        public virtual int CMN_Mst_LocationGroup_DML_Oper(Nullable<int> iD, string locationGroupNameEn, string locationGroupNameAr, Nullable<int> companyID, Nullable<int> governorate, Nullable<int> willayat, string coordinates, string contactPerson, string contactNo, string contactEmail, Nullable<bool> active, string operation)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var locationGroupNameEnParameter = locationGroupNameEn != null ?
+                new ObjectParameter("LocationGroupNameEn", locationGroupNameEn) :
+                new ObjectParameter("LocationGroupNameEn", typeof(string));
+    
+            var locationGroupNameArParameter = locationGroupNameAr != null ?
+                new ObjectParameter("LocationGroupNameAr", locationGroupNameAr) :
+                new ObjectParameter("LocationGroupNameAr", typeof(string));
+    
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
+    
+            var governorateParameter = governorate.HasValue ?
+                new ObjectParameter("Governorate", governorate) :
+                new ObjectParameter("Governorate", typeof(int));
+    
+            var willayatParameter = willayat.HasValue ?
+                new ObjectParameter("Willayat", willayat) :
+                new ObjectParameter("Willayat", typeof(int));
+    
+            var coordinatesParameter = coordinates != null ?
+                new ObjectParameter("Coordinates", coordinates) :
+                new ObjectParameter("Coordinates", typeof(string));
+    
+            var contactPersonParameter = contactPerson != null ?
+                new ObjectParameter("ContactPerson", contactPerson) :
+                new ObjectParameter("ContactPerson", typeof(string));
+    
+            var contactNoParameter = contactNo != null ?
+                new ObjectParameter("ContactNo", contactNo) :
+                new ObjectParameter("ContactNo", typeof(string));
+    
+            var contactEmailParameter = contactEmail != null ?
+                new ObjectParameter("ContactEmail", contactEmail) :
+                new ObjectParameter("ContactEmail", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_Mst_LocationGroup_DML_Oper", iDParameter, locationGroupNameEnParameter, locationGroupNameArParameter, companyIDParameter, governorateParameter, willayatParameter, coordinatesParameter, contactPersonParameter, contactNoParameter, contactEmailParameter, activeParameter, operationParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_LocationGroup_GetList_Result> CMN_Mst_LocationGroup_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_LocationGroup_GetList_Result>("CMN_Mst_LocationGroup_GetList");
+        }
+    
+        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_UserRoles_GetAll_Result> CMN_Mst_UserRoles_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_UserRoles_GetAll_Result>("CMN_Mst_UserRoles_GetAll");
+        }
+    
+        public virtual int CMN_Mst_UserRoles_Save(string userRoleNameEn)
+        {
+            var userRoleNameEnParameter = userRoleNameEn != null ?
+                new ObjectParameter("UserRoleNameEn", userRoleNameEn) :
+                new ObjectParameter("UserRoleNameEn", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_Mst_UserRoles_Save", userRoleNameEnParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Mst_Wilayath_GetList_Result> CMN_Mst_Wilayath_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_Wilayath_GetList_Result>("CMN_Mst_Wilayath_GetList");
+        }
+    
+        public virtual ObjectResult<CMN_STN_RoleToMenu_GetAll_Result> CMN_STN_RoleToMenu_GetAll(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_STN_RoleToMenu_GetAll_Result>("CMN_STN_RoleToMenu_GetAll", roleIdParameter);
+        }
+    
+        public virtual int CMN_STN_RoleToMenu_Save(Nullable<int> roleId, string details)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("details", details) :
+                new ObjectParameter("details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_STN_RoleToMenu_Save", roleIdParameter, detailsParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Menu_GetAll_Result> CMN_Utl_Menu_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_Result>("CMN_Utl_Menu_GetAll");
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Menu_GetAll_ByRoleID_Result> CMN_Utl_Menu_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_ByRoleID_Result>("CMN_Utl_Menu_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_Result> CMN_Utl_MenuItems_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_Result>("CMN_Utl_MenuItems_GetAll");
+        }
+    
+        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_ByRoleID_Result> CMN_Utl_MenuItems_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_ByRoleID_Result>("CMN_Utl_MenuItems_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Modules_GetAll_Result> CMN_Utl_Modules_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_Result>("CMN_Utl_Modules_GetAll");
+        }
+    
+        public virtual ObjectResult<CMN_Utl_Modules_GetAll_ByRoleID_Result> CMN_Utl_Modules_GetAll_ByRoleID(Nullable<int> roleId)
+        {
+            var roleIdParameter = roleId.HasValue ?
+                new ObjectParameter("RoleId", roleId) :
+                new ObjectParameter("RoleId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_ByRoleID_Result>("CMN_Utl_Modules_GetAll_ByRoleID", roleIdParameter);
+        }
+    
+        [DbFunction("NEXUSPRODUCTEntities", "CSVToTable")]
+        public virtual IQueryable<string> CSVToTable(string inStr)
+        {
+            var inStrParameter = inStr != null ?
+                new ObjectParameter("InStr", inStr) :
+                new ObjectParameter("InStr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<string>("[NEXUSPRODUCTEntities].[CSVToTable](@InStr)", inStrParameter);
+        }
+    
+        public virtual int HRP_Cnf_SalaryIncrement_Save(Nullable<System.DateTime> effectivedate, Nullable<int> salarycomponentid, string details)
+        {
+            var effectivedateParameter = effectivedate.HasValue ?
+                new ObjectParameter("effectivedate", effectivedate) :
+                new ObjectParameter("effectivedate", typeof(System.DateTime));
+    
+            var salarycomponentidParameter = salarycomponentid.HasValue ?
+                new ObjectParameter("salarycomponentid", salarycomponentid) :
+                new ObjectParameter("salarycomponentid", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("Details", details) :
+                new ObjectParameter("Details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Cnf_SalaryIncrement_Save", effectivedateParameter, salarycomponentidParameter, detailsParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Cnf_SalarySetup_GetAll_Result> HRP_Cnf_SalarySetup_GetAll(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Cnf_SalarySetup_GetAll_Result>("HRP_Cnf_SalarySetup_GetAll", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Cnf_SalarySetup_GetAll_Forhike_Result> HRP_Cnf_SalarySetup_GetAll_Forhike()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Cnf_SalarySetup_GetAll_Forhike_Result>("HRP_Cnf_SalarySetup_GetAll_Forhike");
+        }
+    
+        public virtual int HRP_Cnf_SalarySetup_Save(Nullable<int> empId, string details)
+        {
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("details", details) :
+                new ObjectParameter("details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Cnf_SalarySetup_Save", empIdParameter, detailsParameter);
+        }
+    
+        public virtual int HRP_Mst_Bank_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_Bank_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Bank_GetAll_Result> HRP_Mst_Bank_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAll_Result>("HRP_Mst_Bank_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Bank_GetAllActive_Result> HRP_Mst_Bank_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAllActive_Result>("HRP_Mst_Bank_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Bank_Save(string bankCode, string bankName, Nullable<int> iD)
+        {
+            var bankCodeParameter = bankCode != null ?
+                new ObjectParameter("bankCode", bankCode) :
+                new ObjectParameter("bankCode", typeof(string));
+    
+            var bankNameParameter = bankName != null ?
+                new ObjectParameter("bankName", bankName) :
+                new ObjectParameter("bankName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_Save", bankCodeParameter, bankNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_BloodGroup_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroup_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_BloodGroups_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroups_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_BloodGroups_GetAll_Result> HRP_Mst_BloodGroups_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_BloodGroups_GetAll_Result>("HRP_Mst_BloodGroups_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_BloodGroups_GetAllActive_Result> HRP_Mst_BloodGroups_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_BloodGroups_GetAllActive_Result>("HRP_Mst_BloodGroups_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_BloodGroups_Save(string bGCode, string bGCodeName, Nullable<int> iD)
+        {
+            var bGCodeParameter = bGCode != null ?
+                new ObjectParameter("BGCode", bGCode) :
+                new ObjectParameter("BGCode", typeof(string));
+    
+            var bGCodeNameParameter = bGCodeName != null ?
+                new ObjectParameter("BGCodeName", bGCodeName) :
+                new ObjectParameter("BGCodeName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroups_Save", bGCodeParameter, bGCodeNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Country_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_Country_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Country_GetAll_Result> HRP_Mst_Country_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Country_GetAll_Result>("HRP_Mst_Country_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Country_GetAllActive_Result> HRP_Mst_Country_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Country_GetAllActive_Result>("HRP_Mst_Country_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Country_Save(string countryCode, string countryName, Nullable<int> iD)
+        {
+            var countryCodeParameter = countryCode != null ?
+                new ObjectParameter("CountryCode", countryCode) :
+                new ObjectParameter("CountryCode", typeof(string));
+    
+            var countryNameParameter = countryName != null ?
+                new ObjectParameter("CountryName", countryName) :
+                new ObjectParameter("CountryName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Save", countryCodeParameter, countryNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Departments_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_Departments_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Departments_GetAll_Result> HRP_Mst_Departments_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Departments_GetAll_Result>("HRP_Mst_Departments_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Departments_GetAllActive_Result> HRP_Mst_Departments_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Departments_GetAllActive_Result>("HRP_Mst_Departments_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Departments_Save(string deptCode, string deptName, Nullable<int> iD)
+        {
+            var deptCodeParameter = deptCode != null ?
+                new ObjectParameter("DeptCode", deptCode) :
+                new ObjectParameter("DeptCode", typeof(string));
+    
+            var deptNameParameter = deptName != null ?
+                new ObjectParameter("DeptName", deptName) :
+                new ObjectParameter("DeptName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_Save", deptCodeParameter, deptNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Designation_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_Designation_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Designation_GetAll_Result> HRP_Mst_Designation_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Designation_GetAll_Result>("HRP_Mst_Designation_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Designation_GetAll_Active_Result> HRP_Mst_Designation_GetAll_Active()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Designation_GetAll_Active_Result>("HRP_Mst_Designation_GetAll_Active");
+        }
+    
+        public virtual int HRP_Mst_Designation_Save(string designationCode, string designationName, Nullable<int> iD)
+        {
+            var designationCodeParameter = designationCode != null ?
+                new ObjectParameter("DesignationCode", designationCode) :
+                new ObjectParameter("DesignationCode", typeof(string));
+    
+            var designationNameParameter = designationName != null ?
+                new ObjectParameter("DesignationName", designationName) :
+                new ObjectParameter("DesignationName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_Save", designationCodeParameter, designationNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_EmpDocs_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_EmpDocs_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_EmpDocs_GetAll_Result> HRP_Mst_EmpDocs_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmpDocs_GetAll_Result>("HRP_Mst_EmpDocs_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_EmpDocs_GetAllActive_Result> HRP_Mst_EmpDocs_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmpDocs_GetAllActive_Result>("HRP_Mst_EmpDocs_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_EmpDocs_Save(string empdocCode, string empdocName, Nullable<int> iD)
+        {
+            var empdocCodeParameter = empdocCode != null ?
+                new ObjectParameter("empdocCode", empdocCode) :
+                new ObjectParameter("empdocCode", typeof(string));
+    
+            var empdocNameParameter = empdocName != null ?
+                new ObjectParameter("empdocName", empdocName) :
+                new ObjectParameter("empdocName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_Save", empdocCodeParameter, empdocNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Employee_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Employee_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Employee_GetAll_Result> HRP_Mst_Employee_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Employee_GetAll_Result>("HRP_Mst_Employee_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Employee_GetAll_ForSalhike_Result> HRP_Mst_Employee_GetAll_ForSalhike()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Employee_GetAll_ForSalhike_Result>("HRP_Mst_Employee_GetAll_ForSalhike");
+        }
+    
+        public virtual ObjectResult<Nullable<int>> HRP_Mst_Employee_Save(string empID, string empName, string gender, Nullable<int> nationality, string primaryIDNo, Nullable<System.DateTime> dOB, string phone, string email, Nullable<System.DateTime> dOJ, Nullable<int> designation, Nullable<int> department, Nullable<int> workLocation, string empType, Nullable<int> subcontractorId, string timing, Nullable<int> reportingTo, Nullable<int> bank, string branch, string swiftCode, string accNo, Nullable<int> bloodgroup, Nullable<int> iD)
+        {
+            var empIDParameter = empID != null ?
+                new ObjectParameter("EmpID", empID) :
+                new ObjectParameter("EmpID", typeof(string));
+    
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var nationalityParameter = nationality.HasValue ?
+                new ObjectParameter("Nationality", nationality) :
+                new ObjectParameter("Nationality", typeof(int));
+    
+            var primaryIDNoParameter = primaryIDNo != null ?
+                new ObjectParameter("PrimaryIDNo", primaryIDNo) :
+                new ObjectParameter("PrimaryIDNo", typeof(string));
+    
+            var dOBParameter = dOB.HasValue ?
+                new ObjectParameter("DOB", dOB) :
+                new ObjectParameter("DOB", typeof(System.DateTime));
+    
+            var phoneParameter = phone != null ?
+                new ObjectParameter("phone", phone) :
+                new ObjectParameter("phone", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var dOJParameter = dOJ.HasValue ?
+                new ObjectParameter("DOJ", dOJ) :
+                new ObjectParameter("DOJ", typeof(System.DateTime));
+    
+            var designationParameter = designation.HasValue ?
+                new ObjectParameter("Designation", designation) :
+                new ObjectParameter("Designation", typeof(int));
+    
+            var departmentParameter = department.HasValue ?
+                new ObjectParameter("Department", department) :
+                new ObjectParameter("Department", typeof(int));
+    
+            var workLocationParameter = workLocation.HasValue ?
+                new ObjectParameter("WorkLocation", workLocation) :
+                new ObjectParameter("WorkLocation", typeof(int));
+    
+            var empTypeParameter = empType != null ?
+                new ObjectParameter("EmpType", empType) :
+                new ObjectParameter("EmpType", typeof(string));
+    
+            var subcontractorIdParameter = subcontractorId.HasValue ?
+                new ObjectParameter("SubcontractorId", subcontractorId) :
+                new ObjectParameter("SubcontractorId", typeof(int));
+    
+            var timingParameter = timing != null ?
+                new ObjectParameter("Timing", timing) :
+                new ObjectParameter("Timing", typeof(string));
+    
+            var reportingToParameter = reportingTo.HasValue ?
+                new ObjectParameter("ReportingTo", reportingTo) :
+                new ObjectParameter("ReportingTo", typeof(int));
+    
+            var bankParameter = bank.HasValue ?
+                new ObjectParameter("Bank", bank) :
+                new ObjectParameter("Bank", typeof(int));
+    
+            var branchParameter = branch != null ?
+                new ObjectParameter("Branch", branch) :
+                new ObjectParameter("Branch", typeof(string));
+    
+            var swiftCodeParameter = swiftCode != null ?
+                new ObjectParameter("SwiftCode", swiftCode) :
+                new ObjectParameter("SwiftCode", typeof(string));
+    
+            var accNoParameter = accNo != null ?
+                new ObjectParameter("AccNo", accNo) :
+                new ObjectParameter("AccNo", typeof(string));
+    
+            var bloodgroupParameter = bloodgroup.HasValue ?
+                new ObjectParameter("bloodgroup", bloodgroup) :
+                new ObjectParameter("bloodgroup", typeof(int));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("HRP_Mst_Employee_Save", empIDParameter, empNameParameter, genderParameter, nationalityParameter, primaryIDNoParameter, dOBParameter, phoneParameter, emailParameter, dOJParameter, designationParameter, departmentParameter, workLocationParameter, empTypeParameter, subcontractorIdParameter, timingParameter, reportingToParameter, bankParameter, branchParameter, swiftCodeParameter, accNoParameter, bloodgroupParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_EmployeeDocuments_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_EmployeeDocuments_GetAll_Result> HRP_Mst_EmployeeDocuments_GetAll(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmployeeDocuments_GetAll_Result>("HRP_Mst_EmployeeDocuments_GetAll", iDParameter);
+        }
+    
+        public virtual int HRP_Mst_EmployeeDocuments_Save(Nullable<int> empId, string details)
+        {
+            var empIdParameter = empId.HasValue ?
+                new ObjectParameter("EmpId", empId) :
+                new ObjectParameter("EmpId", typeof(int));
+    
+            var detailsParameter = details != null ?
+                new ObjectParameter("details", details) :
+                new ObjectParameter("details", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Save", empIdParameter, detailsParameter);
+        }
+    
+        public virtual int HRP_Mst_Holidays_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Holidays_GetAll_Result> HRP_Mst_Holidays_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAll_Result>("HRP_Mst_Holidays_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Holidays_GetAllActive_Result> HRP_Mst_Holidays_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAllActive_Result>("HRP_Mst_Holidays_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Holidays_Save(Nullable<System.DateTime> startDate, Nullable<System.DateTime> enDate, string description, Nullable<int> iD)
+        {
+            var startDateParameter = startDate.HasValue ?
+                new ObjectParameter("StartDate", startDate) :
+                new ObjectParameter("StartDate", typeof(System.DateTime));
+    
+            var enDateParameter = enDate.HasValue ?
+                new ObjectParameter("EnDate", enDate) :
+                new ObjectParameter("EnDate", typeof(System.DateTime));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_Save", startDateParameter, enDateParameter, descriptionParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_LeaveTypes_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_LeaveTypes_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_LeaveTypes_GetAll_Result> HRP_Mst_LeaveTypes_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_LeaveTypes_GetAll_Result>("HRP_Mst_LeaveTypes_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_LeaveTypes_GetAllActive_Result> HRP_Mst_LeaveTypes_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_LeaveTypes_GetAllActive_Result>("HRP_Mst_LeaveTypes_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_LeaveTypes_Save(string leaveTypeCode, string leaveTypeName, Nullable<int> iD)
+        {
+            var leaveTypeCodeParameter = leaveTypeCode != null ?
+                new ObjectParameter("LeaveTypeCode", leaveTypeCode) :
+                new ObjectParameter("LeaveTypeCode", typeof(string));
+    
+            var leaveTypeNameParameter = leaveTypeName != null ?
+                new ObjectParameter("LeaveTypeName", leaveTypeName) :
+                new ObjectParameter("LeaveTypeName", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_LeaveTypes_Save", leaveTypeCodeParameter, leaveTypeNameParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_OtherEarningsDeduction_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_OtherEarningsDeduction_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_OtherEarningsDeduction_GetAll_Result> HRP_Mst_OtherEarningsDeduction_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_OtherEarningsDeduction_GetAll_Result>("HRP_Mst_OtherEarningsDeduction_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_OtherEarningsDeduction_GetAllActive_Result> HRP_Mst_OtherEarningsDeduction_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_OtherEarningsDeduction_GetAllActive_Result>("HRP_Mst_OtherEarningsDeduction_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_OtherEarningsDeduction_Save(string otherEarningsCode, string otherEarningsName, string addOrDeduct, Nullable<int> iD)
+        {
+            var otherEarningsCodeParameter = otherEarningsCode != null ?
+                new ObjectParameter("OtherEarningsCode", otherEarningsCode) :
+                new ObjectParameter("OtherEarningsCode", typeof(string));
+    
+            var otherEarningsNameParameter = otherEarningsName != null ?
+                new ObjectParameter("OtherEarningsName", otherEarningsName) :
+                new ObjectParameter("OtherEarningsName", typeof(string));
+    
+            var addOrDeductParameter = addOrDeduct != null ?
+                new ObjectParameter("AddOrDeduct", addOrDeduct) :
+                new ObjectParameter("AddOrDeduct", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_OtherEarningsDeduction_Save", otherEarningsCodeParameter, otherEarningsNameParameter, addOrDeductParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_SalaryComponents_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAll_Result> HRP_Mst_SalaryComponents_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAll_Result>("HRP_Mst_SalaryComponents_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAllActive_Result> HRP_Mst_SalaryComponents_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAllActive_Result>("HRP_Mst_SalaryComponents_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_SalaryComponents_Save(string salaryComponentCode, string salaryComponentName, string addOrDeduct, Nullable<decimal> defaultAmount, Nullable<decimal> defaultpercent, Nullable<int> iD)
+        {
+            var salaryComponentCodeParameter = salaryComponentCode != null ?
+                new ObjectParameter("SalaryComponentCode", salaryComponentCode) :
+                new ObjectParameter("SalaryComponentCode", typeof(string));
+    
+            var salaryComponentNameParameter = salaryComponentName != null ?
+                new ObjectParameter("SalaryComponentName", salaryComponentName) :
+                new ObjectParameter("SalaryComponentName", typeof(string));
+    
+            var addOrDeductParameter = addOrDeduct != null ?
+                new ObjectParameter("AddOrDeduct", addOrDeduct) :
+                new ObjectParameter("AddOrDeduct", typeof(string));
+    
+            var defaultAmountParameter = defaultAmount.HasValue ?
+                new ObjectParameter("DefaultAmount", defaultAmount) :
+                new ObjectParameter("DefaultAmount", typeof(decimal));
+    
+            var defaultpercentParameter = defaultpercent.HasValue ?
+                new ObjectParameter("defaultpercent", defaultpercent) :
+                new ObjectParameter("defaultpercent", typeof(decimal));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_Save", salaryComponentCodeParameter, salaryComponentNameParameter, addOrDeductParameter, defaultAmountParameter, defaultpercentParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Shift_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Shift_GetAll_Result> HRP_Mst_Shift_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAll_Result>("HRP_Mst_Shift_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Shift_GetAllActive_Result> HRP_Mst_Shift_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAllActive_Result>("HRP_Mst_Shift_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Shift_Save(string shiftCode, string shiftName, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, Nullable<int> iD)
+        {
+            var shiftCodeParameter = shiftCode != null ?
+                new ObjectParameter("ShiftCode", shiftCode) :
+                new ObjectParameter("ShiftCode", typeof(string));
+    
+            var shiftNameParameter = shiftName != null ?
+                new ObjectParameter("ShiftName", shiftName) :
+                new ObjectParameter("ShiftName", typeof(string));
+    
+            var startTimeParameter = startTime.HasValue ?
+                new ObjectParameter("StartTime", startTime) :
+                new ObjectParameter("StartTime", typeof(System.TimeSpan));
+    
+            var endTimeParameter = endTime.HasValue ?
+                new ObjectParameter("EndTime", endTime) :
+                new ObjectParameter("EndTime", typeof(System.TimeSpan));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_Save", shiftCodeParameter, shiftNameParameter, startTimeParameter, endTimeParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_Subcontractors_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_Subcontractors_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Subcontractors_GetAll_Result> HRP_Mst_Subcontractors_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Subcontractors_GetAll_Result>("HRP_Mst_Subcontractors_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_Subcontractors_GetAllActive_Result> HRP_Mst_Subcontractors_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Subcontractors_GetAllActive_Result>("HRP_Mst_Subcontractors_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_Subcontractors_Save(string subcontractorCode, string subcontractorName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
+        {
+            var subcontractorCodeParameter = subcontractorCode != null ?
+                new ObjectParameter("subcontractorCode", subcontractorCode) :
+                new ObjectParameter("subcontractorCode", typeof(string));
+    
+            var subcontractorNameParameter = subcontractorName != null ?
+                new ObjectParameter("subcontractorName", subcontractorName) :
+                new ObjectParameter("subcontractorName", typeof(string));
+    
+            var contactPersonParameter = contactPerson != null ?
+                new ObjectParameter("ContactPerson", contactPerson) :
+                new ObjectParameter("ContactPerson", typeof(string));
+    
+            var contactNumberParameter = contactNumber != null ?
+                new ObjectParameter("ContactNumber", contactNumber) :
+                new ObjectParameter("ContactNumber", typeof(string));
+    
+            var contactEmailParameter = contactEmail != null ?
+                new ObjectParameter("ContactEmail", contactEmail) :
+                new ObjectParameter("ContactEmail", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_Save", subcontractorCodeParameter, subcontractorNameParameter, contactPersonParameter, contactNumberParameter, contactEmailParameter, iDParameter);
+        }
+    
+        public virtual int HRP_Mst_WorkLocation_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_ActivateDeactivate", iDParameter, statusParameter);
+        }
+    
+        public virtual int HRP_Mst_WorkLocation_Delete(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_Delete", iDParameter);
+        }
+    
+        public virtual ObjectResult<HRP_Mst_WorkLocation_GetAll_Result> HRP_Mst_WorkLocation_GetAll()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_WorkLocation_GetAll_Result>("HRP_Mst_WorkLocation_GetAll");
+        }
+    
+        public virtual ObjectResult<HRP_Mst_WorkLocation_GetAllActive_Result> HRP_Mst_WorkLocation_GetAllActive()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_WorkLocation_GetAllActive_Result>("HRP_Mst_WorkLocation_GetAllActive");
+        }
+    
+        public virtual int HRP_Mst_WorkLocation_Save(string workLocationCode, string workLocationName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
+        {
+            var workLocationCodeParameter = workLocationCode != null ?
+                new ObjectParameter("WorkLocationCode", workLocationCode) :
+                new ObjectParameter("WorkLocationCode", typeof(string));
+    
+            var workLocationNameParameter = workLocationName != null ?
+                new ObjectParameter("WorkLocationName", workLocationName) :
+                new ObjectParameter("WorkLocationName", typeof(string));
+    
+            var contactPersonParameter = contactPerson != null ?
+                new ObjectParameter("ContactPerson", contactPerson) :
+                new ObjectParameter("ContactPerson", typeof(string));
+    
+            var contactNumberParameter = contactNumber != null ?
+                new ObjectParameter("ContactNumber", contactNumber) :
+                new ObjectParameter("ContactNumber", typeof(string));
+    
+            var contactEmailParameter = contactEmail != null ?
+                new ObjectParameter("ContactEmail", contactEmail) :
+                new ObjectParameter("ContactEmail", typeof(string));
+    
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_Save", workLocationCodeParameter, workLocationNameParameter, contactPersonParameter, contactNumberParameter, contactEmailParameter, iDParameter);
+        }
+    
         public virtual ObjectResult<VSR_Mst_OwnVehicles_GetAll_Result> VSR_Mst_OwnVehicles_GetAll()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Mst_OwnVehicles_GetAll_Result>("VSR_Mst_OwnVehicles_GetAll");
@@ -171,6 +1171,11 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntry_GetDashboardData_Result>("VSR_Trn_ServiceEntry_GetDashboardData");
         }
     
+        public virtual ObjectResult<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result> VSR_Trn_ServiceEntry_Head_getMaxEntryNo()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result>("VSR_Trn_ServiceEntry_Head_getMaxEntryNo");
+        }
+    
         public virtual ObjectResult<Nullable<int>> VSR_Trn_ServiceEntry_IsShowOpening()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("VSR_Trn_ServiceEntry_IsShowOpening");
@@ -229,243 +1234,6 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("VSR_Trn_ServiceEntry_Save", entryStartNoParameter, bayTypeParameter, partyTypeParameter, vehicleNumberParameter, vehicleTypeParameter, imgUrlParameter, remarksParameter, customerNameParameter, totalAmountParameter, discountParameter, netAmountParameter, detailsParameter);
         }
     
-        public virtual ObjectResult<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result> VSR_Trn_ServiceEntry_Head_getMaxEntryNo()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result>("VSR_Trn_ServiceEntry_Head_getMaxEntryNo");
-        }
-    
-        public virtual int HRP_Mst_BloodGroups_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroups_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_BloodGroups_Save(string bGCode, string bGCodeName, Nullable<int> iD)
-        {
-            var bGCodeParameter = bGCode != null ?
-                new ObjectParameter("BGCode", bGCode) :
-                new ObjectParameter("BGCode", typeof(string));
-    
-            var bGCodeNameParameter = bGCodeName != null ?
-                new ObjectParameter("BGCodeName", bGCodeName) :
-                new ObjectParameter("BGCodeName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroups_Save", bGCodeParameter, bGCodeNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Country_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Country_Save(string countryCode, string countryName, Nullable<int> iD)
-        {
-            var countryCodeParameter = countryCode != null ?
-                new ObjectParameter("CountryCode", countryCode) :
-                new ObjectParameter("CountryCode", typeof(string));
-    
-            var countryNameParameter = countryName != null ?
-                new ObjectParameter("CountryName", countryName) :
-                new ObjectParameter("CountryName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_Save", countryCodeParameter, countryNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Designation_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Designation_Save(string designationCode, string designationName, Nullable<int> iD)
-        {
-            var designationCodeParameter = designationCode != null ?
-                new ObjectParameter("DesignationCode", designationCode) :
-                new ObjectParameter("DesignationCode", typeof(string));
-    
-            var designationNameParameter = designationName != null ?
-                new ObjectParameter("DesignationName", designationName) :
-                new ObjectParameter("DesignationName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_Save", designationCodeParameter, designationNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Departments_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Departments_Save(string deptCode, string deptName, Nullable<int> iD)
-        {
-            var deptCodeParameter = deptCode != null ?
-                new ObjectParameter("DeptCode", deptCode) :
-                new ObjectParameter("DeptCode", typeof(string));
-    
-            var deptNameParameter = deptName != null ?
-                new ObjectParameter("DeptName", deptName) :
-                new ObjectParameter("DeptName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_Save", deptCodeParameter, deptNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Bank_Save(string bankCode, string bankName, Nullable<int> iD)
-        {
-            var bankCodeParameter = bankCode != null ?
-                new ObjectParameter("bankCode", bankCode) :
-                new ObjectParameter("bankCode", typeof(string));
-    
-            var bankNameParameter = bankName != null ?
-                new ObjectParameter("bankName", bankName) :
-                new ObjectParameter("bankName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_Save", bankCodeParameter, bankNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_EmpDocs_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_EmpDocs_Save(string empdocCode, string empdocName, Nullable<int> iD)
-        {
-            var empdocCodeParameter = empdocCode != null ?
-                new ObjectParameter("empdocCode", empdocCode) :
-                new ObjectParameter("empdocCode", typeof(string));
-    
-            var empdocNameParameter = empdocName != null ?
-                new ObjectParameter("empdocName", empdocName) :
-                new ObjectParameter("empdocName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_Save", empdocCodeParameter, empdocNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Subcontractors_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Subcontractors_Save(string subcontractorCode, string subcontractorName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
-        {
-            var subcontractorCodeParameter = subcontractorCode != null ?
-                new ObjectParameter("subcontractorCode", subcontractorCode) :
-                new ObjectParameter("subcontractorCode", typeof(string));
-    
-            var subcontractorNameParameter = subcontractorName != null ?
-                new ObjectParameter("subcontractorName", subcontractorName) :
-                new ObjectParameter("subcontractorName", typeof(string));
-    
-            var contactPersonParameter = contactPerson != null ?
-                new ObjectParameter("ContactPerson", contactPerson) :
-                new ObjectParameter("ContactPerson", typeof(string));
-    
-            var contactNumberParameter = contactNumber != null ?
-                new ObjectParameter("ContactNumber", contactNumber) :
-                new ObjectParameter("ContactNumber", typeof(string));
-    
-            var contactEmailParameter = contactEmail != null ?
-                new ObjectParameter("ContactEmail", contactEmail) :
-                new ObjectParameter("ContactEmail", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_Save", subcontractorCodeParameter, subcontractorNameParameter, contactPersonParameter, contactNumberParameter, contactEmailParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_WorkLocation_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_Delete", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_WorkLocation_Save(string workLocationCode, string workLocationName, string contactPerson, string contactNumber, string contactEmail, Nullable<int> iD)
-        {
-            var workLocationCodeParameter = workLocationCode != null ?
-                new ObjectParameter("WorkLocationCode", workLocationCode) :
-                new ObjectParameter("WorkLocationCode", typeof(string));
-    
-            var workLocationNameParameter = workLocationName != null ?
-                new ObjectParameter("WorkLocationName", workLocationName) :
-                new ObjectParameter("WorkLocationName", typeof(string));
-    
-            var contactPersonParameter = contactPerson != null ?
-                new ObjectParameter("ContactPerson", contactPerson) :
-                new ObjectParameter("ContactPerson", typeof(string));
-    
-            var contactNumberParameter = contactNumber != null ?
-                new ObjectParameter("ContactNumber", contactNumber) :
-                new ObjectParameter("ContactNumber", typeof(string));
-    
-            var contactEmailParameter = contactEmail != null ?
-                new ObjectParameter("ContactEmail", contactEmail) :
-                new ObjectParameter("ContactEmail", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_Save", workLocationCodeParameter, workLocationNameParameter, contactPersonParameter, contactNumberParameter, contactEmailParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Bank_Delete(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_Delete", iDParameter);
-        }
-    
         public virtual ObjectResult<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result> VSR_Trn_ServiceEntryDetails_GetByServeEntryID(Nullable<int> serviceEntryID)
         {
             var serviceEntryIDParameter = serviceEntryID.HasValue ?
@@ -475,645 +1243,463 @@ namespace NexusProductAPI.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<VSR_Trn_ServiceEntryDetails_GetByServeEntryID_Result>("VSR_Trn_ServiceEntryDetails_GetByServeEntryID", serviceEntryIDParameter);
         }
     
-        public virtual int HRP_Mst_Employee_Delete(Nullable<int> iD)
+        public virtual int WSP_Mst_ItemMaster_DML_Oper(Nullable<int> iD, string itemCode, string itemNameEn, string itemNameAr, Nullable<decimal> price, Nullable<int> uOM, Nullable<bool> active, string operation)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Employee_Delete", iDParameter);
+            var itemCodeParameter = itemCode != null ?
+                new ObjectParameter("ItemCode", itemCode) :
+                new ObjectParameter("ItemCode", typeof(string));
+    
+            var itemNameEnParameter = itemNameEn != null ?
+                new ObjectParameter("ItemNameEn", itemNameEn) :
+                new ObjectParameter("ItemNameEn", typeof(string));
+    
+            var itemNameArParameter = itemNameAr != null ?
+                new ObjectParameter("ItemNameAr", itemNameAr) :
+                new ObjectParameter("ItemNameAr", typeof(string));
+    
+            var priceParameter = price.HasValue ?
+                new ObjectParameter("Price", price) :
+                new ObjectParameter("Price", typeof(decimal));
+    
+            var uOMParameter = uOM.HasValue ?
+                new ObjectParameter("UOM", uOM) :
+                new ObjectParameter("UOM", typeof(int));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_ItemMaster_DML_Oper", iDParameter, itemCodeParameter, itemNameEnParameter, itemNameArParameter, priceParameter, uOMParameter, activeParameter, operationParameter);
         }
     
-        public virtual int HRP_Mst_EmployeeDocuments_Delete(Nullable<int> iD)
+        public virtual ObjectResult<WSP_Mst_ItemMaster_GetList_Result> WSP_Mst_ItemMaster_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_ItemMaster_GetList_Result>("WSP_Mst_ItemMaster_GetList");
+        }
+    
+        public virtual int WSP_Mst_Technician_DML_Oper(Nullable<int> iD, string empID, Nullable<int> technicianType, Nullable<int> workshop, string technicianName, Nullable<bool> active, string operation)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Delete", iDParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_EmployeeDocuments_GetAll_Result> HRP_Mst_EmployeeDocuments_GetAll(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmployeeDocuments_GetAll_Result>("HRP_Mst_EmployeeDocuments_GetAll", iDParameter);
-        }
-    
-        public virtual int HRP_Mst_EmployeeDocuments_Save(Nullable<int> empId, string details)
-        {
-            var empIdParameter = empId.HasValue ?
-                new ObjectParameter("EmpId", empId) :
-                new ObjectParameter("EmpId", typeof(int));
-    
-            var detailsParameter = details != null ?
-                new ObjectParameter("details", details) :
-                new ObjectParameter("details", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmployeeDocuments_Save", empIdParameter, detailsParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Employee_GetAll_Result> HRP_Mst_Employee_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Employee_GetAll_Result>("HRP_Mst_Employee_GetAll");
-        }
-    
-        public virtual ObjectResult<Nullable<int>> HRP_Mst_Employee_Save(string empID, string empName, string gender, Nullable<int> nationality, string primaryIDNo, Nullable<System.DateTime> dOB, string phone, string email, Nullable<System.DateTime> dOJ, Nullable<int> designation, Nullable<int> department, Nullable<int> workLocation, string empType, Nullable<int> subcontractorId, string timing, Nullable<int> reportingTo, Nullable<int> bank, string branch, string swiftCode, string accNo, Nullable<int> bloodgroup, Nullable<int> iD)
-        {
             var empIDParameter = empID != null ?
                 new ObjectParameter("EmpID", empID) :
                 new ObjectParameter("EmpID", typeof(string));
     
-            var empNameParameter = empName != null ?
-                new ObjectParameter("EmpName", empName) :
-                new ObjectParameter("EmpName", typeof(string));
+            var technicianTypeParameter = technicianType.HasValue ?
+                new ObjectParameter("TechnicianType", technicianType) :
+                new ObjectParameter("TechnicianType", typeof(int));
     
-            var genderParameter = gender != null ?
-                new ObjectParameter("Gender", gender) :
-                new ObjectParameter("Gender", typeof(string));
+            var workshopParameter = workshop.HasValue ?
+                new ObjectParameter("Workshop", workshop) :
+                new ObjectParameter("Workshop", typeof(int));
     
-            var nationalityParameter = nationality.HasValue ?
-                new ObjectParameter("Nationality", nationality) :
-                new ObjectParameter("Nationality", typeof(int));
+            var technicianNameParameter = technicianName != null ?
+                new ObjectParameter("TechnicianName", technicianName) :
+                new ObjectParameter("TechnicianName", typeof(string));
     
-            var primaryIDNoParameter = primaryIDNo != null ?
-                new ObjectParameter("PrimaryIDNo", primaryIDNo) :
-                new ObjectParameter("PrimaryIDNo", typeof(string));
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
     
-            var dOBParameter = dOB.HasValue ?
-                new ObjectParameter("DOB", dOB) :
-                new ObjectParameter("DOB", typeof(System.DateTime));
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
     
-            var phoneParameter = phone != null ?
-                new ObjectParameter("phone", phone) :
-                new ObjectParameter("phone", typeof(string));
-    
-            var emailParameter = email != null ?
-                new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
-    
-            var dOJParameter = dOJ.HasValue ?
-                new ObjectParameter("DOJ", dOJ) :
-                new ObjectParameter("DOJ", typeof(System.DateTime));
-    
-            var designationParameter = designation.HasValue ?
-                new ObjectParameter("Designation", designation) :
-                new ObjectParameter("Designation", typeof(int));
-    
-            var departmentParameter = department.HasValue ?
-                new ObjectParameter("Department", department) :
-                new ObjectParameter("Department", typeof(int));
-    
-            var workLocationParameter = workLocation.HasValue ?
-                new ObjectParameter("WorkLocation", workLocation) :
-                new ObjectParameter("WorkLocation", typeof(int));
-    
-            var empTypeParameter = empType != null ?
-                new ObjectParameter("EmpType", empType) :
-                new ObjectParameter("EmpType", typeof(string));
-    
-            var subcontractorIdParameter = subcontractorId.HasValue ?
-                new ObjectParameter("SubcontractorId", subcontractorId) :
-                new ObjectParameter("SubcontractorId", typeof(int));
-    
-            var timingParameter = timing != null ?
-                new ObjectParameter("Timing", timing) :
-                new ObjectParameter("Timing", typeof(string));
-    
-            var reportingToParameter = reportingTo.HasValue ?
-                new ObjectParameter("ReportingTo", reportingTo) :
-                new ObjectParameter("ReportingTo", typeof(int));
-    
-            var bankParameter = bank.HasValue ?
-                new ObjectParameter("Bank", bank) :
-                new ObjectParameter("Bank", typeof(int));
-    
-            var branchParameter = branch != null ?
-                new ObjectParameter("Branch", branch) :
-                new ObjectParameter("Branch", typeof(string));
-    
-            var swiftCodeParameter = swiftCode != null ?
-                new ObjectParameter("SwiftCode", swiftCode) :
-                new ObjectParameter("SwiftCode", typeof(string));
-    
-            var accNoParameter = accNo != null ?
-                new ObjectParameter("AccNo", accNo) :
-                new ObjectParameter("AccNo", typeof(string));
-    
-            var bloodgroupParameter = bloodgroup.HasValue ?
-                new ObjectParameter("bloodgroup", bloodgroup) :
-                new ObjectParameter("bloodgroup", typeof(int));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("HRP_Mst_Employee_Save", empIDParameter, empNameParameter, genderParameter, nationalityParameter, primaryIDNoParameter, dOBParameter, phoneParameter, emailParameter, dOJParameter, designationParameter, departmentParameter, workLocationParameter, empTypeParameter, subcontractorIdParameter, timingParameter, reportingToParameter, bankParameter, branchParameter, swiftCodeParameter, accNoParameter, bloodgroupParameter, iDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_Technician_DML_Oper", iDParameter, empIDParameter, technicianTypeParameter, workshopParameter, technicianNameParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<CMN_Mst_UserRoles_GetAll_Result> CMN_Mst_UserRoles_GetAll()
+        public virtual ObjectResult<WSP_Mst_Technician_GetList_Result> WSP_Mst_Technician_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_UserRoles_GetAll_Result>("CMN_Mst_UserRoles_GetAll");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_Technician_GetList_Result>("WSP_Mst_Technician_GetList");
         }
     
-        public virtual int CMN_Mst_UserRoles_Save(string userRoleNameEn)
-        {
-            var userRoleNameEnParameter = userRoleNameEn != null ?
-                new ObjectParameter("UserRoleNameEn", userRoleNameEn) :
-                new ObjectParameter("UserRoleNameEn", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_Mst_UserRoles_Save", userRoleNameEnParameter);
-        }
-    
-        public virtual ObjectResult<CMN_Utl_Modules_GetAll_Result> CMN_Utl_Modules_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_Result>("CMN_Utl_Modules_GetAll");
-        }
-    
-        public virtual int CMN_STN_RoleToMenu_Save(Nullable<int> roleId, string details)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("RoleId", roleId) :
-                new ObjectParameter("RoleId", typeof(int));
-    
-            var detailsParameter = details != null ?
-                new ObjectParameter("details", details) :
-                new ObjectParameter("details", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CMN_STN_RoleToMenu_Save", roleIdParameter, detailsParameter);
-        }
-    
-        public virtual ObjectResult<CMN_STN_RoleToMenu_GetAll_Result> CMN_STN_RoleToMenu_GetAll(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("RoleId", roleId) :
-                new ObjectParameter("RoleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_STN_RoleToMenu_GetAll_Result>("CMN_STN_RoleToMenu_GetAll", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<CMN_Utl_Menu_GetAll_Result> CMN_Utl_Menu_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_Result>("CMN_Utl_Menu_GetAll");
-        }
-    
-        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_Result> CMN_Utl_MenuItems_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_Result>("CMN_Utl_MenuItems_GetAll");
-        }
-    
-        public virtual ObjectResult<CMN_Utl_Menu_GetAll_ByRoleID_Result> CMN_Utl_Menu_GetAll_ByRoleID(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("RoleId", roleId) :
-                new ObjectParameter("RoleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Menu_GetAll_ByRoleID_Result>("CMN_Utl_Menu_GetAll_ByRoleID", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<CMN_Utl_MenuItems_GetAll_ByRoleID_Result> CMN_Utl_MenuItems_GetAll_ByRoleID(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("RoleId", roleId) :
-                new ObjectParameter("RoleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_MenuItems_GetAll_ByRoleID_Result>("CMN_Utl_MenuItems_GetAll_ByRoleID", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<CMN_Utl_Modules_GetAll_ByRoleID_Result> CMN_Utl_Modules_GetAll_ByRoleID(Nullable<int> roleId)
-        {
-            var roleIdParameter = roleId.HasValue ?
-                new ObjectParameter("RoleId", roleId) :
-                new ObjectParameter("RoleId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Utl_Modules_GetAll_ByRoleID_Result>("CMN_Utl_Modules_GetAll_ByRoleID", roleIdParameter);
-        }
-    
-        public virtual ObjectResult<CMN_Mst_User_Authenticate_Result> CMN_Mst_User_Authenticate(string userName, string password)
-        {
-            var userNameParameter = userName != null ?
-                new ObjectParameter("UserName", userName) :
-                new ObjectParameter("UserName", typeof(string));
-    
-            var passwordParameter = password != null ?
-                new ObjectParameter("Password", password) :
-                new ObjectParameter("Password", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_User_Authenticate_Result>("CMN_Mst_User_Authenticate", userNameParameter, passwordParameter);
-        }
-    
-        public virtual int HRP_Mst_Bank_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        public virtual int WSP_Mst_TechnicianTypes_DML_Oper(Nullable<int> iD, string techTypeNameEn, string techTypeNameAr, Nullable<decimal> chargePerHr, Nullable<bool> active, string operation)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
+            var techTypeNameEnParameter = techTypeNameEn != null ?
+                new ObjectParameter("TechTypeNameEn", techTypeNameEn) :
+                new ObjectParameter("TechTypeNameEn", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Bank_ActivateDeactivate", iDParameter, statusParameter);
+            var techTypeNameArParameter = techTypeNameAr != null ?
+                new ObjectParameter("TechTypeNameAr", techTypeNameAr) :
+                new ObjectParameter("TechTypeNameAr", typeof(string));
+    
+            var chargePerHrParameter = chargePerHr.HasValue ?
+                new ObjectParameter("ChargePerHr", chargePerHr) :
+                new ObjectParameter("ChargePerHr", typeof(decimal));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_TechnicianTypes_DML_Oper", iDParameter, techTypeNameEnParameter, techTypeNameArParameter, chargePerHrParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_Bank_GetAllActive_Result> HRP_Mst_Bank_GetAllActive()
+        public virtual ObjectResult<WSP_Mst_TechnicianTypes_GetList_Result> WSP_Mst_TechnicianTypes_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAllActive_Result>("HRP_Mst_Bank_GetAllActive");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_TechnicianTypes_GetList_Result>("WSP_Mst_TechnicianTypes_GetList");
         }
     
-        public virtual int HRP_Mst_Country_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Country_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Bank_GetAll_Result> HRP_Mst_Bank_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Bank_GetAll_Result>("HRP_Mst_Bank_GetAll");
-        }
-    
-        public virtual int HRP_Mst_BloodGroup_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        public virtual int WSP_Mst_UOM_DML_Oper(Nullable<int> iD, string uOM_Code, string uOM_NameEn, string uOM_NameAr, Nullable<bool> active, string operation)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
+            var uOM_CodeParameter = uOM_Code != null ?
+                new ObjectParameter("UOM_Code", uOM_Code) :
+                new ObjectParameter("UOM_Code", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_BloodGroup_ActivateDeactivate", iDParameter, statusParameter);
+            var uOM_NameEnParameter = uOM_NameEn != null ?
+                new ObjectParameter("UOM_NameEn", uOM_NameEn) :
+                new ObjectParameter("UOM_NameEn", typeof(string));
+    
+            var uOM_NameArParameter = uOM_NameAr != null ?
+                new ObjectParameter("UOM_NameAr", uOM_NameAr) :
+                new ObjectParameter("UOM_NameAr", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_UOM_DML_Oper", iDParameter, uOM_CodeParameter, uOM_NameEnParameter, uOM_NameArParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_BloodGroups_GetAll_Result> HRP_Mst_BloodGroups_GetAll()
+        public virtual ObjectResult<WSP_Mst_UOM_GetList_Result> WSP_Mst_UOM_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_BloodGroups_GetAll_Result>("HRP_Mst_BloodGroups_GetAll");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_UOM_GetList_Result>("WSP_Mst_UOM_GetList");
         }
     
-        public virtual ObjectResult<HRP_Mst_BloodGroups_GetAllActive_Result> HRP_Mst_BloodGroups_GetAllActive()
+        public virtual int WSP_Mst_Brands_DML_Oper(Nullable<int> id, string brandNameEn, string brandNameAr, Nullable<bool> active, string operation)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_BloodGroups_GetAllActive_Result>("HRP_Mst_BloodGroups_GetAllActive");
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var brandNameEnParameter = brandNameEn != null ?
+                new ObjectParameter("brandNameEn", brandNameEn) :
+                new ObjectParameter("brandNameEn", typeof(string));
+    
+            var brandNameArParameter = brandNameAr != null ?
+                new ObjectParameter("brandNameAr", brandNameAr) :
+                new ObjectParameter("brandNameAr", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_Brands_DML_Oper", idParameter, brandNameEnParameter, brandNameArParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_Country_GetAll_Result> HRP_Mst_Country_GetAll()
+        public virtual ObjectResult<WSP_Mst_Brands_GetList_Result> WSP_Mst_Brands_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Country_GetAll_Result>("HRP_Mst_Country_GetAll");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_Brands_GetList_Result>("WSP_Mst_Brands_GetList");
         }
     
-        public virtual ObjectResult<HRP_Mst_Country_GetAllActive_Result> HRP_Mst_Country_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Country_GetAllActive_Result>("HRP_Mst_Country_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_Departments_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Departments_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Departments_GetAll_Result> HRP_Mst_Departments_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Departments_GetAll_Result>("HRP_Mst_Departments_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Departments_GetAllActive_Result> HRP_Mst_Departments_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Departments_GetAllActive_Result>("HRP_Mst_Departments_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_Designation_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Designation_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Designation_GetAll_Result> HRP_Mst_Designation_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Designation_GetAll_Result>("HRP_Mst_Designation_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Designation_GetAll_Active_Result> HRP_Mst_Designation_GetAll_Active()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Designation_GetAll_Active_Result>("HRP_Mst_Designation_GetAll_Active");
-        }
-    
-        public virtual int HRP_Mst_EmpDocs_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        public virtual int WSP_Mst_Customers_DML_Oper(Nullable<int> iD, Nullable<int> type, string uniqueIDNo, Nullable<int> location, string customerName, string contactPerson, string contactNo, string contactEmail, Nullable<bool> active, string operation)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
                 new ObjectParameter("ID", typeof(int));
     
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
+            var typeParameter = type.HasValue ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_EmpDocs_ActivateDeactivate", iDParameter, statusParameter);
+            var uniqueIDNoParameter = uniqueIDNo != null ?
+                new ObjectParameter("uniqueIDNo", uniqueIDNo) :
+                new ObjectParameter("uniqueIDNo", typeof(string));
+    
+            var locationParameter = location.HasValue ?
+                new ObjectParameter("location", location) :
+                new ObjectParameter("location", typeof(int));
+    
+            var customerNameParameter = customerName != null ?
+                new ObjectParameter("customerName", customerName) :
+                new ObjectParameter("customerName", typeof(string));
+    
+            var contactPersonParameter = contactPerson != null ?
+                new ObjectParameter("contactPerson", contactPerson) :
+                new ObjectParameter("contactPerson", typeof(string));
+    
+            var contactNoParameter = contactNo != null ?
+                new ObjectParameter("contactNo", contactNo) :
+                new ObjectParameter("contactNo", typeof(string));
+    
+            var contactEmailParameter = contactEmail != null ?
+                new ObjectParameter("contactEmail", contactEmail) :
+                new ObjectParameter("contactEmail", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_Customers_DML_Oper", iDParameter, typeParameter, uniqueIDNoParameter, locationParameter, customerNameParameter, contactPersonParameter, contactNoParameter, contactEmailParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_EmpDocs_GetAll_Result> HRP_Mst_EmpDocs_GetAll()
+        public virtual int WSP_Mst_ServiceTypes_DML_Oper(Nullable<int> id, string serviceTypeNameEn, string serviceTypeNameAr, Nullable<long> kilometre, string active, string operation)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmpDocs_GetAll_Result>("HRP_Mst_EmpDocs_GetAll");
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var serviceTypeNameEnParameter = serviceTypeNameEn != null ?
+                new ObjectParameter("serviceTypeNameEn", serviceTypeNameEn) :
+                new ObjectParameter("serviceTypeNameEn", typeof(string));
+    
+            var serviceTypeNameArParameter = serviceTypeNameAr != null ?
+                new ObjectParameter("serviceTypeNameAr", serviceTypeNameAr) :
+                new ObjectParameter("serviceTypeNameAr", typeof(string));
+    
+            var kilometreParameter = kilometre.HasValue ?
+                new ObjectParameter("kilometre", kilometre) :
+                new ObjectParameter("kilometre", typeof(long));
+    
+            var activeParameter = active != null ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(string));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_ServiceTypes_DML_Oper", idParameter, serviceTypeNameEnParameter, serviceTypeNameArParameter, kilometreParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_EmpDocs_GetAllActive_Result> HRP_Mst_EmpDocs_GetAllActive()
+        public virtual ObjectResult<WSP_Mst_ServiceTypes_GetList_Result> WSP_Mst_ServiceTypes_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_EmpDocs_GetAllActive_Result>("HRP_Mst_EmpDocs_GetAllActive");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_ServiceTypes_GetList_Result>("WSP_Mst_ServiceTypes_GetList");
         }
     
-        public virtual int HRP_Mst_Subcontractors_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
+        public virtual int WSP_Mst_Vehicles_DML_Oper(Nullable<int> id, Nullable<int> vehicleTypeID, Nullable<int> vehicleSubTypeID, string regNo, string fleetNo, Nullable<System.DateTime> regExpiryDate, string description, Nullable<int> brandID, Nullable<int> yearOfManufact, Nullable<System.DateTime> firstRegDate, string engineNo, string chasisNo, Nullable<System.DateTime> purchaseDate, Nullable<decimal> purchaseValue, Nullable<long> serviceInterval_KM, Nullable<int> serviceInterval_Months, Nullable<short> status, Nullable<bool> active, string operation)
         {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
     
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
+            var vehicleTypeIDParameter = vehicleTypeID.HasValue ?
+                new ObjectParameter("vehicleTypeID", vehicleTypeID) :
+                new ObjectParameter("vehicleTypeID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Subcontractors_ActivateDeactivate", iDParameter, statusParameter);
-        }
+            var vehicleSubTypeIDParameter = vehicleSubTypeID.HasValue ?
+                new ObjectParameter("vehicleSubTypeID", vehicleSubTypeID) :
+                new ObjectParameter("vehicleSubTypeID", typeof(int));
     
-        public virtual ObjectResult<HRP_Mst_Subcontractors_GetAll_Result> HRP_Mst_Subcontractors_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Subcontractors_GetAll_Result>("HRP_Mst_Subcontractors_GetAll");
-        }
+            var regNoParameter = regNo != null ?
+                new ObjectParameter("regNo", regNo) :
+                new ObjectParameter("regNo", typeof(string));
     
-        public virtual ObjectResult<HRP_Mst_Subcontractors_GetAllActive_Result> HRP_Mst_Subcontractors_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Subcontractors_GetAllActive_Result>("HRP_Mst_Subcontractors_GetAllActive");
-        }
+            var fleetNoParameter = fleetNo != null ?
+                new ObjectParameter("FleetNo", fleetNo) :
+                new ObjectParameter("FleetNo", typeof(string));
     
-        public virtual ObjectResult<HRP_Mst_WorkLocation_GetAll_Result> HRP_Mst_WorkLocation_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_WorkLocation_GetAll_Result>("HRP_Mst_WorkLocation_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_WorkLocation_GetAllActive_Result> HRP_Mst_WorkLocation_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_WorkLocation_GetAllActive_Result>("HRP_Mst_WorkLocation_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_WorkLocation_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_WorkLocation_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual int HRP_Mst_LeaveTypes_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_LeaveTypes_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_LeaveTypes_GetAll_Result> HRP_Mst_LeaveTypes_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_LeaveTypes_GetAll_Result>("HRP_Mst_LeaveTypes_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_LeaveTypes_GetAllActive_Result> HRP_Mst_LeaveTypes_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_LeaveTypes_GetAllActive_Result>("HRP_Mst_LeaveTypes_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_LeaveTypes_Save(string leaveTypeCode, string leaveTypeName, Nullable<int> iD)
-        {
-            var leaveTypeCodeParameter = leaveTypeCode != null ?
-                new ObjectParameter("LeaveTypeCode", leaveTypeCode) :
-                new ObjectParameter("LeaveTypeCode", typeof(string));
-    
-            var leaveTypeNameParameter = leaveTypeName != null ?
-                new ObjectParameter("LeaveTypeName", leaveTypeName) :
-                new ObjectParameter("LeaveTypeName", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_LeaveTypes_Save", leaveTypeCodeParameter, leaveTypeNameParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_SalaryComponents_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual int HRP_Mst_OtherEarningsDeduction_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("status", status) :
-                new ObjectParameter("status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_OtherEarningsDeduction_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_OtherEarningsDeduction_GetAll_Result> HRP_Mst_OtherEarningsDeduction_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_OtherEarningsDeduction_GetAll_Result>("HRP_Mst_OtherEarningsDeduction_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_OtherEarningsDeduction_GetAllActive_Result> HRP_Mst_OtherEarningsDeduction_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_OtherEarningsDeduction_GetAllActive_Result>("HRP_Mst_OtherEarningsDeduction_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_OtherEarningsDeduction_Save(string otherEarningsCode, string otherEarningsName, string addOrDeduct, Nullable<int> iD)
-        {
-            var otherEarningsCodeParameter = otherEarningsCode != null ?
-                new ObjectParameter("OtherEarningsCode", otherEarningsCode) :
-                new ObjectParameter("OtherEarningsCode", typeof(string));
-    
-            var otherEarningsNameParameter = otherEarningsName != null ?
-                new ObjectParameter("OtherEarningsName", otherEarningsName) :
-                new ObjectParameter("OtherEarningsName", typeof(string));
-    
-            var addOrDeductParameter = addOrDeduct != null ?
-                new ObjectParameter("AddOrDeduct", addOrDeduct) :
-                new ObjectParameter("AddOrDeduct", typeof(string));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_OtherEarningsDeduction_Save", otherEarningsCodeParameter, otherEarningsNameParameter, addOrDeductParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Shift_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Shift_GetAll_Result> HRP_Mst_Shift_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAll_Result>("HRP_Mst_Shift_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Shift_GetAllActive_Result> HRP_Mst_Shift_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Shift_GetAllActive_Result>("HRP_Mst_Shift_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_Shift_Save(string shiftCode, string shiftName, Nullable<System.TimeSpan> startTime, Nullable<System.TimeSpan> endTime, Nullable<int> iD)
-        {
-            var shiftCodeParameter = shiftCode != null ?
-                new ObjectParameter("ShiftCode", shiftCode) :
-                new ObjectParameter("ShiftCode", typeof(string));
-    
-            var shiftNameParameter = shiftName != null ?
-                new ObjectParameter("ShiftName", shiftName) :
-                new ObjectParameter("ShiftName", typeof(string));
-    
-            var startTimeParameter = startTime.HasValue ?
-                new ObjectParameter("StartTime", startTime) :
-                new ObjectParameter("StartTime", typeof(System.TimeSpan));
-    
-            var endTimeParameter = endTime.HasValue ?
-                new ObjectParameter("EndTime", endTime) :
-                new ObjectParameter("EndTime", typeof(System.TimeSpan));
-    
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Shift_Save", shiftCodeParameter, shiftNameParameter, startTimeParameter, endTimeParameter, iDParameter);
-        }
-    
-        public virtual int HRP_Mst_Holidays_ActivateDeactivate(Nullable<int> iD, Nullable<bool> status)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var statusParameter = status.HasValue ?
-                new ObjectParameter("Status", status) :
-                new ObjectParameter("Status", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_ActivateDeactivate", iDParameter, statusParameter);
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Holidays_GetAll_Result> HRP_Mst_Holidays_GetAll()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAll_Result>("HRP_Mst_Holidays_GetAll");
-        }
-    
-        public virtual ObjectResult<HRP_Mst_Holidays_GetAllActive_Result> HRP_Mst_Holidays_GetAllActive()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_Holidays_GetAllActive_Result>("HRP_Mst_Holidays_GetAllActive");
-        }
-    
-        public virtual int HRP_Mst_Holidays_Save(Nullable<System.DateTime> startDate, Nullable<System.DateTime> enDate, string description, Nullable<int> iD)
-        {
-            var startDateParameter = startDate.HasValue ?
-                new ObjectParameter("StartDate", startDate) :
-                new ObjectParameter("StartDate", typeof(System.DateTime));
-    
-            var enDateParameter = enDate.HasValue ?
-                new ObjectParameter("EnDate", enDate) :
-                new ObjectParameter("EnDate", typeof(System.DateTime));
+            var regExpiryDateParameter = regExpiryDate.HasValue ?
+                new ObjectParameter("regExpiryDate", regExpiryDate) :
+                new ObjectParameter("regExpiryDate", typeof(System.DateTime));
     
             var descriptionParameter = description != null ?
-                new ObjectParameter("Description", description) :
-                new ObjectParameter("Description", typeof(string));
+                new ObjectParameter("description", description) :
+                new ObjectParameter("description", typeof(string));
     
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
+            var brandIDParameter = brandID.HasValue ?
+                new ObjectParameter("brandID", brandID) :
+                new ObjectParameter("brandID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_Holidays_Save", startDateParameter, enDateParameter, descriptionParameter, iDParameter);
+            var yearOfManufactParameter = yearOfManufact.HasValue ?
+                new ObjectParameter("yearOfManufact", yearOfManufact) :
+                new ObjectParameter("yearOfManufact", typeof(int));
+    
+            var firstRegDateParameter = firstRegDate.HasValue ?
+                new ObjectParameter("firstRegDate", firstRegDate) :
+                new ObjectParameter("firstRegDate", typeof(System.DateTime));
+    
+            var engineNoParameter = engineNo != null ?
+                new ObjectParameter("engineNo", engineNo) :
+                new ObjectParameter("engineNo", typeof(string));
+    
+            var chasisNoParameter = chasisNo != null ?
+                new ObjectParameter("chasisNo", chasisNo) :
+                new ObjectParameter("chasisNo", typeof(string));
+    
+            var purchaseDateParameter = purchaseDate.HasValue ?
+                new ObjectParameter("purchaseDate", purchaseDate) :
+                new ObjectParameter("purchaseDate", typeof(System.DateTime));
+    
+            var purchaseValueParameter = purchaseValue.HasValue ?
+                new ObjectParameter("purchaseValue", purchaseValue) :
+                new ObjectParameter("purchaseValue", typeof(decimal));
+    
+            var serviceInterval_KMParameter = serviceInterval_KM.HasValue ?
+                new ObjectParameter("serviceInterval_KM", serviceInterval_KM) :
+                new ObjectParameter("serviceInterval_KM", typeof(long));
+    
+            var serviceInterval_MonthsParameter = serviceInterval_Months.HasValue ?
+                new ObjectParameter("serviceInterval_Months", serviceInterval_Months) :
+                new ObjectParameter("serviceInterval_Months", typeof(int));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("status", status) :
+                new ObjectParameter("status", typeof(short));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_Vehicles_DML_Oper", idParameter, vehicleTypeIDParameter, vehicleSubTypeIDParameter, regNoParameter, fleetNoParameter, regExpiryDateParameter, descriptionParameter, brandIDParameter, yearOfManufactParameter, firstRegDateParameter, engineNoParameter, chasisNoParameter, purchaseDateParameter, purchaseValueParameter, serviceInterval_KMParameter, serviceInterval_MonthsParameter, statusParameter, activeParameter, operationParameter);
         }
     
-        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAll_Result> HRP_Mst_SalaryComponents_GetAll()
+        public virtual ObjectResult<WSP_Mst_Vehicles_GetList_Result> WSP_Mst_Vehicles_GetList()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAll_Result>("HRP_Mst_SalaryComponents_GetAll");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_Vehicles_GetList_Result>("WSP_Mst_Vehicles_GetList");
         }
     
-        public virtual ObjectResult<HRP_Mst_SalaryComponents_GetAllActive_Result> HRP_Mst_SalaryComponents_GetAllActive()
+        public virtual int WSP_Mst_VehicleSubType_DML_Oper(Nullable<int> id, Nullable<int> vehicleType, string vehicleSubTypeNameEn, string vehicleSubTypeNameAr, Nullable<bool> active, string operation)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HRP_Mst_SalaryComponents_GetAllActive_Result>("HRP_Mst_SalaryComponents_GetAllActive");
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var vehicleTypeParameter = vehicleType.HasValue ?
+                new ObjectParameter("vehicleType", vehicleType) :
+                new ObjectParameter("vehicleType", typeof(int));
+    
+            var vehicleSubTypeNameEnParameter = vehicleSubTypeNameEn != null ?
+                new ObjectParameter("vehicleSubTypeNameEn", vehicleSubTypeNameEn) :
+                new ObjectParameter("vehicleSubTypeNameEn", typeof(string));
+    
+            var vehicleSubTypeNameArParameter = vehicleSubTypeNameAr != null ?
+                new ObjectParameter("vehicleSubTypeNameAr", vehicleSubTypeNameAr) :
+                new ObjectParameter("vehicleSubTypeNameAr", typeof(string));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_VehicleSubType_DML_Oper", idParameter, vehicleTypeParameter, vehicleSubTypeNameEnParameter, vehicleSubTypeNameArParameter, activeParameter, operationParameter);
         }
     
-        public virtual int HRP_Mst_SalaryComponents_Save(string salaryComponentCode, string salaryComponentName, string addOrDeduct, Nullable<decimal> defaultAmount, Nullable<decimal> defaultpercent, Nullable<int> iD)
+        public virtual ObjectResult<WSP_Mst_VehicleSubType_GetList_Result> WSP_Mst_VehicleSubType_GetList()
         {
-            var salaryComponentCodeParameter = salaryComponentCode != null ?
-                new ObjectParameter("SalaryComponentCode", salaryComponentCode) :
-                new ObjectParameter("SalaryComponentCode", typeof(string));
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_VehicleSubType_GetList_Result>("WSP_Mst_VehicleSubType_GetList");
+        }
     
-            var salaryComponentNameParameter = salaryComponentName != null ?
-                new ObjectParameter("SalaryComponentName", salaryComponentName) :
-                new ObjectParameter("SalaryComponentName", typeof(string));
+        public virtual int WSP_Mst_VehicleType_DML_Oper(Nullable<int> id, string vehicleTypeNameEn, string vehicleTypeNameAr, Nullable<bool> active, string operation)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
     
-            var addOrDeductParameter = addOrDeduct != null ?
-                new ObjectParameter("AddOrDeduct", addOrDeduct) :
-                new ObjectParameter("AddOrDeduct", typeof(string));
+            var vehicleTypeNameEnParameter = vehicleTypeNameEn != null ?
+                new ObjectParameter("vehicleTypeNameEn", vehicleTypeNameEn) :
+                new ObjectParameter("vehicleTypeNameEn", typeof(string));
     
-            var defaultAmountParameter = defaultAmount.HasValue ?
-                new ObjectParameter("DefaultAmount", defaultAmount) :
-                new ObjectParameter("DefaultAmount", typeof(decimal));
+            var vehicleTypeNameArParameter = vehicleTypeNameAr != null ?
+                new ObjectParameter("vehicleTypeNameAr", vehicleTypeNameAr) :
+                new ObjectParameter("vehicleTypeNameAr", typeof(string));
     
-            var defaultpercentParameter = defaultpercent.HasValue ?
-                new ObjectParameter("defaultpercent", defaultpercent) :
-                new ObjectParameter("defaultpercent", typeof(decimal));
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
     
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("HRP_Mst_SalaryComponents_Save", salaryComponentCodeParameter, salaryComponentNameParameter, addOrDeductParameter, defaultAmountParameter, defaultpercentParameter, iDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_VehicleType_DML_Oper", idParameter, vehicleTypeNameEnParameter, vehicleTypeNameArParameter, activeParameter, operationParameter);
+        }
+    
+        public virtual ObjectResult<WSP_Mst_VehicleType_GetList_Result> WSP_Mst_VehicleType_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_VehicleType_GetList_Result>("WSP_Mst_VehicleType_GetList");
+        }
+    
+        public virtual ObjectResult<CMN_Mst_Location_GetList_Result> CMN_Mst_Location_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CMN_Mst_Location_GetList_Result>("CMN_Mst_Location_GetList");
+        }
+    
+        public virtual ObjectResult<WSP_Mst_Customers_GetList_Result> WSP_Mst_Customers_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_Customers_GetList_Result>("WSP_Mst_Customers_GetList");
+        }
+    
+        public virtual ObjectResult<WSP_Mst_Services_GetList_Result> WSP_Mst_Services_GetList()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<WSP_Mst_Services_GetList_Result>("WSP_Mst_Services_GetList");
+        }
+    
+        public virtual int WSP_Mst_Services_DML_Oper(Nullable<int> id, Nullable<int> serviceTypeID, string serviceNameEn, string serviceNameAr, string serviceCode, Nullable<bool> isItemRequired, Nullable<bool> active, string operation)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            var serviceTypeIDParameter = serviceTypeID.HasValue ?
+                new ObjectParameter("serviceTypeID", serviceTypeID) :
+                new ObjectParameter("serviceTypeID", typeof(int));
+    
+            var serviceNameEnParameter = serviceNameEn != null ?
+                new ObjectParameter("serviceNameEn", serviceNameEn) :
+                new ObjectParameter("serviceNameEn", typeof(string));
+    
+            var serviceNameArParameter = serviceNameAr != null ?
+                new ObjectParameter("serviceNameAr", serviceNameAr) :
+                new ObjectParameter("serviceNameAr", typeof(string));
+    
+            var serviceCodeParameter = serviceCode != null ?
+                new ObjectParameter("serviceCode", serviceCode) :
+                new ObjectParameter("serviceCode", typeof(string));
+    
+            var isItemRequiredParameter = isItemRequired.HasValue ?
+                new ObjectParameter("isItemRequired", isItemRequired) :
+                new ObjectParameter("isItemRequired", typeof(bool));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("active", active) :
+                new ObjectParameter("active", typeof(bool));
+    
+            var operationParameter = operation != null ?
+                new ObjectParameter("Operation", operation) :
+                new ObjectParameter("Operation", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("WSP_Mst_Services_DML_Oper", idParameter, serviceTypeIDParameter, serviceNameEnParameter, serviceNameArParameter, serviceCodeParameter, isItemRequiredParameter, activeParameter, operationParameter);
         }
     }
 }
