@@ -1,0 +1,4 @@
+
+*.config
+.vs/NexusProductAPI/v15/.suo
+NexusProductAPI/bin/NexusProductAPI.pdb

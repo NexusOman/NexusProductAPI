@@ -145,14 +145,28 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Class\CommonUtilites.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HR_Payroll\HRP_ConfigController.cs" />
     <Compile Include="Controllers\HR_Payroll\HRP_MasterController.cs" />
     <Compile Include="Controllers\ServiceModule\ServiceCenterController.cs" />
     <Compile Include="Controllers\UserModule\LoginController.cs" />
     <Compile Include="Controllers\UserModule\MenuController.cs" />
     <Compile Include="Controllers\UserModule\UserRolesController.cs" />
+    <Compile Include="Controllers\Workshop\ConfigurationsController.cs" />
+    <Compile Include="Controllers\Workshop\MasterController.cs" />
+    <Compile Include="Controllers\Workshop\OperationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_Mst_Governorate_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_Mst_LocationGroup_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_Mst_Location_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CMN_Mst_UserRoles_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -160,28 +174,73 @@
     <Compile Include="Models\CMN_Mst_User_Authenticate_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CMN_Mst_Wilayath_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_STN_RoleToMenu_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_Utl_MenuItems_GetAll_ByRoleID_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CMN_Utl_MenuItems_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CMN_Utl_Menu_GetAll_ByRoleID_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CMN_Utl_Menu_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CMN_Utl_Modules_GetAll_ByRoleID_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CMN_Utl_Modules_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Cnf_SalarySetup_GetAll_Forhike_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Cnf_SalarySetup_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Cnf_ShiftConfigDetails_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Cnf_ShiftConfigHead_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Bank_GetAllActive_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRP_Mst_Bank_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRP_Mst_BloodGroups_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRP_Mst_BloodGroups_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Country_GetAllActive_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRP_Mst_Country_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRP_Mst_Departments_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRP_Mst_Departments_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRP_Mst_Designation_GetAll_Active_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRP_Mst_Designation_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_EmpDocs_GetAllActive_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRP_Mst_EmpDocs_GetAll_Result.cs">
@@ -190,10 +249,49 @@
     <Compile Include="Models\HRP_Mst_EmployeeDocuments_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRP_Mst_Employee_GetAll_ForSalhike_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRP_Mst_Employee_GetAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRP_Mst_Holidays_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Holidays_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_LeaveTypes_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_LeaveTypes_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_OtherEarningsDeduction_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_OtherEarningsDeduction_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_SalaryComponents_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_SalaryComponents_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Shift_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Shift_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_Subcontractors_GetAllActive_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRP_Mst_Subcontractors_GetAll_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRP_Mst_WorkLocation_GetAllActive_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRP_Mst_WorkLocation_GetAll_Result.cs">
@@ -245,6 +343,39 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VSR_Trn_ServiceEntry_Head_getMaxEntryNo_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_Brands_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_Customers_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_ItemMaster_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_Services_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_ServiceTypes_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_TechnicianTypes_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_Technician_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_UOM_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_VehicleSubType_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_Vehicles_GetList_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WSP_Mst_VehicleType_GetList_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

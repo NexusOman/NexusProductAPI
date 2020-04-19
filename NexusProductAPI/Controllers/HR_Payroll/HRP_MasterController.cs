@@ -291,7 +291,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             List<HRP_Mst_Designation_GetAll_Result> Designations = new List<HRP_Mst_Designation_GetAll_Result>();
             try
             {
-                db.HRP_Mst_Designation_Delete(data.id);
+                db.HRP_Mst_Designation_ActivateDeactivate(data.id,data.active);
                 Designations = db.HRP_Mst_Designation_GetAll().ToList();
                 if (Designations.Count() > 0)
                 {
@@ -872,7 +872,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             }
             catch
             {
-                SR.message = "Error Occured in fetching Employee Document Types"; SR.employees = Employees; SR.status = 0;
+                SR.message = "Error Occured in fetching Employees"; SR.employees = Employees; SR.status = 0;
                 return SR;
             }
         }
@@ -1015,7 +1015,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
         }
         #endregion
 
-
         #region LeaveTypes
         [Route("api/GetLeaveTypes")]
         public LeaveTypesResponse GetLeaveTypes()
@@ -1127,9 +1126,10 @@ namespace NexusProductAPI.Controllers.HR_Payroll
             List<HRP_Mst_SalaryComponents_GetAll_Result> SalaryComponentss = new List<HRP_Mst_SalaryComponents_GetAll_Result>();
             try
             {
-                Nullable<decimal> defaultamount = null;
+                Nullable<decimal> defaultamount = null,defaultpercent=null;
                 try { defaultamount = data.defaultamount; } catch { }
-                db.HRP_Mst_SalaryComponents_Save(data.salarycomponentcode, data.salarycomponentname,data.addordeduct,defaultamount, data.id);
+                try { defaultpercent =Convert.ToDecimal(data.defaultpercent); } catch { }
+                db.HRP_Mst_SalaryComponents_Save(data.salarycomponentcode, data.salarycomponentname,data.addordeduct,defaultamount,defaultpercent,data.id);
                 SalaryComponentss = db.HRP_Mst_SalaryComponents_GetAll().ToList();
                 if (SalaryComponentss.Count() > 0)
                 {
@@ -1137,7 +1137,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                 }
                 return SR;
             }
-            catch
+            catch(Exception ex)
             {
                 SR.message = "Error Occured "; SR.SalaryComponents = SalaryComponentss; SR.status = 0;
                 return SR;
@@ -1177,7 +1177,6 @@ namespace NexusProductAPI.Controllers.HR_Payroll
 
 
         #endregion
-
 
         #region OtherEarningsDeduction
         [Route("api/GetOtherEarningsDeduction")]
@@ -1258,6 +1257,167 @@ namespace NexusProductAPI.Controllers.HR_Payroll
 
         #endregion
 
+        #region Shift
+        [Route("api/GetShift")]
+        public ShiftResponse GetShift()
+        {
+            ShiftResponse SR = new ShiftResponse();
+            List<HRP_Mst_Shift_GetAll_Result> Shifts = new List<HRP_Mst_Shift_GetAll_Result>();
+            try
+            {
+                Shifts = db.HRP_Mst_Shift_GetAll().ToList();
+                if (Shifts.Count() > 0)
+                {
+                    SR.status = 1; SR.Shift = Shifts;
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured in fetching Shifts"; SR.Shift = Shifts; SR.status = 0;
+                return SR;
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/PostShift")]
+        public ShiftResponse PostShift(HRP_Mst_Shift_GetAll_Result data)
+        {
+            ShiftResponse SR = new ShiftResponse();
+            List<HRP_Mst_Shift_GetAll_Result> Shifts = new List<HRP_Mst_Shift_GetAll_Result>();
+            try
+            {
+                db.HRP_Mst_Shift_Save(data.shiftcode, data.shiftname,data.starttime,data.endtime, data.id);
+                Shifts = db.HRP_Mst_Shift_GetAll().ToList();
+                if (Shifts.Count() > 0)
+                {
+                    SR.status = 1; SR.Shift = Shifts; SR.message = "Saved Successfully!!";
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured "; SR.Shift = Shifts; SR.status = 0;
+                return SR;
+            }
+        }
+
+       
+
+        [HttpPost]
+        [Route("api/ActivateDeactivateShift")]
+        public ShiftResponse ActivateDeactivateShift(HRP_Mst_Shift_GetAll_Result data)
+        {
+            ShiftResponse SR = new ShiftResponse();
+            List<HRP_Mst_Shift_GetAll_Result> Shifts = new List<HRP_Mst_Shift_GetAll_Result>();
+            try
+            {
+                db.HRP_Mst_Shift_ActivateDeactivate(data.id, data.active);
+                Shifts = db.HRP_Mst_Shift_GetAll().ToList();
+                if (Shifts.Count() > 0)
+                {
+                    SR.status = 1; SR.Shift = Shifts; if (data.active==true) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured "; SR.Shift = Shifts; SR.status = 0;
+                return SR;
+            }
+        }
+
+        public class ShiftResponse
+        {
+            public int status { get; set; }
+            public string message { get; set; }
+            public List<HRP_Mst_Shift_GetAll_Result> Shift { get; set; }
+        }
+
+
+        #endregion
+
+        #region Holidays
+        [Route("api/GetHolidays")]
+        public HolidaysResponse GetHolidays()
+        {
+            HolidaysResponse SR = new HolidaysResponse();
+            List<HRP_Mst_Holidays_GetAll_Result> Holidayss = new List<HRP_Mst_Holidays_GetAll_Result>();
+            try
+            {
+                Holidayss = db.HRP_Mst_Holidays_GetAll().ToList();
+                if (Holidayss.Count() > 0)
+                {
+                    SR.status = 1; SR.Holidays = Holidayss;
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured in fetching Holidayss"; SR.Holidays = Holidayss; SR.status = 0;
+                return SR;
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/PostHolidays")]
+        public HolidaysResponse PostHolidays(HRP_Mst_Holidays_GetAll_Result data)
+        {
+            HolidaysResponse SR = new HolidaysResponse();
+            List<HRP_Mst_Holidays_GetAll_Result> Holidayss = new List<HRP_Mst_Holidays_GetAll_Result>();
+            try
+            {
+                db.HRP_Mst_Holidays_Save(data.startdate,data.endate, data.description, data.id);
+                Holidayss = db.HRP_Mst_Holidays_GetAll().ToList();
+                if (Holidayss.Count() > 0)
+                {
+                    SR.status = 1; SR.Holidays = Holidayss; SR.message = "Saved Successfully!!";
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured "; SR.Holidays = Holidayss; SR.status = 0;
+                return SR;
+            }
+        }
+
+       
+
+        [HttpPost]
+        [Route("api/ActivateDeactivateHolidays")]
+        public HolidaysResponse ActivateDeactivateHolidays(HRP_Mst_Holidays_GetAll_Result data)
+        {
+            HolidaysResponse SR = new HolidaysResponse();
+            List<HRP_Mst_Holidays_GetAll_Result> Holidayss = new List<HRP_Mst_Holidays_GetAll_Result>();
+            try
+            {
+                db.HRP_Mst_Holidays_ActivateDeactivate(data.id, data.active);
+                Holidayss = db.HRP_Mst_Holidays_GetAll().ToList();
+                if (Holidayss.Count() > 0)
+                {
+                    SR.status = 1; SR.Holidays = Holidayss; if (data.active) { SR.message = "Activated Successfully!!"; } else { SR.message = "Deactivated Successfully!!"; }
+                }
+                return SR;
+            }
+            catch
+            {
+                SR.message = "Error Occured "; SR.Holidays = Holidayss; SR.status = 0;
+                return SR;
+            }
+        }
+
+        public class HolidaysResponse
+        {
+            public int status { get; set; }
+            public string message { get; set; }
+            public List<HRP_Mst_Holidays_GetAll_Result> Holidays { get; set; }
+        }
+
+
+        #endregion
 
         #region FileUpload
 
@@ -1289,7 +1449,7 @@ namespace NexusProductAPI.Controllers.HR_Payroll
                         if (!File.Exists(sPath + Path.GetFileName(hpf.FileName)))
                         {
                             // SAVE THE FILES IN THE FOLDER.
-                            //hpf.SaveAs(sPath + Path.GetFileName(hpf.FileName));
+                            // hpf.SaveAs(sPath + Path.GetFileName(hpf.FileName));
                             string extension = Path.GetExtension(Path.GetFileName(hpf.FileName));
                             filename = System.DateTime.Now.ToString("ddMMyyhhmmss") + extension;
                             hpf.SaveAs(sPath + Path.GetFileName(filename));
