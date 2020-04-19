@@ -16,6 +16,5 @@ namespace NexusProductAPI.Models
         public int id { get; set; }
         public string bankcode { get; set; }
         public string bankname { get; set; }
-        public bool active { get; set; }
     }
 }

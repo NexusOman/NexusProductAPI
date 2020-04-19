@@ -474,6 +474,41 @@
       <Parameter Name="year" Mode="In" Type="Int32" />
       <Parameter Name="location" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Shift_ActivateDeactivate">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Shift_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_Shift_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Shift_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_Shift_Save">
+      <Parameter Name="ShiftCode" Mode="In" Type="String" />
+      <Parameter Name="ShiftName" Mode="In" Type="String" />
+      <Parameter Name="StartTime" Mode="In" Type="Time" />
+      <Parameter Name="EndTime" Mode="In" Type="Time" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Holidays_ActivateDeactivate">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_Holidays_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_Holidays_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_Holidays_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_Holidays_Save">
+      <Parameter Name="StartDate" Mode="In" Type="DateTime" />
+      <Parameter Name="EnDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAll" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result)" />
+    <FunctionImport Name="HRP_Mst_SalaryComponents_GetAllActive" ReturnType="Collection(NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result)" />
+    <FunctionImport Name="HRP_Mst_SalaryComponents_Save">
+      <Parameter Name="SalaryComponentCode" Mode="In" Type="String" />
+      <Parameter Name="SalaryComponentName" Mode="In" Type="String" />
+      <Parameter Name="AddOrDeduct" Mode="In" Type="String" />
+      <Parameter Name="DefaultAmount" Mode="In" Type="Decimal" />
+      <Parameter Name="defaultpercent" Mode="In" Type="Decimal" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="VSR_Mst_OwnVehicles_GetAll_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />

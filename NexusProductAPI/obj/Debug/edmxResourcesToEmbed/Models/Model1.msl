@@ -595,10 +595,10 @@
     <FunctionImportMapping FunctionImportName="HRP_Mst_Holidays_Save" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_Holidays_Save" />
     <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAll" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAll">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAll_Result">
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_OtherEarningsDeduction_GetAll_Result">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
-          <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
+          <ScalarProperty Name="otherearningscode" ColumnName="otherearningscode" />
+          <ScalarProperty Name="otherearningsname" ColumnName="otherearningsname" />
           <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
           <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
           <ScalarProperty Name="defaultpercent" ColumnName="defaultpercent" />
@@ -606,12 +606,12 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="HRP_Mst_SalaryComponents_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_SalaryComponents_GetAllActive">
+    <FunctionImportMapping FunctionImportName="HRP_Mst_OtherEarningsDeduction_GetAllActive" FunctionName="NEXUSPRODUCTModel.Store.HRP_Mst_OtherEarningsDeduction_GetAllActive">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_SalaryComponents_GetAllActive_Result">
+        <ComplexTypeMapping TypeName="NEXUSPRODUCTModel.HRP_Mst_OtherEarningsDeduction_GetAllActive_Result">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="salarycomponentcode" ColumnName="salarycomponentcode" />
-          <ScalarProperty Name="salarycomponentname" ColumnName="salarycomponentname" />
+          <ScalarProperty Name="otherearningscode" ColumnName="otherearningscode" />
+          <ScalarProperty Name="otherearningsname" ColumnName="otherearningsname" />
           <ScalarProperty Name="addordeduct" ColumnName="addordeduct" />
           <ScalarProperty Name="defaultamount" ColumnName="defaultamount" />
           <ScalarProperty Name="defaultpercent" ColumnName="defaultpercent" />
